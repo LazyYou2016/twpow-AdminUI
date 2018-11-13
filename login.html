@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="dist/css/font-awesome.min.css"/> -->
+  <link rel="stylesheet" href="dist/css/style.css" />
+  <link rel="stylesheet" href="dist/css/all.css">
+</head>
+
+<body>
+  <div class="login-body vc">
+    <div class="vc-child">
+      <div class="login-container">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="login-anim-container">
+                <img class="img-responsive" src="dist/imgs/login/banner-1.png" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="login-anim-container">
+                <img class="img-responsive" src="dist/imgs/login/banner-2.png" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="login-anim-container">
+                <img class="img-responsive" src="dist/imgs/login/banner-3.png" />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="login-box fr">
+          <div class="login-head">
+            <img src="dist/imgs/login/login-logo.png" />
+          </div>
+          <div class="login-form">
+            <div class="form-label">用户名</div>
+            <div class="login-input">
+              <input type="text" class="form-control" id="userName" placeholder="请输入用户名" />
+              <i class="fab fa-accessible-icon"></i>
+            </div>
+          </div>
+          <div class="login-form">
+            <div class="form-label">密码</div>
+            <div class="login-input">
+              <input type="password" class="form-control" id="userPassword" placeholder="请输入密码" />
+              <i class="fa fa-lock fa-lg"></i>
+            </div>
+          </div>
+          <div class="login-form login-code">
+            <div class="form-label">验证码</div>
+            <div class="login-input">
+              <input type="text" id="veryCode" class="form-control form-code" placeholder="请输入验证码">
+              <i class="fa fa-shield fa-lg"></i>
+              <a href="javascript:void(0)" onclick="">
+                <img class="code-img" alt="" src="dist/imgs/login/login-code.jpg">
+              </a>
+            </div>
+          </div>
+          <div class="login-other">
+            <b id="info" class="orang pull-left">密码错误</b>
+            <a href="javaScript:void(0)" onclick="changeImg()" class="btn btn-link">看不清换一张</a>
+          </div>
+          <div class="login-form login-phonecode">
+            <div class="form-label">验证码</div>
+            <div class="login-input">
+              <input type="text" id="veryCode" class="form-control form-code" onblur="isRightCode()" placeholder="验证码">
+              <i class="fa fa-shield fa-lg"></i>
+              <a href="" class="text-primary code-btn">发送验证码</a>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-block btn-primary" id="popup-submit" onclick="Login()">
+            登录
+          </button>
+          <!--
+              <div class="login-link">
+                <a href="#" class="btn btn-link pull-right" onclick="password_forget()">忘记密码</a>
+              </div>
+            -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/jquery.min.js"></script>
+  <script src="dist/js/swiper.min.js"></script>
+  <script src="dist/js/login.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+      },
+      loop: true,
+    });
+  </script>
+</body>
+
+</html>

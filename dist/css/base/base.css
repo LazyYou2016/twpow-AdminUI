@@ -1,0 +1,15 @@
+.text-primary {
+  color: #4a92ff !important;
+}
+.text-success {
+  color: #4dbd74 !important;
+}
+.text-warning {
+  color: #ffae42 !important;
+}
+.text-danger {
+  color: #ff6152 !important;
+}
+.text-info {
+  color: #5bc0de !important;
+}

@@ -1,0 +1,117 @@
+@import 'base/module';
+//基础样式 S
+.fl {
+  .fl();
+}
+
+.fr {
+  .fr();
+}
+
+.abs-full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vc {
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .abs-full();
+}
+
+.vc-child {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.bg-sf {
+  background-size: 100% 100%;
+}
+
+//基础样式 E
+@import 'components/swiper.less';
+@login-bg: '../imgs/login/login-bg.png';
+@login-color: #091645;
+@login-container-w: 1200px;
+@login-box-w: 427px;
+// @login-box-h: 534px;
+@login-box-h: auto;
+@login-box-p: 44px 60px;
+@login-box-bg: #091645;
+@login-box-r: 4px;
+.login-body {
+  display: table;
+  overflow: hidden;
+  background-image: url(@login-bg);
+  background-color: @login-color;
+  background-size: contain;
+  .bg-sf();
+  .abs-full();
+  .login-container {
+    position: relative;
+    width: @login-container-w;
+    .bc();
+    .swiper-container {
+      width: 50%;
+      height: 460px;
+      margin: 20px auto;
+      position: absolute;
+      z-index: 2;
+      overflow-y: auto;
+    }
+    .login-box {
+      position: relative;
+      width: @login-box-w;
+      height: @login-box-h;
+      padding: @login-box-p;
+      background: @login-box-bg;
+      border-radius: @login-box-r;
+      .bc();
+      .login-head {
+        margin: 14px 0 20px;
+        .tc();
+      }
+      .login-form {
+        margin-bottom: 14px;
+        .form-label {
+          color: #fff;
+          margin-bottom: 10px;
+        }
+        .login-input {
+          input {
+            width: 100%;
+            padding: 10px 0 10px 50px;
+            border: none;
+            height: 44px;
+          }
+          i {
+            color: #fff;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &.login-code {
+          input {
+            display: inline;
+            width: 200px;
+          }
+          img.code-img {
+            width: 100px;
+            height: 40px;
+            margin: 2px 0;
+            .fr();
+          }
+        }
+      }
+    }
+  }
+}
