@@ -5,6 +5,7 @@
 @body-bg-color: #f7f7f7;
 //body E
 //color S
+@main-color: #4a92ff;
 @btn-font-color: #fff;
 @default: #fff;
 @default-active: darken(@default, 10%);
@@ -19,22 +20,24 @@
 @warning-active: darken(@warning, 10%);
 @danger: #ff6152;
 @danger-active: darken(@danger, 10%);
+@gray-h: #606266;
+@gray-m: #909399;
+@gray-l: #f2f2f2;
 //color E
-//label S
+//label and badge S
 @label-radio: 0.25em;
-@label-default: @default;
+@label-default: #777;
 @label-primary: @primary;
 @label-success: @success;
 @label-info: @info;
 @label-warning: @warning;
 @label-danger: @danger;
-//label E
-.variant(@color) {
-  background-color: @color;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken(@color, 10%);
-    }
-  }
-}
+@badge-default: @label-default;
+//label and badge E
+//progress S
+@progress-bar-primary-bg: @primary;
+@progress-bar-success-bg: @success;
+@progress-bar-info-bg: @info;
+@progress-bar-warning-bg: @warning;
+@progress-bar-danger-bg: @danger;
+//progress E

@@ -1,0 +1,159 @@
+//文本颜色 S
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover,
+  a&:focus {
+    color: darken(@color, 10%);
+  }
+}
+
+.text-muted {
+  .text-emphasis-variant(@font-color)
+}
+
+.text-primary {
+  .text-emphasis-variant(@primary)
+}
+
+.text-success {
+  .text-emphasis-variant(@success)
+}
+
+.text-info {
+  .text-emphasis-variant(@info)
+}
+
+.text-warning {
+  .text-emphasis-variant(@warning)
+}
+
+.text-danger {
+  .text-emphasis-variant(@danger)
+}
+
+//文本颜色 E
+//标签 S
+@import '../base/variables.less';
+.label-variant(@color) {
+  background-color: @color;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@color, 10%);
+    }
+  }
+}
+
+.label-line-variant(@color) {
+  background-color: transparent;
+  color: @color;
+  border: 1px solid @color;
+}
+
+.label-rz {
+  border-radius: 0;
+}
+
+.label {
+  border-radius: @label-radio;
+}
+
+.label-default {
+  .label-variant(@label-default);
+  &.label-line {
+    .label-line-variant(@label-default);
+  }
+}
+
+.label-primary {
+  .label-variant(@label-primary);
+  &.label-line {
+    .label-line-variant(@label-primary);
+  }
+}
+
+.label-success {
+  .label-variant(@label-success);
+  &.label-line {
+    .label-line-variant(@label-success);
+  }
+}
+
+.label-info {
+  .label-variant(@label-info);
+  &.label-line {
+    .label-line-variant(@label-info);
+  }
+}
+
+.label-warning {
+  .label-variant(@label-warning);
+  &.label-line {
+    .label-line-variant(@label-warning);
+  }
+}
+
+.label-danger {
+  .label-variant(@label-danger);
+  &.label-line {
+    .label-line-variant(@label-danger);
+  }
+}
+
+//标签 E
+//徽章 S
+.badge-variant(@color) {
+  background-color: @color;
+}
+
+.badge {
+  .badge-variant(@badge-default);
+}
+
+.badge-primary {
+  .badge-variant(@primary);
+}
+
+.badge-success {
+  .badge-variant(@success);
+}
+
+.badge-info {
+  .badge-variant(@info);
+}
+
+.badge-warning {
+  .badge-variant(@warning);
+}
+
+.badge-danger {
+  .badge-variant(@danger);
+}
+
+//徽章 E
+// 进度条 S
+.progress-bar-variant(@color) {
+  background-color: @color;
+}
+
+.progress-bar {
+  .progress-bar-variant(@progress-bar-primary-bg);
+}
+
+.progress-bar-success {
+  .progress-bar-variant(@progress-bar-success-bg);
+}
+
+.progress-bar-info {
+  .progress-bar-variant(@progress-bar-info-bg);
+}
+
+.progress-bar-warning {
+  .progress-bar-variant(@progress-bar-warning-bg);
+}
+
+.progress-bar-danger {
+  .progress-bar-variant(@progress-bar-danger-bg);
+}
+
+// 进度条 E

@@ -1,0 +1,31 @@
+.nav-tabs > li > a {
+  color: #333;
+}
+.nav-tabs.nav-tabs-line > li.active > a,
+.nav-tabs.nav-tabs-line > li.active > a:hover,
+.nav-tabs.nav-tabs-line > li.active > a:focus {
+  border-color: transparent;
+}
+.nav-tabs.nav-tabs-line > li.active > a:after,
+.nav-tabs.nav-tabs-line > li.active > a:hover:after,
+.nav-tabs.nav-tabs-line > li.active > a:focus:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4a92ff;
+}
+.nav-tabs.nav-tabs-card {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+}
+.nav-tabs.nav-tabs-card > li > a {
+  border-radius: 0;
+}
+.nav-tabs.nav-tabs-card > li.active > a,
+.nav-tabs.nav-tabs-card > li.active > a:hover,
+.nav-tabs.nav-tabs-card > li.active > a:focus {
+  border-top-color: transparent;
+}

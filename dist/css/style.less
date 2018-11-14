@@ -80,12 +80,13 @@
         .tc();
       }
       .login-form {
-        margin-bottom: 14px;
+        margin-bottom: 18px;
         .form-label {
           color: #fff;
-          margin-bottom: 10px;
+          margin: 10px 0;
         }
         .login-input {
+          .rel();
           input {
             width: 100%;
             padding: 10px 0 10px 50px;
@@ -93,7 +94,10 @@
             height: 44px;
           }
           i {
-            color: #fff;
+            .abs();
+            top: 16px;
+            left: 16px;
+            color: @main-color;
           }
         }
         &:last-child {
@@ -101,7 +105,7 @@
         }
         &.login-code {
           input {
-            display: inline;
+            display: inline-block;
             width: 200px;
           }
           img.code-img {

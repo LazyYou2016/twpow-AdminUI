@@ -3,6 +3,68 @@
  */
 /*雅虎（YUI 3）reset*/
 /*Normalize.css*/
+.row-12 {
+  height: 100% !important;
+}
+.row-11 {
+  height: 91.66666667% !important;
+}
+.row-10 {
+  height: 83.33333333% !important;
+}
+.row-9 {
+  height: 75% !important;
+}
+.row-8 {
+  height: 66.66666667% !important;
+}
+.row-7 {
+  height: 58.33333333% !important;
+}
+.row-6 {
+  height: 50% !important;
+}
+.row-5 {
+  height: 41.66666667% !important;
+}
+.row-4 {
+  height: 33.33333333% !important;
+}
+.row-3 {
+  height: 25% !important;
+}
+.row-2 {
+  height: 16.66666667% !important;
+}
+.row-1 {
+  height: 8.33333333% !important;
+}
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f7f7f7;
+  font-family: 'Lantinghei SC', 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'STHeiti', 'WenQuanYi Micro Hei', SimSun, sans-serif;
+  color: #333;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+img {
+  border: none;
+}
+li {
+  list-style: none;
+}
 /*!
  * Font Awesome Free 5.5.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -3993,37 +4055,98 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto;
 }
-::-ms-clear,
-::-ms-reveal {
-  display: none;
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
 }
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.fab {
+  font-family: 'Font Awesome 5 Brands';
 }
-body {
-  background-color: #f7f7f7;
-  font-family: 'Lantinghei SC', 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'STHeiti', 'WenQuanYi Micro Hei', SimSun, sans-serif;
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.text-muted {
   color: #333;
 }
-a:active,
-a:hover {
-  outline: 0;
+a.text-muted:hover,
+a.text-muted:focus {
+  color: #1a1a1a;
 }
-img {
-  border: none;
+.text-primary {
+  color: #4a92ff;
 }
-li {
-  list-style: none;
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #1773ff;
+}
+.text-success {
+  color: #4dbd74;
+}
+a.text-success:hover,
+a.text-success:focus {
+  color: #3a9d5d;
+}
+.text-info {
+  color: #67dcff;
+}
+a.text-info:hover,
+a.text-info:focus {
+  color: #34d0ff;
+}
+.text-warning {
+  color: #ffae42;
+}
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #ff980f;
+}
+.text-danger {
+  color: #ff6152;
+}
+a.text-danger:hover,
+a.text-danger:focus {
+  color: #ff321f;
 }
 .label-rz {
   border-radius: 0;
 }
 .label {
-  border-radius: 14px;
+  border-radius: 0.25em;
+}
+.label-default {
+  background-color: #777;
+}
+.label-default[href]:hover,
+.label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.label-default.label-line {
+  background-color: transparent;
+  color: #777;
+  border: 1px solid #777;
 }
 .label-primary {
   background-color: #4a92ff;
@@ -4032,12 +4155,22 @@ li {
 .label-primary[href]:focus {
   background-color: #1773ff;
 }
+.label-primary.label-line {
+  background-color: transparent;
+  color: #4a92ff;
+  border: 1px solid #4a92ff;
+}
 .label-success {
   background-color: #4dbd74;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
   background-color: #3a9d5d;
+}
+.label-success.label-line {
+  background-color: transparent;
+  color: #4dbd74;
+  border: 1px solid #4dbd74;
 }
 .label-info {
   background-color: #67dcff;
@@ -4046,6 +4179,11 @@ li {
 .label-info[href]:focus {
   background-color: #34d0ff;
 }
+.label-info.label-line {
+  background-color: transparent;
+  color: #67dcff;
+  border: 1px solid #67dcff;
+}
 .label-warning {
   background-color: #ffae42;
 }
@@ -4053,12 +4191,203 @@ li {
 .label-warning[href]:focus {
   background-color: #ff980f;
 }
+.label-warning.label-line {
+  background-color: transparent;
+  color: #ffae42;
+  border: 1px solid #ffae42;
+}
 .label-danger {
   background-color: #ff6152;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
   background-color: #ff321f;
+}
+.label-danger.label-line {
+  background-color: transparent;
+  color: #ff6152;
+  border: 1px solid #ff6152;
+}
+.badge {
+  background-color: #777;
+}
+.badge-primary {
+  background-color: #4a92ff;
+}
+.badge-success {
+  background-color: #4dbd74;
+}
+.badge-info {
+  background-color: #67dcff;
+}
+.badge-warning {
+  background-color: #ffae42;
+}
+.badge-danger {
+  background-color: #ff6152;
+}
+.progress-bar {
+  background-color: #4a92ff;
+}
+.progress-bar-success {
+  background-color: #4dbd74;
+}
+.progress-bar-info {
+  background-color: #67dcff;
+}
+.progress-bar-warning {
+  background-color: #ffae42;
+}
+.progress-bar-danger {
+  background-color: #ff6152;
+}
+.panel {
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 4px;
+}
+.panel .panel-heading,
+.panel .panel-footer {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.panel .panel-heading {
+  background: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel .panel-footer {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel-primary {
+  border-color: #4a92ff;
+}
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #4a92ff;
+  border-color: #4a92ff;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4a92ff;
+}
+.panel-primary > .panel-heading .badge {
+  color: #4a92ff;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4a92ff;
+}
+.panel-success {
+  border-color: #4dbd74;
+}
+.panel-success > .panel-heading {
+  color: #fff;
+  background-color: #4dbd74;
+  border-color: #4dbd74;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4dbd74;
+}
+.panel-success > .panel-heading .badge {
+  color: #4dbd74;
+  background-color: #fff;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4dbd74;
+}
+.panel-info {
+  border-color: #67dcff;
+}
+.panel-info > .panel-heading {
+  color: #fff;
+  background-color: #67dcff;
+  border-color: #67dcff;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #67dcff;
+}
+.panel-info > .panel-heading .badge {
+  color: #67dcff;
+  background-color: #fff;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #67dcff;
+}
+.panel-warning {
+  border-color: #ffae42;
+}
+.panel-warning > .panel-heading {
+  color: #fff;
+  background-color: #ffae42;
+  border-color: #ffae42;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ffae42;
+}
+.panel-warning > .panel-heading .badge {
+  color: #ffae42;
+  background-color: #fff;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ffae42;
+}
+.panel-danger {
+  border-color: #ff6152;
+}
+.panel-danger > .panel-heading {
+  color: #fff;
+  background-color: #ff6152;
+  border-color: #ff6152;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ff6152;
+}
+.panel-danger > .panel-heading .badge {
+  color: #ff6152;
+  background-color: #fff;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ff6152;
+}
+.card-fluid {
+  position: relative;
+  padding: 15px;
+}
+.card-fluid.abs-full {
+  padding: 8px;
+}
+.card-fluid.abs-full .panel-full {
+  height: 100%;
+  padding: 4px 8px;
+}
+.card-fluid.abs-full .panel-full .panel {
+  height: 100%;
+}
+.nav-tabs > li > a {
+  color: #333;
+}
+.nav-tabs.nav-tabs-line > li.active > a,
+.nav-tabs.nav-tabs-line > li.active > a:hover,
+.nav-tabs.nav-tabs-line > li.active > a:focus {
+  border-color: transparent;
+}
+.nav-tabs.nav-tabs-line > li.active > a:after,
+.nav-tabs.nav-tabs-line > li.active > a:hover:after,
+.nav-tabs.nav-tabs-line > li.active > a:focus:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4a92ff;
+}
+.nav-tabs.nav-tabs-card {
+  background-color: #f2f2f2;
+}
+.nav-tabs.nav-tabs-card > li > a {
+  border-radius: 0;
 }
 .btn-default {
   color: #333;

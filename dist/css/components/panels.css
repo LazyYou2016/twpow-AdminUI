@@ -1,0 +1,123 @@
+.panel {
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 4px;
+}
+.panel .panel-heading,
+.panel .panel-footer {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.panel .panel-heading {
+  background: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel .panel-footer {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel-primary {
+  border-color: #4a92ff;
+}
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #4a92ff;
+  border-color: #4a92ff;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4a92ff;
+}
+.panel-primary > .panel-heading .badge {
+  color: #4a92ff;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4a92ff;
+}
+.panel-success {
+  border-color: #4dbd74;
+}
+.panel-success > .panel-heading {
+  color: #fff;
+  background-color: #4dbd74;
+  border-color: #4dbd74;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4dbd74;
+}
+.panel-success > .panel-heading .badge {
+  color: #4dbd74;
+  background-color: #fff;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4dbd74;
+}
+.panel-info {
+  border-color: #67dcff;
+}
+.panel-info > .panel-heading {
+  color: #fff;
+  background-color: #67dcff;
+  border-color: #67dcff;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #67dcff;
+}
+.panel-info > .panel-heading .badge {
+  color: #67dcff;
+  background-color: #fff;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #67dcff;
+}
+.panel-warning {
+  border-color: #ffae42;
+}
+.panel-warning > .panel-heading {
+  color: #fff;
+  background-color: #ffae42;
+  border-color: #ffae42;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ffae42;
+}
+.panel-warning > .panel-heading .badge {
+  color: #ffae42;
+  background-color: #fff;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ffae42;
+}
+.panel-danger {
+  border-color: #ff6152;
+}
+.panel-danger > .panel-heading {
+  color: #fff;
+  background-color: #ff6152;
+  border-color: #ff6152;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ff6152;
+}
+.panel-danger > .panel-heading .badge {
+  color: #ff6152;
+  background-color: #fff;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ff6152;
+}
+.card-fluid {
+  position: relative;
+  padding: 15px;
+}
+.card-fluid.abs-full {
+  padding: 8px;
+}
+.card-fluid.abs-full .panel-full {
+  height: 100%;
+  padding: 4px 8px;
+}
+.card-fluid.abs-full .panel-full .panel {
+  height: 100%;
+}

@@ -1,0 +1,86 @@
+@import '../base/variables.less';
+@panel-head-color: #fff;
+@panel-bg: #f5f5f5;
+@panel-bd: #ddd;
+@panel-r: 4px;
+@panel-child-r: @panel-r - 1px;
+.panel-variant(@border;
+@heading-text-color;
+@heading-bg-color;
+@heading-border) {
+  border-color: @border;
+  &>.panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @heading-border;
+    +.panel-collapse>.panel-body {
+      border-top-color: @border;
+    }
+    .badge {
+      color: @heading-bg-color;
+      background-color: @heading-text-color;
+    }
+  }
+  &>.panel-footer {
+    +.panel-collapse>.panel-body {
+      border-bottom-color: @border;
+    }
+  }
+}
+
+.panel {
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: @panel-r;
+  .panel-heading,
+  .panel-footer {
+    background-color: @panel-bg;
+    border-color: @panel-bd;
+  }
+  .panel-heading {
+    background: @panel-head-color;
+    border-top-left-radius: @panel-child-r;
+    border-top-right-radius: @panel-child-r;
+  }
+  .panel-footer {
+    border-bottom-right-radius: @panel-child-r;
+    border-bottom-left-radius: @panel-child-r;
+  }
+}
+
+.panel-primary {
+  .panel-variant(@primary, @default, @primary, @primary);
+}
+
+.panel-success {
+  .panel-variant(@success, @default, @success, @success);
+}
+
+.panel-info {
+  .panel-variant(@info, @default, @info, @info);
+}
+
+.panel-warning {
+  .panel-variant(@warning, @default, @warning, @warning);
+}
+
+.panel-danger {
+  .panel-variant(@danger, @default, @danger, @danger);
+}
+
+.card-fluid {
+  position: relative; // margin: 0px auto;
+  padding: 15px; // div[class^='col'] {
+  //   height: 100%;
+  // }
+  &.abs-full {
+    padding: 8px;
+    .panel-full {
+      height: 100%;
+      padding: 4px 8px;
+      .panel {
+        height: 100%;
+      }
+    }
+  }
+}

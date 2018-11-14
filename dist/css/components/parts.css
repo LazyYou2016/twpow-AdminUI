@@ -1,0 +1,153 @@
+.text-muted {
+  color: #333;
+}
+a.text-muted:hover,
+a.text-muted:focus {
+  color: #1a1a1a;
+}
+.text-primary {
+  color: #4a92ff;
+}
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #1773ff;
+}
+.text-success {
+  color: #4dbd74;
+}
+a.text-success:hover,
+a.text-success:focus {
+  color: #3a9d5d;
+}
+.text-info {
+  color: #67dcff;
+}
+a.text-info:hover,
+a.text-info:focus {
+  color: #34d0ff;
+}
+.text-warning {
+  color: #ffae42;
+}
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #ff980f;
+}
+.text-danger {
+  color: #ff6152;
+}
+a.text-danger:hover,
+a.text-danger:focus {
+  color: #ff321f;
+}
+.label-rz {
+  border-radius: 0;
+}
+.label {
+  border-radius: 0.25em;
+}
+.label-default {
+  background-color: #777;
+}
+.label-default[href]:hover,
+.label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.label-default.label-line {
+  background-color: transparent;
+  color: #777;
+  border: 1px solid #777;
+}
+.label-primary {
+  background-color: #4a92ff;
+}
+.label-primary[href]:hover,
+.label-primary[href]:focus {
+  background-color: #1773ff;
+}
+.label-primary.label-line {
+  background-color: transparent;
+  color: #4a92ff;
+  border: 1px solid #4a92ff;
+}
+.label-success {
+  background-color: #4dbd74;
+}
+.label-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #3a9d5d;
+}
+.label-success.label-line {
+  background-color: transparent;
+  color: #4dbd74;
+  border: 1px solid #4dbd74;
+}
+.label-info {
+  background-color: #67dcff;
+}
+.label-info[href]:hover,
+.label-info[href]:focus {
+  background-color: #34d0ff;
+}
+.label-info.label-line {
+  background-color: transparent;
+  color: #67dcff;
+  border: 1px solid #67dcff;
+}
+.label-warning {
+  background-color: #ffae42;
+}
+.label-warning[href]:hover,
+.label-warning[href]:focus {
+  background-color: #ff980f;
+}
+.label-warning.label-line {
+  background-color: transparent;
+  color: #ffae42;
+  border: 1px solid #ffae42;
+}
+.label-danger {
+  background-color: #ff6152;
+}
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+  background-color: #ff321f;
+}
+.label-danger.label-line {
+  background-color: transparent;
+  color: #ff6152;
+  border: 1px solid #ff6152;
+}
+.badge {
+  background-color: #777;
+}
+.badge-primary {
+  background-color: #4a92ff;
+}
+.badge-success {
+  background-color: #4dbd74;
+}
+.badge-info {
+  background-color: #67dcff;
+}
+.badge-warning {
+  background-color: #ffae42;
+}
+.badge-danger {
+  background-color: #ff6152;
+}
+.progress-bar {
+  background-color: #4a92ff;
+}
+.progress-bar-success {
+  background-color: #4dbd74;
+}
+.progress-bar-info {
+  background-color: #67dcff;
+}
+.progress-bar-warning {
+  background-color: #ffae42;
+}
+.progress-bar-danger {
+  background-color: #ff6152;
+}
