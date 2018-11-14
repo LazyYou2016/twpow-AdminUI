@@ -1,4 +1,35 @@
 @import '../base/variables.less';
+input.form-control.form-radio {
+  border-radius: @form-radio;
+}
+
+input.form-control {
+  border-radius: @form-radio-default;
+}
+
+.form-flex-container.form-radio {
+  .form-flex-label {
+    border-top-left-radius: @form-radio;
+    border-bottom-left-radius: @form-radio;
+  }
+  .form-flex-body {
+    border-top-right-radius: @form-radio;
+    border-bottom-right-radius: @form-radio;
+  }
+}
+
+.form-control,
+span.select2-container--default .select2-selection--multiple {
+  border: 1px solid @gray-l;
+}
+
+.form-flex-container {
+  .form-flex-label,
+  .form-flex-body {
+    border: 1px solid @gray-l;
+  }
+}
+
 .form-flex {
   padding: 20px;
 }
@@ -7,33 +38,34 @@
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
-display: -ms-flexbox;
+  display: -ms-flexbox;
   display: flex;
   margin: 10px 0;
   .form-flex-label {
     width: 11.5rem;
     float: left;
     text-align: right;
-    border: 1px solid @gray-l;
     border-right: none;
     line-height: 14px;
     padding: 13px 10px 13px 10px;
+    border-top-left-radius: @form-radio-default;
+    border-bottom-left-radius: @form-radio-default;
   }
   .form-flex-body {
     position: relative;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    border: 1px solid #e7e7e7;
     min-width: 200px;
-    padding: 3px 10px;
+    border-top-right-radius: @form-radio-default;
+    border-bottom-right-radius: @form-radio-default;
     input {
       -webkit-box-shadow: none;
       box-shadow: none;
-      line-height: 34px;
-      height: 34px;
+      line-height: 40px;
+      height: 40px;
       width: 100%;
-      padding: 0;
+      padding: 3px 10px;
       border: 0;
       background-color: transparent;
       outline: none;
@@ -41,30 +73,33 @@ display: -ms-flexbox;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
   }
+  .select2 {
+    .select2-selection__rendered,
+    &.select2-container--default {
+      &.select2-container--focus,
+      .select2-selection--multiple,
+      .select2-selection--single {
+        border-color: transparent;
+      }
+    }
+  }
 }
 
 .select2 {
-  margin: 2px 0;
+  margin: 0;
   .select2-selection {
-    height: 28px;
-    line-height: 28px;
+    height: 40px;
+    line-height: 40px;
     &:focus {
       outline: none;
     }
   }
-  .select2-selection__rendered,
-  &.select2-container--default {
-    &.select2-container--focus,
-    .select2-selection--multiple,
-    .select2-selection--single {
-      border-color: #ccc;
-    }
-  }
   &.select2-container--default .select2-search--inline .select2-search__field {
-    height: 28px;
-    line-height: 28px;
+    height: 40px;
+    line-height: 40px;
   }
   .select2-selection__rendered {
+    line-height: 40px !important;
     li.select2-search {
       input {
         margin-top: 0;
@@ -75,4 +110,10 @@ display: -ms-flexbox;
       line-height: 22px;
     }
   }
+}
+
+span.select2-container--default.select2-container--focus
+  .select2-selection--multiple,
+span.select2-dropdown {
+  border: 1px solid @gray-l;
 }

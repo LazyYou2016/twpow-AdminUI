@@ -4392,10 +4392,13 @@ a.text-danger:focus {
   width: 0;
 }
 .widget {
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 15px 20px;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+.widget.widget-radio {
+  border-radius: 16px;
 }
 .widget.widget-success {
   background-color: #4dbd74;
@@ -4446,6 +4449,12 @@ a.text-danger:focus {
 .nav-tabs.nav-tabs-card > li.active > a:hover,
 .nav-tabs.nav-tabs-card > li.active > a:focus {
   border-top-color: transparent;
+}
+.btn {
+  border-radius: 4px;
+}
+.btn-radio {
+  border-radius: 16px;
 }
 .btn-default {
   color: #333;
@@ -4665,6 +4674,28 @@ body .layui-layer-btn .layui-layer-btn0:hover {
 body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
   height: 43px;
 }
+input.form-control.form-radio {
+  border-radius: 16px;
+}
+input.form-control {
+  border-radius: 4px;
+}
+.form-flex-container.form-radio .form-flex-label {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.form-flex-container.form-radio .form-flex-body {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.form-control,
+span.select2-container--default .select2-selection--multiple {
+  border: 1px solid #e9eef5;
+}
+.form-flex-container .form-flex-label,
+.form-flex-container .form-flex-body {
+  border: 1px solid #e9eef5;
+}
 .form-flex {
   padding: 20px;
 }
@@ -4680,54 +4711,58 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
   width: 11.5rem;
   float: left;
   text-align: right;
-  border: 1px solid #e9eef5;
   border-right: none;
   line-height: 14px;
   padding: 13px 10px 13px 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .form-flex-container .form-flex-body {
   position: relative;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  border: 1px solid #e7e7e7;
   min-width: 200px;
-  padding: 3px 10px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .form-flex-container .form-flex-body input {
   -webkit-box-shadow: none;
   box-shadow: none;
-  line-height: 34px;
-  height: 34px;
+  line-height: 40px;
+  height: 40px;
   width: 100%;
-  padding: 0;
+  padding: 3px 10px;
   border: 0;
   background-color: transparent;
   outline: none;
   -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.form-flex-container .select2 .select2-selection__rendered.select2-container--focus,
+.form-flex-container .select2.select2-container--default.select2-container--focus,
+.form-flex-container .select2 .select2-selection__rendered .select2-selection--multiple,
+.form-flex-container .select2.select2-container--default .select2-selection--multiple,
+.form-flex-container .select2 .select2-selection__rendered .select2-selection--single,
+.form-flex-container .select2.select2-container--default .select2-selection--single {
+  border-color: transparent;
+}
 .select2 {
-  margin: 2px 0;
+  margin: 0;
 }
 .select2 .select2-selection {
-  height: 28px;
-  line-height: 28px;
+  height: 40px;
+  line-height: 40px;
 }
 .select2 .select2-selection:focus {
   outline: none;
 }
-.select2 .select2-selection__rendered.select2-container--focus,
-.select2.select2-container--default.select2-container--focus,
-.select2 .select2-selection__rendered .select2-selection--multiple,
-.select2.select2-container--default .select2-selection--multiple,
-.select2 .select2-selection__rendered .select2-selection--single,
-.select2.select2-container--default .select2-selection--single {
-  border-color: #ccc;
-}
 .select2.select2-container--default .select2-search--inline .select2-search__field {
-  height: 28px;
-  line-height: 28px;
+  height: 40px;
+  line-height: 40px;
+}
+.select2 .select2-selection__rendered {
+  line-height: 40px !important;
 }
 .select2 .select2-selection__rendered li.select2-search input {
   margin-top: 0;
@@ -4735,6 +4770,10 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 .select2 .select2-selection__rendered li.select2-selection__choice {
   height: 22px;
   line-height: 22px;
+}
+span.select2-container--default.select2-container--focus .select2-selection--multiple,
+span.select2-dropdown {
+  border: 1px solid #e9eef5;
 }
 .headportrait-container {
   width: 120px;
