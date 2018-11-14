@@ -1,2 +1,6 @@
 .vscode
 .project
+.idea
+
+/dist/css/components/*.css
+/dist/css/components/*.css.map

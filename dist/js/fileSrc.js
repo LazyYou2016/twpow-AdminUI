@@ -24,5 +24,5 @@ var fnExtend = {
 //插入css文件
 fnExtend.includFile(filesSrc.cssPath, ['bootstrap.min.css', 'dataTables.bootstrap.min.css', 'style.css']);
 //插入js文件
-fnExtend.includFile(filesSrc.jsPath, ['jquery.min.js', 'dataTables.bootstrap.min.js', 'common.js']);
+fnExtend.includFile(filesSrc.jsPath, ['jquery.min.js', 'bootstrap.min.js','dataTables.bootstrap.min.js', 'common.js', 'swiper.min.js']);
 fnExtend.includFile(filesSrc.isLayer, ['layer.js']);
