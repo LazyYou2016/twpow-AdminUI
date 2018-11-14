@@ -36,6 +36,14 @@
   background-size: 100% 100%;
 }
 
+.hr-line-dashed {
+  border-top: 1px dashed #e7eaec;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  margin: 20px 0;
+}
+
 //基础样式 E
 @import 'components/swiper.less';
 @login-bg: '../imgs/login/login-bg.png';
@@ -77,7 +85,7 @@
       .bc();
       .login-head {
         margin: 14px 0 20px;
-        .tc();
+        text-align: center;
       }
       .login-form {
         margin-bottom: 18px;
@@ -86,7 +94,7 @@
           margin: 10px 0;
         }
         .login-input {
-          .rel();
+          position: relative;
           input {
             width: 100%;
             padding: 10px 0 10px 50px;
@@ -94,7 +102,7 @@
             height: 44px;
           }
           i {
-            .abs();
+            position: absolute;
             top: 16px;
             left: 16px;
             color: @main-color;
@@ -112,7 +120,7 @@
             width: 100px;
             height: 40px;
             margin: 2px 0;
-            .fr();
+            float: right;
           }
         }
       }

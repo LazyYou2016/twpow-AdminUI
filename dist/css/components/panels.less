@@ -9,11 +9,11 @@
 @heading-bg-color;
 @heading-border) {
   border-color: @border;
-  &>.panel-heading {
+  & > .panel-heading {
     color: @heading-text-color;
     background-color: @heading-bg-color;
     border-color: @heading-border;
-    +.panel-collapse>.panel-body {
+    + .panel-collapse > .panel-body {
       border-top-color: @border;
     }
     .badge {
@@ -21,8 +21,8 @@
       background-color: @heading-text-color;
     }
   }
-  &>.panel-footer {
-    +.panel-collapse>.panel-body {
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
       border-bottom-color: @border;
     }
   }
@@ -80,6 +80,39 @@
       padding: 4px 8px;
       .panel {
         height: 100%;
+      }
+    }
+  }
+}
+
+.panel {
+  .split {
+    .split-body {
+      .split-title {
+        color: @gray-m;
+      }
+      .split-content {
+        // padding: 4px 0;
+        font-weight: bold;
+        text-align: center;
+        font-size: 30px;
+        small {
+          color: @gray-m;
+          font-size: 14px;
+          padding-left: 4px;
+        }
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: @gray-l;
+      &:last-child {
+        width: 0;
       }
     }
   }

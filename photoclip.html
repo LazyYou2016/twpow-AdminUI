@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="描述" />
+    <meta name="keywords" content="关键词" />
+    <title></title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <style></style>
+
+  <body>
+    <div class="cursor-p" id="headportrait">
+      <div class="headportrait-container">
+        <img src="dist/imgs/headportrait.jpg"/ id="img-view2">
+        <span class="ml-10">点击此处更换修改</span>
+      </div>
+    </div>
+    <script src="dist/js/fileSrc.js"></script>
+    <script src="dist/js/photoclip/iscroll-zoom.min.js"></script>
+    <!-- 移动端多点触摸插件 -->
+    <!-- <script src="dist/hammer.min.js"></script> -->
+    <script src="dist/js/photoclip/photoClip.js"></script>
+    <script>
+      $(function() {
+        var Mhtml =
+          '<div class="layui-body"><div class="clip-img"><img src="dist/imgs/headportrait.jpg" id="img-view"> <button type="button" class="btn btn-primary" id="fileBtn"><i class="fa fa-cloud-upload"></i> 选择图片</button> <input class="hidden" type="file" id="file"></div><div id="clip"></div><button type="button" class="btn btn-danger m-btnauto mt-15 btn-block" id="clipBtn">裁剪</button></div>';
+        $('#headportrait').click(function() {
+          // $('#myModal').modal();
+          layer.open({
+            type: 1,
+            title: '头像上传',
+            area: ['620px', '670px'], //宽高
+            content: Mhtml,
+            btn: ['确认', '取消'],
+            success: function() {
+              var $clip = $('#clip');
+              var $file = $('#file');
+              var $imgView = $('#img-view');
+              $clip.photoClip({
+                width: 250,
+                height: 250,
+                fileMinSize: 20,
+                file: $file,
+                ok: '#clipBtn',
+                //					loadStart: function() {
+                //						console.log("照片读取中");
+                //					},
+                //					loadProgress: function(progress) {
+                //						console.log(progress);
+                //					},
+                //					loadError: function() {
+                //						console.log("图片加载失败");
+                //					},
+                //					loadComplete: function() {
+                //						console.log("照片读取完成");
+                //					},
+                // imgSizeMin: function (kbs) {
+                // layer.msg('上传图片过小');
+                // console.log(kbs, "上传图片过小");
+                // },
+                clipFinish: function(dataURL) {
+                  console.log(dataURL);
+                  $('#img-view').attr('src', dataURL);
+                },
+              });
+              $('body')
+                .undelegate()
+                .delegate('#fileBtn', 'click', function() {
+                  $file.trigger('click');
+                });
+            },
+            yes: function() {
+              $('#img-view2').attr('src', $('#img-view').attr('src'));
+              layer.closeAll('page');
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

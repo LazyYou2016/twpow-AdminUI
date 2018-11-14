@@ -15,8 +15,10 @@ body {
   color: #333;
 }
 a:active,
-a:hover {
+a:hover,
+a:focus {
   outline: 0;
+  text-decoration: none !important;
 }
 img {
   border: none;

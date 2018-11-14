@@ -18,9 +18,13 @@ body {
   color: @font-color;
 }
 
-a:active,
-a:hover {
-  outline: 0;
+a {
+  &:active,
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none !important;
+  }
 }
 
 img {

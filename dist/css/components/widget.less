@@ -1,0 +1,27 @@
+@import '../base/variables.less';
+.widget-variables(@color) {
+  background-color: @color;
+  color: #fff;
+}
+
+.widget {
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  &.widget-success {
+    .widget-variables(@success);
+  }
+  &.widget-info {
+    .widget-variables(@info);
+  }
+  &.widget-warning {
+    .widget-variables(@warning);
+  }
+  &.widget-danger {
+    .widget-variables(@danger);
+  }
+  h2 {
+    margin: 0;
+  }
+}
