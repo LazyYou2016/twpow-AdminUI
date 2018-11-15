@@ -1,16 +1,23 @@
-input.form-control.form-radio {
+input.form-control.form-radius {
   border-radius: 16px;
 }
 input.form-control {
   border-radius: 4px;
 }
-.form-flex-container.form-radio .form-flex-label {
+.form-flex-container.form-radius .form-flex-label {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
-.form-flex-container.form-radio .form-flex-body {
+.form-flex-container.form-radius .form-flex-body {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+}
+.form-group i,
+.form-flex .form-flex-body i {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
 }
 .form-control,
 span.select2-container--default .select2-selection--multiple {
@@ -62,6 +69,14 @@ span.select2-container--default .select2-selection--multiple {
   outline: none;
   -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.form-flex-container .form-flex-body textarea.form-control {
+  padding-top: 10px;
+}
+.form-flex-container .form-flex-body textarea.form-control,
+.form-flex-container .form-flex-body textarea.form-control:focus {
+  box-shadow: none;
+  border: 1px solid transparent;
 }
 .form-flex-container .select2 .select2-selection__rendered.select2-container--focus,
 .form-flex-container .select2.select2-container--default.select2-container--focus,

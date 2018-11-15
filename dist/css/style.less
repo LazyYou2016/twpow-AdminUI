@@ -50,8 +50,7 @@
 @login-color: #091645;
 @login-container-w: 1200px;
 @login-box-w: 427px;
-// @login-box-h: 534px;
-@login-box-h: auto;
+@login-box-h: 550px;
 @login-box-p: 44px 60px;
 @login-box-bg: #091645;
 @login-box-r: 4px;
@@ -68,12 +67,12 @@
     width: @login-container-w;
     .bc();
     .swiper-container {
-      width: 50%;
-      height: 460px;
-      margin: 20px auto;
+      width: 60%;
+      height: 550px;
+      margin: 0 auto;
       position: absolute;
       z-index: 2;
-      overflow-y: auto;
+      overflow-y: hidden;
     }
     .login-box {
       position: relative;
@@ -88,10 +87,10 @@
         text-align: center;
       }
       .login-form {
-        margin-bottom: 18px;
+        margin-bottom: 6px;
         .form-label {
           color: #fff;
-          margin: 10px 0;
+          margin: 10px 0 6px;
         }
         .login-input {
           position: relative;
@@ -106,6 +105,18 @@
             top: 16px;
             left: 16px;
             color: @main-color;
+          }
+          .code-btn {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-weight: bold;
+            &,
+            &:hover,
+            &:focus {
+              border-color: transparent !important;
+              color: @primary;
+            }
           }
         }
         &:last-child {
@@ -124,6 +135,72 @@
           }
         }
       }
+      .btn-login {
+        margin: 16px 0;
+      }
+      .login-other {
+        &.error-tips-container {
+          &,
+          b {
+            height: 14px;
+          }
+        }
+      }
+      .login-tab {
+        text-align: center;
+        .btn-group {
+          width: 100%;
+          .btn {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+  &.login-full {
+    .login-container {
+      width: 100%;
+      height: 100%;
+      .login-box-left {
+        position: relative;
+        height: 100%;
+        padding-right: @login-box-w;
+        .vc {
+          padding: 90px @login-box-w 120px 0;
+          z-index: 100;
+        }
+        .swiper-container {
+          position: relative;
+          width: 800px;
+        }
+      }
+      .login-box-right {
+        width: @login-box-w;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: @login-box-bg;
+      }
+    }
+    .footer-copyright {
+      padding-right: @login-box-w;
+    }
+  }
+  .footer-copyright {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    bottom: 14px;
+    color: #fff;
+    width: 100%;
+    margin: 30px 0 20px;
+    text-align: center;
+    font-size: 12px;
+    transform: translateX(-50%);
+    a {
+      color: #fff;
     }
   }
 }

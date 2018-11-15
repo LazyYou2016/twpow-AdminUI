@@ -40,11 +40,11 @@ a.text-danger:hover,
 a.text-danger:focus {
   color: #ff321f;
 }
-.label-rz {
-  border-radius: 0;
+.label-radius {
+  border-radius: 16px;
 }
 .label {
-  border-radius: 0.25em;
+  border-radius: 4px;
 }
 .label-default {
   background-color: #777;

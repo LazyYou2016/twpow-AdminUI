@@ -8,27 +8,27 @@
 }
 
 .text-muted {
-  .text-emphasis-variant(@font-color)
+  .text-emphasis-variant(@font-color);
 }
 
 .text-primary {
-  .text-emphasis-variant(@primary)
+  .text-emphasis-variant(@primary);
 }
 
 .text-success {
-  .text-emphasis-variant(@success)
+  .text-emphasis-variant(@success);
 }
 
 .text-info {
-  .text-emphasis-variant(@info)
+  .text-emphasis-variant(@info);
 }
 
 .text-warning {
-  .text-emphasis-variant(@warning)
+  .text-emphasis-variant(@warning);
 }
 
 .text-danger {
-  .text-emphasis-variant(@danger)
+  .text-emphasis-variant(@danger);
 }
 
 //文本颜色 E
@@ -50,12 +50,12 @@
   border: 1px solid @color;
 }
 
-.label-rz {
-  border-radius: 0;
+.label-radius {
+  border-radius: @label-radius;
 }
 
 .label {
-  border-radius: @label-radio;
+  border-radius: @label-radius-default;
 }
 
 .label-default {

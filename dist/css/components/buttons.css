@@ -1,8 +1,8 @@
 .btn {
   border-radius: 4px;
 }
-.btn-radio {
-  border-radius: 12px;
+.btn-radius {
+  border-radius: 16px;
 }
 .btn-default {
   color: #333;
