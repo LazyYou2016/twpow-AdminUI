@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>my97DatePicker</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="dist/css/style.css" />
+</head>
+<body>
+    <div class="card-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">简单示例</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">选择日期</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" onClick="WdatePicker()">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">时分秒</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" onClick="WdatePicker({'dateFmt':'H:mm:ss'})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">年月</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" onClick="WdatePicker({dateFmt:'yyyy年MM月'})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">限制日期的范围</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" onClick="WdatePicker({minDate:'2018-11-02',maxDate: '%y-%M-%d'})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">只能选择今天以前的日期(包括今天)</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" onClick="WdatePicker({maxDate: '%y-%M-%d'})">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">简单示例</div>
+                    <div class="panel-body">
+                        <div id="div1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/fileSrc.js"></script>
+<script>
+    WdatePicker({eCont:'div1',onpicked:function(dp){alert('你选择的日期是:'+dp.cal.getDateStr())}})
+</script>
+</body>
+</html>

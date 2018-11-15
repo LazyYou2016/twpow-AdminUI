@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap-datetimepicker</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="dist/css/style.css" />
+</head>
+<body>
+    <div class="card-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">简单示例</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">选择日期</label>
+                                <div class="col-sm-10">
+                                    <input id="default" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">各种选择器</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">年选择器</label>
+                                <div class="col-sm-10">
+                                    <input id="year" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">年月选择器</label>
+                                <div class="col-sm-10">
+                                    <input id="yearMonth" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">日期时间选择器</label>
+                                <div class="col-sm-10">
+                                    <input id="date" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">时间选择器</label>
+                                <div class="col-sm-10">
+                                    <input id="time" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">日期范围</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">开始时间</label>
+                                <div class="col-sm-10">
+                                    <input id="startTime" type="text" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">结束时间</label>
+                                <div class="col-sm-10">
+                                    <input id="endTime" type="text" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/fileSrc.js"></script>
+    <script>
+        $('#default').datetimepicker({
+            format: "yyyy-mm-dd hh:ii",
+            language: "zh-CN",
+            autoclose: true,
+            todayBtn : true,  //显示今天按钮
+            todayHighlight : true,   //当天高亮显示
+        })
+        // 年选择器
+        $('#year').datetimepicker({
+            format: "yyyy",
+            language: "zh-CN",
+            autoclose: true,
+            todayBtn : true,  //显示今天按钮
+            todayHighlight : true,   //当天高亮显示
+            startView: 4,
+            minView: 4
+        })
+        // 年月选择器
+        $('#yearMonth').datetimepicker({
+            format: "yyyy-mm",
+            language: "zh-CN",
+            autoclose: true,
+            todayBtn : true,  //显示今天按钮
+            todayHighlight : true,   //当天高亮显示
+            startView: 4,
+            minView: 3
+        })
+        // 日期时间
+        $('#date').datetimepicker({
+            format: "yyyy-mm-dd hh:ii",
+            language: "zh-CN",
+            autoclose: true,
+            todayBtn : true,  //显示今天按钮
+            todayHighlight : true,   //当天高亮显示
+            startView: 2,
+            minView: 0
+        })
+        // 时间
+        $('#time').datetimepicker({
+            format: "hh:ii",
+            language: "zh-CN",
+            autoclose: true,
+            todayBtn : true,  //显示今天按钮
+            todayHighlight : true,   //当天高亮显示
+            startView: 1,
+            minView: 0,
+            minuteStep:1 //预设时间（分钟）用于选择
+        })
+
+        function rangeDatePicker(beginSelect, endSelect) {
+            // 开始日期
+            $(beginSelect).datetimepicker({
+                format: "yyyy-mm-dd hh:ii",
+                language: "zh-CN",
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 0
+            }).on('changeDate',function(e){
+                console.log(e.date)
+                if(e.date){
+                    $(endSelect).datetimepicker('setStartDate',e.date);
+                }else{
+                    $(endSelect).datetimepicker('setStartDate',null);
+                }
+            });
+
+            // 结束日期
+            $(endSelect).datetimepicker({
+                format: "yyyy-mm-dd hh:ii",
+                language: "zh-CN",
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 0
+            }).on('changeDate',function(e){
+                if(e.date){
+                    $(beginSelect).datetimepicker('setEndDate',e.date);
+                }else{
+                    $(beginSelect).datetimepicker('setEndDate',null);
+                }
+            });
+        }
+        rangeDatePicker('#startTime', '#endTime')
+    </script>
+</body>
+</html>
