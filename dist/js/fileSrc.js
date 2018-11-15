@@ -1,3 +1,4 @@
+      // console.log(document.body);
 ﻿var csspath = "dist/css/";
 var jspath = "dist/js/";
 var jsfiles = ['jquery.min.js', 'bootstrap.min.js', 'dataTables.bootstrap.min.js', 'select2.min.js', 'common.js', 'layer/layer.js']
@@ -16,7 +17,7 @@ function addjs() {
   for (var i = 0; i < jsfiles.length; i++) {
     var s = document.createElement("script");
     s.src = jspath + jsfiles[i];
-    document.getElementsByTagName("body")[0].appendChild(s);
+    document.getElementsByTagName("head")[0].appendChild(s);
   }
 }
 addcss();
