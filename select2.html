@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="card-fluid">
+    <h1><a href="https://select2.org/" target="_blank">https://select2.org/</a></h1>
+    <div class="panel panel-default">
+      <div class="panel-heading">单选选择框</div>
+      <div class="panel-body">
+        <div class="form-flex">
+          <div class="form-flex-container bl-radio">
+            <div class="form-flex-label">单选选择框</div>
+            <div class="form-flex-body">
+              <select class="select2-event" name="state">
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">多选选择框</div>
+      <div class="panel-body">
+        <div class="form-flex">
+          <div class="form-flex-container bl-radio">
+            <div class="form-flex-label">多选选择框</div>
+            <div class="form-flex-body">
+              <select class="select2-event" name="states[]" multiple="multiple">
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">原生bs</div>
+      <div class="panel-body">
+        <form method="get" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">单选选择框</label>
+            <div class="col-sm-10">
+              <select class="select2-event" name="states[]" multiple="multiple">
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">多选选择框</label>
+            <div class="col-sm-10">
+              <select class="select2-event" name="states[]" multiple="multiple">
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script>
+    $(function () {
+      $('.select2-event').select2({
+        ajax: {
+          url: 'dist/json/select2.json',
+          dataType: 'json'
+        },
+        placeholder: "请选择",
+        closeOnSelect: false,
+        allowClear: true,
+        width: "100%"
+      });
+
+    });
+  </script>
+</body>
+
+</html>

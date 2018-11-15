@@ -121,3 +121,28 @@
 .card-fluid.abs-full .panel-full .panel {
   height: 100%;
 }
+.panel .split .split-body .split-title {
+  color: #909399;
+}
+.panel .split .split-body .split-content {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+.panel .split .split-body .split-content small {
+  color: #909399;
+  font-size: 14px;
+  padding-left: 4px;
+}
+.panel .split:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #e9eef5;
+}
+.panel .split:after:last-child {
+  width: 0;
+}

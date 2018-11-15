@@ -1,90 +1,83 @@
 @import '../base/variables.less';
-.btn-default {
-  color: @font-color;
-  background-color: @default;
-  border-color: @btn-default-border;
+.btn {
+  border-radius: @btn-radio-default;
+}
+
+.btn-radio {
+  border-radius: @btn-radio;
+}
+
+.btn-variables(@btn-fc, @btn-bg, @btn-border, @btn-active) {
+  color: @btn-fc;
+  background-color: @btn-bg;
+  border-color: @btn-border;
   &:hover,
   &:active,
   &:focus,
   &:active,
   &.active,
   .open>&.dropdown-toggle {
-    background-color: @default-active  !important;
-    border-color: @default-active  !important;
+    background-color: @btn-active  !important;
+    border-color: @btn-active  !important;
   }
+}
+
+.btn-line-variables(@btn-color, @btn-active) {
+  color: @btn-color;
+  background-color: transparent;
+  border-color: @btn-color;
+  &:hover,
+  &:active,
+  &:focus,
+  &:active,
+  &.active,
+  .open>&.dropdown-toggle {
+    background-color: transparent !important;
+    border-color: @btn-active  !important;
+  }
+}
+
+.btn-default {
+  .btn-variables(@font-color, @default, @btn-default-border, @default-active);
 }
 
 .btn-primary {
-  color: @btn-font-color;
-  background-color: @primary;
-  border-color: @primary;
-  &:hover,
-  &:active,
-  &:focus,
-  &:active,
-  &.active,
-  .open>&.dropdown-toggle {
-    background-color: @primary-active  !important;
-    border-color: @primary-active  !important;
-  }
+  .btn-variables(@btn-font-color, @primary, @primary, @primary-active);
 }
 
 .btn-success {
-  color: @btn-font-color;
-  background-color: @success;
-  border-color: @success;
-  &:hover,
-  &:active,
-  &:focus,
-  &:active,
-  &.active,
-  .open>&.dropdown-toggle {
-    background-color: @success-active  !important;
-    border-color: @success-active  !important;
-  }
+  .btn-variables(@btn-font-color, @success, @success, @success-active);
 }
 
 .btn-info {
-  color: @btn-font-color;
-  background-color: @info;
-  border-color: @info-active;
-  &:hover,
-  &:active,
-  &:focus,
-  &:active,
-  &.active,
-  .open>.dropdown-toggle& {
-    background-color: @info-active  !important;
-    border-color: @info-active  !important;
-  }
+  .btn-variables(@btn-font-color, @info, @info, @info-active);
 }
 
 .btn-warning {
-  color: @btn-font-color;
-  background-color: @warning;
-  border-color: @warning;
-  &:hover,
-  &:active,
-  &:focus,
-  &:active,
-  &.active,
-  .open>&.dropdown-toggle {
-    background-color: @warning-active  !important;
-    border-color: @warning-active  !important;
-  }
+  .btn-variables(@btn-font-color, @warning, @warning, @warning-active);
 }
 
 .btn-danger {
-  color: @btn-font-color;
-  background-color: @danger;
-  border-color: @danger;
-  &:hover,
-  &:active,
-  &:focus,
-  &:active,
-  &.active,
-  .open>&.dropdown-toggle {
-    background-color: @danger-active  !important;
-    border-color: @danger-active  !important;
+  .btn-variables(@btn-font-color, @danger, @danger, @danger-active);
+}
+
+.btn-line {
+  &.btn-default {
+    .btn-line-variables(@gray-m, @gray-h);
+  }
+  &.btn-primary {
+    .btn-line-variables(@primary, @primary-active);
+  }
+  &.btn-success {
+    .btn-line-variables(@success, @success-active);
+  }
+  &.btn-info {
+    .btn-line-variables(@info, @info-active);
+  }
+  &.btn-warning {
+    .btn-line-variables(@warning, @warning-active);
+  }
+  &.btn-danger {
+    .btn-line-variables(@danger, @danger-active);
   }
 }
