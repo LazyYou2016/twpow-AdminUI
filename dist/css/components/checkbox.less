@@ -6,10 +6,10 @@
 
 
 // 获取全局圆角,进行比较，若大于多选框预设圆角的值`@marquee-radius-max`，取最大的圆角值`@marquee-radius-max`
-.marquee-radius(@main-radio-default) {
-    border-radius: @main-radio-default;
+.marquee-radius(@main-radius-default) {
+    border-radius: @main-radius-default;
 }
-.marquee-radius(@main-radio-default) when (@main-radio-default >= @marquee-radius-max){
+.marquee-radius(@main-radius-default) when (@main-radius-default >= @marquee-radius-max){
     border-radius: @marquee-radius-max;
 }
 //.test-radius-value(@test-main-radius) when (@test-main-radius <= 20px){
@@ -21,7 +21,7 @@
     height: 100px;
     background-color: @primary;
     //border-radius: @test-main-radius;s
-    .marquee-radius(@main-radio-default);
+    .marquee-radius(@main-radius-default);
 }
 input[type=checkbox],
 input[type=radio]{
@@ -56,7 +56,7 @@ label {
     display: inline-block;
     position: relative;
     border: 1px solid #ddd;
-    .marquee-radius(@main-radio-default);
+    .marquee-radius(@main-radius-default);
     box-sizing: border-box;
     //width: 16px;
     //height: 16px;
