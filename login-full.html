@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="login-body login-full">
+    <div class="login-container">
+      <div class="login-box-left">
+
+        <div class="vc">
+          <div class="vc-child">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="login-anim-container">
+                    <img class="img-responsive" src="dist/imgs/login/banner-1.png" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="login-anim-container">
+                    <img class="img-responsive" src="dist/imgs/login/banner-2.png" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="login-anim-container">
+                    <img class="img-responsive" src="dist/imgs/login/banner-3.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>Copyright&nbsp;&nbsp;©&nbsp;&nbsp;版权所有:恒泰宏科能源科技有限公司&nbsp;&nbsp;京ICP备15026881号 &nbsp;&nbsp; 电话:010-52461170</p>
+          <p>
+            地址:北京市丰台区长辛店镇东河沿村西博园(园博园六号门对面)26号楼201
+            &nbsp;&nbsp;<a href="隐私政策.html" target="_blank">隐私政策</a>
+          </p>
+        </div>
+      </div>
+      <div class="login-box-right">
+        <div class="vc">
+          <div class="vc-child">
+            <div class="login-box">
+              <div class="login-head">
+                <img src="dist/imgs/login/login-logo.png" />
+              </div>
+              <div class="login-other login-tab">
+                <div class="btn-group">
+                  <a class="btn btn-default btn-primary">密码登录</a>
+                  <a class="btn btn-default">手机登录</a>
+                </div>
+              </div>
+              <div class="login-tab-container">
+                <div class="login-form">
+                  <div class="form-label">用户名</div>
+                  <div class="login-input">
+                    <input type="text" class="form-control" id="user" placeholder="请输入用户名" />
+                    <i class="fas fa-user fa-lg"></i>
+                  </div>
+                </div>
+                <div class="login-form">
+                  <div class="form-label">密码</div>
+                  <div class="login-input">
+                    <input type="password" class="form-control" id="userPassword" placeholder="请输入密码" />
+                    <i class="fa fa-lock fa-lg"></i>
+                  </div>
+                </div>
+                <div class="login-form login-code">
+                  <div class="form-label">验证码</div>
+                  <div class="login-input">
+                    <input type="text" id="veryCode" class="form-control form-code" placeholder="请输入验证码" />
+                    <i class="fa fa-lock fa-lg"></i>
+                    <a href="javascript:void(0)" onclick="">
+                      <img class="code-img" alt="" src="dist/imgs/login/login-code.jpg" />
+                    </a>
+                  </div>
+                </div>
+                <div class="login-other text-right error-tips-container">
+                  <b class="text-danger pull-left error-tips"></b>
+                  <a href="javaScript:void(0)">看不清换一张</a>
+                </div>
+              </div>
+              <div class="login-tab-container" style="display:none">
+                <div class="login-form">
+                  <div class="form-label">手机号</div>
+                  <div class="login-input">
+                    <input type="text" class="form-control" id="phone" placeholder="请输入用户名" />
+                    <i class="fas fa-user fa-lg"></i>
+                  </div>
+                </div>
+                <div class="login-form">
+                  <div class="form-label">验证码</div>
+                  <div class="login-input">
+                    <input type="text" id="phoneCode" class="form-control form-code" placeholder="验证码" />
+                    <i class="fa fa-lock fa-lg"></i>
+                    <button href="javascript:void(0)" id="btnSendCode" code-id="0" class="btn btn-line btn-primary code-btn"
+                      onclick="sendMessage()">发送验证码</button>
+                  </div>
+                </div>
+                <div class="login-other text-right error-tips-container">
+                  <b class="text-danger pull-left error-tips-phone"></b>
+                </div>
+              </div>
+              <div class="login-other text-left">
+                <div class="login-tab-loginbtn">
+                  <button type="button" login-id="1" class="btn btn-block btn-primary btn-login" onclick="Login()">
+                    登录
+                  </button>
+                </div>
+                <div class="login-tab-loginbtn" style="display: none">
+                  <button type="button" login-id="2" class="btn btn-block btn-primary btn-login" onclick="LoginPhone()">
+                    登录
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script src="dist/js/swiper.min.js"></script>
+  <script src="dist/js/login.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+      },
+      loop: true,
+    });
+    $(".login-tab .btn").click(function () {
+      var _index = $(this).index();
+      var tab = '.login-tab-container'
+      var btn = '.login-tab-loginbtn'
+      $(this).addClass("btn-primary").siblings().removeClass("btn-primary");
+      $($(tab)[_index]).show().siblings(tab).hide();
+      $($(btn)[_index]).show().siblings(btn).hide();
+    })
+  </script>
+</body>
+
+</html>

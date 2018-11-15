@@ -1,10 +1,10 @@
 @import '../base/variables.less';
 .btn {
-  border-radius: @btn-radio-default;
+  border-radius: @btn-radius-default;
 }
 
-.btn-radio {
-  border-radius: @btn-radio;
+.btn-radius {
+  border-radius: @btn-radius;
 }
 
 .btn-variables(@btn-fc, @btn-bg, @btn-border, @btn-active) {
@@ -16,9 +16,9 @@
   &:focus,
   &:active,
   &.active,
-  .open>&.dropdown-toggle {
-    background-color: @btn-active  !important;
-    border-color: @btn-active  !important;
+  .open > &.dropdown-toggle {
+    background-color: @btn-active !important;
+    border-color: @btn-active !important;
   }
 }
 
@@ -31,9 +31,9 @@
   &:focus,
   &:active,
   &.active,
-  .open>&.dropdown-toggle {
+  .open > &.dropdown-toggle {
     background-color: transparent !important;
-    border-color: @btn-active  !important;
+    border-color: @btn-active !important;
   }
 }
 

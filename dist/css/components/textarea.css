@@ -1,0 +1,10 @@
+.textarea-container textarea {
+  resize: none;
+}
+.textarea-container .wordwrap {
+  color: #ff6152;
+  text-align: right;
+}
+.textarea-container .wordwrap var {
+  font-style: normal;
+}
