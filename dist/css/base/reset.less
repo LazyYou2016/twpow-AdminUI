@@ -4,6 +4,32 @@
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: @scrollbar-bg;
+  -webkit-border-radius: @scrollbar-radius;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: @scrollbar-wh;
+  background-color: @scrollbar-color;
+  -webkit-border-radius: @scrollbar-radius;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: @scrollbar-wh;
+  background-color: @scrollbar-color;
+  -webkit-border-radius: @scrollbar-radius;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: @scrollbar-color-active;
+}
+
 html,
 body {
   width: 100%;

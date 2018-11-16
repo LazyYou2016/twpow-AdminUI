@@ -2,6 +2,27 @@
 ::-ms-reveal {
   display: none;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #ebeef3;
+  -webkit-border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 32px;
+  background-color: #d8dce4;
+  -webkit-border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  width: 32px;
+  background-color: #d8dce4;
+  -webkit-border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bac1cf;
+}
 html,
 body {
   width: 100%;

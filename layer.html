@@ -102,27 +102,28 @@
 </head>
 
 <body>
-  <div class="layer_notice">
-    <div class="alert alert-success" role="alert">
-      <a href="http://fly.layui.com/jie/220.html" class="alert-link" target="_blank">1、Fork layer on Github</a>
-    </div>
-    <div class="alert alert-info" role="alert">
-      <a href="http://layer.layui.com/" class="alert-link" target="_blank">2、layer弹层官网</a>
-    </div>
-    <div class="alert alert-warning" role="alert">
-      <a href="http://www.layui.com/doc/modules/layer.html" class="alert-link" target="_blank">3、layer文档手册</a>
-    </div>
-  </div>
-
-  <div class="main">
-    <h2 class="text-center">layer弹层组件</h2>
-    <div class="demo">
-      <h3>一、初始化CSS样式</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="css()"></a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+  <div class="card-fluid">
+    <div class="layer_notice">
+      <div class="alert alert-success" role="alert">
+        <a href="http://fly.layui.com/jie/220.html" class="alert-link" target="_blank">1、Fork layer on Github</a>
       </div>
-      <pre>
+      <div class="alert alert-info" role="alert">
+        <a href="http://layer.layui.com/" class="alert-link" target="_blank">2、layer弹层官网</a>
+      </div>
+      <div class="alert alert-warning" role="alert">
+        <a href="http://www.layui.com/doc/modules/layer.html" class="alert-link" target="_blank">3、layer文档手册</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2 class="text-center">layer弹层组件</h2>
+      <div class="demo">
+        <h3>一、初始化CSS样式</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="css()"></a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 .layui-layer-title[style*="center"] {
 	padding: 0 20px;
 }
@@ -150,49 +151,49 @@
 body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 	height: 43px;
 }</pre>
-    </div>
-    <div class="demo">
-      <h3>二、初始化配置</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="js()"></a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>二、初始化配置</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="js()"></a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.config({    	//初始化配置
     shadeClose: true, //点击遮罩关闭
     btnAlign: 'c' //按钮居中
 })</pre>
-    </div>
-    <div class="demo">
-      <h3>1、（1）默认alert</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="alert_content()">默认alertg</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>1、（1）默认alert</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="alert_content()">默认alertg</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.alert('内容');
 </pre>
-    </div>
-    <div class="demo">
-      <h3>1、（2）预加载</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="alert_content1()"></a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>1、（2）预加载</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="alert_content1()"></a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.ready(function() {
 	layer.open({
 		layer.alert('内容');
 	});
 })</pre>
-    </div>
-    <div class="demo">
-      <h3>2、询问框confirm</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="confirm()">询问框confirm</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>2、询问框confirm</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="confirm()">询问框confirm</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.confirm('是否删除此条消息？', {
 	btn: ['确认', '取消'], //按钮
 	}, function() {
@@ -200,53 +201,53 @@ layer.confirm('是否删除此条消息？', {
 	time: 2500//2.5s后自动关闭
 	});
 })</pre>
-    </div>
-    <div class="demo">
-      <h3>3、（1）提示框msg</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="msg()">提示框msg</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>3、（1）提示框msg</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="msg()">提示框msg</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 //正常
 layer.msg('玩命提示中');
 //警告
 </pre>
-    </div>
-    <div class="demo">
-      <h3>3、（2）警告提示框msg</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="msg_warning()">警告提示框msg</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>3、（2）警告提示框msg</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="msg_warning()">警告提示框msg</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 //警告
 layer.msg('警告！不能取消！', function(){
 //关闭后的操作
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>4、html页面层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="html_content()">html页面层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>4、html页面层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="html_content()">html页面层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
 	type: 1,
 	skin: 'layui-layer-rim', //加上边框
 	area: ['420px', 'auto'], //宽高
 	content: 'html内容'
 });</pre>
-    </div>
-
-    <div class="demo">
-      <h3>5、捕获页capture</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="capture()">捕获页capture</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+
+      <div class="demo">
+        <h3>5、捕获页capture</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="capture()">捕获页capture</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
     type: 1,
     shade: false,
@@ -256,14 +257,14 @@ layer.open({
     	layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
     }
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>6、自定层html</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="html_content1()">自定层html</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>6、自定层html</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="html_content1()">自定层html</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
 	title:['文本', 'text-align:center'],
 	type: 1,
@@ -273,27 +274,27 @@ layer.open({
 	shadeClose: true, //开启遮罩关闭
 	content: '内容'
 });</pre>
-    </div>
-
-    <div class="demo">
-      <h3>7、tips层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="tips()" id="tips_box">tips层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+
+      <div class="demo">
+        <h3>7、tips层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="tips()" id="tips_box">tips层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '#tips', {
 	tips: [3, '#3595CC'],//通过1-4进行方向设定。如tips: 3则表示在元素的下面出现。
 	time: 4000
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>8、（1）iframe层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="iframe()">iframe层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>8、（1）iframe层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="iframe()">iframe层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
 	type: 2,
 	title: 'layer mobile页',
@@ -301,28 +302,28 @@ layer.open({
 	area: ['380px', '90%'],
 	content: 'http://layer.layui.com/mobile/' //iframe的url
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>8、（2）iframe层-禁滚动条</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="iframe_overflow()">iframe层-禁滚动条</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>8、（2）iframe层-禁滚动条</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="iframe_overflow()">iframe层-禁滚动条</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
     type: 2,
     area: ['360px', '500px'],
     skin: 'layui-layer-rim', //加上边框
     content: ['http://layer.layui.com/mobile', 'no']
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>9、prompt层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="prompt()">prompt层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>9、prompt层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="prompt()">prompt层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pass, index){
 	layer.close(index);
 	layer.prompt({title: '随便写点啥，并确认', formType: 2}, function(text, index){
@@ -330,14 +331,14 @@ layer.prompt({title: '输入任何口令，并确认', formType: 1}, function(pa
 	    layer.msg('演示完毕！您的口令：'+ pass +'您最后写下了：'+text);
     });
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>10、tab层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="tab()">tab层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>10、tab层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="tab()">tab层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.tab({
 	area: ['600px', '300px'],
 	tab: [{
@@ -351,14 +352,14 @@ layer.tab({
 		content: '内容3'
 	}]
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>11、多窗口</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="manywindow()">多窗口</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>11、多窗口</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="manywindow()">多窗口</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
 	type: 2, //此处以iframe举例
 	title: '多窗口',
@@ -378,27 +379,27 @@ layer.open({
 		layer.setTop(layero); //重点2
 	}
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>12、透明的询问框</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="confirmTrans()">透明的询问框</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>12、透明的询问框</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="confirmTrans()">透明的询问框</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.msg('大部分参数都是可以公用的合理搭配，展示不一样的风格', {
         time: 20000, //20s后自动关闭
         btn: ['知道了', '关闭']
     });
 }</pre>
-    </div>
-    <div class="demo">
-      <h3>13、公告层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="notice()">公告层</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>13、公告层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="notice()">公告层</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
 	type: 1,
 	title: false, //不显示标题栏
@@ -418,15 +419,16 @@ layer.open({
 		});
 	}
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>14、定位层</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="position()">定位层</a>
-        <a style="font-size: 14px;margin-left: 20px;" href="http://www.layui.com/doc/modules/layer.html#offset" target="_blank">offset参数项</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>14、定位层</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="position()">定位层</a>
+          <a style="font-size: 14px;margin-left: 20px;" href="http://www.layui.com/doc/modules/layer.html#offset"
+            target="_blank">offset参数项</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
     type: 1
     ,offset: 'rb' //具体配置参考：offset参数项
@@ -438,18 +440,19 @@ layer.open({
     	layer.closeAll();
     }
 });</pre>
-    </div>
-    <div class="demo">
-      <h3>15、屏蔽浏览器滚动条</h3>
-      <div class="text-right">
-        <a class="btn btn-default" onclick="layer_overflow()">屏蔽浏览器滚动条</a>
-        <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
       </div>
-      <pre>
+      <div class="demo">
+        <h3>15、屏蔽浏览器滚动条</h3>
+        <div class="text-right">
+          <a class="btn btn-default" onclick="layer_overflow()">屏蔽浏览器滚动条</a>
+          <input type="button" class="btn btn-danger copybtn" value="点击复制代码" />
+        </div>
+        <pre>
 layer.open({
     content: '浏览器滚动条已锁',
     scrollbar: false
 });</pre>
+      </div>
     </div>
   </div>
   <script src="dist/js/fileSrc.js"></script>
