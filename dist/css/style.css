@@ -5739,6 +5739,30 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 .str_wrap img {
   max-width: none !important;
 }
+.surepass {
+  position: relative;
+  display: inline-block;
+}
+.surepass .surepass-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 24px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.surepass canvas {
+  width: 200px;
+  height: 200px;
+}
+.surepass.surepass-sm canvas {
+  width: 160px;
+  height: 160px;
+}
+.surepass.surepass-lg canvas {
+  width: 260px;
+  height: 260px;
+}
 /*!
 * metismenu https://github.com/onokumus/metismenu#readme
 * A jQuery menu plugin
@@ -9007,28 +9031,4 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 }
 img.lazyimg {
   background: url(../imgs/loading.gif) 50% no-repeat;
-}
-.surepass {
-  position: relative;
-  display: inline-block;
-}
-.surepass .surepass-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 24px;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.surepass canvas {
-  width: 200px;
-  height: 200px;
-}
-.surepass.surepass-sm canvas {
-  width: 160px;
-  height: 160px;
-}
-.surepass.surepass-lg canvas {
-  width: 260px;
-  height: 260px;
 }
