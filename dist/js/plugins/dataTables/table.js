@@ -30,11 +30,11 @@ eloancn.table = {
 //dataTables方法封装
 
 function dataTablesInit(elo) {
-  var dataLength;
+  elo.gridInit = elo.gridInit || {};
   eloancn = $('#' + elo.tableId).dataTable({
     ajax: {
       url: elo.ajaxUrl, //请求后台路径
-      error: function (jqXHR, textStatus, errorMsg) {
+      error: function(jqXHR, textStatus, errorMsg) {
         layer.msg('请求失败');
       },
     },
@@ -50,39 +50,44 @@ function dataTablesInit(elo) {
     bSort: elo.gridInit.bSort === false ? false : true, //排序功能
     order: elo.order || [],
     language: language,
-    dom: "<'row'<'col-sm-2 table-numpage'l><'#" +
+    dom:
+      "<'row'<'col-sm-2 table-numpage'l><'#" +
       elo.tableId +
       '-head' +
       ".table-head-container'><'col-sm-3 table-search'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
-    initComplete: function () {
+    initComplete: function() {
       $('#' + elo.tableId + '-head').append(elo.headDom);
       //checkbox 跳转页数取消全选
-      var tableContainer = $('#' + elo.tableId)
-        .parents('.dataTables_wrapper')
-      var tablePage = tableContainer
-        .find('.dataTables_paginate');
+      var tableContainer = $('#' + elo.tableId).parents('.dataTables_wrapper');
+      var tablePage = tableContainer.find('.dataTables_paginate');
       var tablePageBtn = tablePage.find('a,button');
-      $(tablePage).delegate(tablePageBtn, 'mouseup ', function () {
-        $('#' + elo.checkAllId).siblings('input').prop('checked', false);
-        $('#' + elo.tableId + " input[name='checkList']").prop('checked', false);
+      $(tablePage).delegate(tablePageBtn, 'mouseup ', function() {
+        $('#' + elo.checkAllId)
+          .siblings('input')
+          .prop('checked', false);
+        $('#' + elo.tableId + " input[name='checkList']").prop(
+          'checked',
+          false,
+        );
       });
 
-
-      $('#' + elo.tableId).on('order.dt', function () {
-        $('#' + elo.checkAllId).siblings('input').prop('checked', false);
-      })
+      $('#' + elo.tableId).on('order.dt', function() {
+        $('#' + elo.checkAllId)
+          .siblings('input')
+          .prop('checked', false);
+      });
 
       //checkbox全选
-      $('#' + elo.checkAllId).click(function () {
+      $('#' + elo.checkAllId).click(function() {
         console.log(
           $(this)
-          .siblings('input')
-          .prop('checked'),
+            .siblings('input')
+            .prop('checked'),
         );
         if (
           !$(this)
-          .siblings('input')
-          .prop('checked')
+            .siblings('input')
+            .prop('checked')
         ) {
           $('#' + elo.tableId + " input[name='checkList']").prop(
             'checked',
@@ -98,8 +103,8 @@ function dataTablesInit(elo) {
         }
       });
       //checkbox 取消某个复选框，就判断是否取消全选
-      $('#' + elo.tableId + " input[name='checkList']").click(function () {
-        $('#' + elo.tableId + " input[name='checkList']").each(function () {
+      $('#' + elo.tableId + " input[name='checkList']").click(function() {
+        $('#' + elo.tableId + " input[name='checkList']").each(function() {
           if ($(this).prop('checked')) {
             $('#' + elo.checkAllId)
               .siblings('input')
