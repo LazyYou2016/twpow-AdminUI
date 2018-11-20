@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>百度图表</title>
+    <title>百度图表-折线图</title>
+    <style>
+        .echarts-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
 <div class="card-fluid">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">基本图表</h3>
-        </div>
-        <div class="panel-body">
-            <div id="main" style="width: 100%;height:400px;"></div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">基本图表</h3>
-        </div>
-        <div class="panel-body">
-            <div id="bar" style="width: 100%;height:400px;"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">标准折线图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="line" class="echarts-content"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -27,34 +29,54 @@
 <script src="dist/js/plugins/echarts/echarts.js"></script>
 <script src="dist/js/plugins/echarts/echarts-demo.js"></script>
 <script type="text/javascript">
-
-    // pp.mysss({aa:'ss',type:"'11",call:addccc},function(e,v){...})
-    // function addccc(e){
-    //
-    // }
-    var data = [{name: '男生', value: 10},
-        {name: '女生', value: 20}];
-    var option = MyEcharts.EchartsOption.pie('男女人数统计', '单位(人)', data);
+    var data = [
+        {name: '男生', value: 10},
+        {name: '女生', value: 20}
+    ];
+    var option = MyEcharts.EchartsOption.pie(data, {
+        title: '你好',
+        subtext: '副标题'
+    });
     var initChart = MyEcharts.EchartsOption.initChart(option, 'main');
-/*    var options = {
-        color: ["#FDB157", "#3498DB"],
-        legend: {
-            orient: 'vertical',
-            right: 'right',
-        },
-        series: [
-            {
-                radius: '60%',
-                center: ['50%', '60%']
-            }
-        ]
-    }
-    // console.log(initChart)
-    initChart.setOption(options)*/
+    /*    var options = {
+            color: ["#FDB157", "#3498DB"],
+            legend: {
+                orient: 'vertical',
+                right: 'right',
+            },
+            series: [
+                {
+                    radius: '60%',
+                    center: ['50%', '60%']
+                }
+            ]
+        }
+        // console.log(initChart)
+        initChart.setOption(options)*/
 
-
-    var options = MyEcharts.EchartsOption.bar('男女人数统计', '单位(人)', data);
+    var data1 = [{group: '销量', name: '衬衫', value: 5},
+        {group: '销量', name: '羊毛衫', value: 20},
+        {group: '销量', name: '雪纺衫', value: 36},
+        {group: '销量', name: '裤子', value: 10},
+        {group: '销量', name: '高跟鞋', value: 10},
+        {group: '销量', name: '袜子', value: 20},
+        {group: '销量1', name: '袜子', value: 20},
+        {group: '销量1', name: '袜子', value: 20},
+        {group: '销量2', name: '衬衫', value: ''},
+        {group: '销量2', name: '羊毛衫', value: 80},
+        {group: '销量2', name: '雪纺衫', value: 90},
+    ];
+    var options = MyEcharts.EchartsOption.bar(data1,{
+        title: 'ECharts 入门示例',
+        subtext: '副标题'
+    });
     var initChart1 = MyEcharts.EchartsOption.initChart(options, 'bar');
+
+    var optionsLine = MyEcharts.EchartsOption.line(data1,{
+        title: 'ECharts 入门示例',
+        subtext: '副标题'
+    });
+    MyEcharts.EchartsOption.initChart(optionsLine, 'line');
 
 </script>
 </body>
