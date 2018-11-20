@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="card-fluid">
+    <div class="panel panel-default">
+      <div class="panel-heading">flex输入框</div>
+      <div class="panel-body">
+        <div class="surepass surepass-sm">
+          <div class="surepass-text">
+            25%
+          </div>
+          <canvas data-run="0" id="canvas1" amout="1000" nowData="1000"></canvas>
+        </div>
+        <div class="surepass">
+          <div class="surepass-text">
+            50%
+          </div>
+          <canvas data-run="0" id="canvas2" amout="1000" nowData="1000"></canvas>
+        </div>
+        <div class="surepass surepass-lg">
+          <div class="surepass-text">
+            100%
+          </div>
+          <canvas data-run="0" id="canvas3" amout="1000" nowData="1000"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script>
+    $(function () {
+      //percents 为百分比的值  范围 0- 1
+      runCircle({
+        obj: 'canvas1',
+        percent: 0.25,
+        circleBottomColor: "#e6eaed", //圆环底色
+        innerColorStart: '#ff6152', //内部圆环 渐变色
+        innerColorEnd: '#ff321f',
+      });
+      runCircle({
+        obj: 'canvas2',
+        percent: 0.5,
+        circleBottomColor: "#e6eaed", //圆环底色
+        innerColorStart: '#ffae42', //内部圆环 渐变色
+        innerColorEnd: '#ff980f',
+      });
+      runCircle({
+        obj: 'canvas3',
+        percent: 1.0,
+        circleBottomColor: "#e6eaed", //圆环底色
+        innerColorStart: '#4a92ff', //内部圆环 渐变色
+        innerColorEnd: '#1773ff',
+      });
+    });
+  </script>
+</body>
+
+</html>

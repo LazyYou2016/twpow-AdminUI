@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="card-fluid">
+    <div class="panel panel-default">
+      <div class="panel-heading">表格</div>
+      <div class="panel-body">
+        <div class="table-container">
+          <table id="table" class="table text-center table-bordered">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>位置</th>
+                <th>办公</th>
+                <th>人数</th>
+                <th>日期</th>
+                <th>薪水</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script>
+    var stringDate = dyDate().format('yyyy-MM-dd');
+    var httpUrl =
+      'https://www.easy-mock.com/mock/5bf22c3d7a08cf70839ea4e1/example/',
+      employee = {
+        tableId: 'table',
+        ajaxUrl: httpUrl + 'objects.json?date=' + stringDate, //对象
+        columns: [{
+            data: 'checkval',
+          },
+          {
+            data: 'name',
+          },
+          {
+            data: 'position',
+          },
+          {
+            data: 'office',
+          },
+          {
+            data: 'extn',
+          },
+          {
+            data: 'start_date',
+          },
+          {
+            data: 'salary',
+          }
+        ],
+        gridInit: {},
+        headDom: '<div class="table-head"><input type="text" class="form-control input-sm" id="date" placeholder="请选择日期" value="' +
+          stringDate +
+          '" onclick="WdatePicker({maxDate: \'%y-%M-%d\'})">' +
+          '<select id="selectVal" class="form-control input-sm" name="account">' +
+          '<option value="1">全部设备</option>' +
+          '<option value="2">A类设备</option>' +
+          '<option value="3">B类设备</option>' +
+          '<option value="4">C类设备</option>' +
+          '</select>' +
+          '<button type="button" class="btn btn-sm btn-primary" onclick="reload()"><i class="fas fa-search"></i> 查询</button>' +
+          '</div>'
+      };
+
+    function reload() {
+      employee.ajaxUrl = httpUrl + 'objects.json?date=' + $('#date').val() + '&type=' + $("#selectVal option:selected")
+        .val();
+      console.log(employee.ajaxUrl);
+      $('#table')
+        .DataTable()
+        .ajax.url(employee.ajaxUrl)
+        .load();
+    }
+
+    function edit(id) {
+      layer.open({
+        type: 1,
+        title: ['编辑信息'],
+        area: ["600px", "300px"],
+        content: '<div class="form-flex">' +
+          '<div class="form-flex-container">' +
+          '<div class="form-flex-label">' +
+          '姓名' +
+          '</div>' +
+          '<div class="form-flex-body">' +
+          '<input id="edit-name" type="text" placeholder="请输入姓名">' +
+          '</div>' +
+          '</div>' +
+          '<div class="form-flex-container">' +
+          '<div class="form-flex-label">' +
+          '位置' +
+          '</div>' +
+          '<div class="form-flex-body">' +
+          '<select id="edit-info" class="select2-event"></select>' +
+          '</div>' +
+          '</div>' +
+          '<div class="form-flex-container">' +
+          '<div class="form-flex-label">' +
+          '选择日期' +
+          '</div>' +
+          '<div class="form-flex-body">' +
+          '<input id="edit-date" type="text" class="form-control" placeholder="请选择日期" onClick="WdatePicker({maxDate: \'%y-%M-%d\'})">' +
+          '</div>' +
+          '</div>' +
+          '</div>',
+        btn: ['确认', '取消'],
+        success: function () {
+          $('.select2-event').select2({
+            ajax: {
+              url: 'dist/json/select2.json',
+              dataType: 'json'
+            },
+            placeholder: "请选择",
+            allowClear: true,
+            width: "100%"
+          });
+        },
+        yes: function (index, layero) {
+          employee.ajaxUrl = httpUrl + 'objects.json?date=' + $('#edit-date').val() + '&info=' + $(
+            "#edit-info option:selected").val() + '&name=' + $("#edit-name").val();
+          console.log(employee.ajaxUrl);
+          $('#table')
+            .DataTable()
+            .ajax.url(employee.ajaxUrl)
+            .load();
+          layer.msg('编辑成功!');
+          layer.closeAll("page")
+        }
+      });
+    }
+
+    function del(id) {
+      layer.confirm('是否删除此条信息？', {
+        btn: ['确认', '取消'] //按钮
+      }, function () {
+        employee.ajaxUrl = httpUrl + 'objects.json?id=' + id
+        console.log(employee.ajaxUrl);
+        $('#table')
+          .DataTable()
+          .ajax.url(employee.ajaxUrl)
+          .load();
+        layer.msg('删除成功!');
+      })
+    }
+    $(function () {
+      dataTablesInit(employee);
+    });
+  </script>
+</body>
+
+</html>
