@@ -48,7 +48,7 @@ function dataTablesInit(elo) {
     processing: elo.gridInit.processing || false, //是否显示中文提示
     serverSide: elo.gridInit.serverSide || false, //开启服务器模式，默认是关闭
     bSort: elo.gridInit.bSort === false ? false : true, //排序功能
-    order: elo.order || '',
+    order: elo.order || [],
     language: language,
     dom: "<'row'<'col-sm-2 table-numpage'l><'#" +
       elo.tableId +
