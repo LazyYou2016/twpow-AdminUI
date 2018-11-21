@@ -4,6 +4,9 @@ input.form-control.form-radius {
 input.form-control {
   border-radius: 4px;
 }
+.input-group-addon {
+  border: none;
+}
 .form-flex-container.form-radius .form-flex-label {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
