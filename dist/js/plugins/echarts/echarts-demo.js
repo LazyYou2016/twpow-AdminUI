@@ -161,7 +161,7 @@ var MyEcharts = {
             $.extend(settings,opts);
             // console.log(data)
             var datas = MyEcharts.EchartsDataFormate.GroupFormate(data, 'line');
-            console.log(datas.series)
+            console.log(datas)
 
             // 是否平滑曲线显示
             if (settings.smooth) {
@@ -193,7 +193,7 @@ var MyEcharts = {
                 tooltip: {
                     show: true,
                     trigger: 'axis',
-                    formatter: "{a}<br/>{b} : {c}"
+                    // formatter: "{a}<br/>{b} : {c}"
                 },
                 legend: {
                     data:datas.groups

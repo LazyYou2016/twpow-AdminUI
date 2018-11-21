@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度图表-饼图</title>
+    <style>
+        .echarts-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本饼图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="basic_pie" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">玫瑰图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="roseType_pie" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">环图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="ring_pie" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">环图-玫瑰图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="ring_roseType__pie" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/plugins/echarts/echarts.js"></script>
+<script src="dist/js/plugins/echarts/echarts-util.js"></script>
+<script type="text/javascript">
+    var data = [
+        {name: '1/1', value: 1393},
+        {name: '1/2', value: 3530},
+        {name: '1/3', value: 2923},
+        {name: '1/4', value: 1723},
+        {name: '1/5', value: 3792},
+        {name: '1/6', value: 4593}
+    ];
+    var basic_pie = MyEcharts.EchartsOption.pie(data, {
+        title: '你好',
+        subtext: '副标题'
+    });
+    var basic_pie = MyEcharts.EchartsOption.initChart(option, 'basic_pie');
+    /*    var options = {
+            color: ["#FDB157", "#3498DB"],
+            legend: {
+                orient: 'vertical',
+                right: 'right',
+            },
+            series: [
+                {
+                    radius: '60%',
+                    center: ['50%', '60%']
+                }
+            ]
+        }
+        // console.log(initChart)
+        initChart.setOption(options)*/
+    var roseType_pie = MyEcharts.EchartsOption.pie(data, {
+        title: '玫瑰图',
+        subtext: '玫瑰图',
+        roseType: 'radius'
+    });
+    MyEcharts.EchartsOption.initChart(roseType_pie, 'roseType_pie');
+
+    var ring_pie = MyEcharts.EchartsOption.pie(data, {
+        title: '环图',
+        radius:['30%','50%']
+    });
+    MyEcharts.EchartsOption.initChart(ring_pie, 'ring_pie');
+
+    var ring_roseType__pie = MyEcharts.EchartsOption.pie(data, {
+        title: '环图-玫瑰图',
+        radius:['10%','50%'],
+        roseType: 'radius'
+    });
+    MyEcharts.EchartsOption.initChart(ring_roseType__pie, 'ring_roseType__pie');
+</script>
+</body>
+</html>
