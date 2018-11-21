@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度图表-折线图</title>
+    <style>
+        .echarts-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">标准折线图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic-line" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本面积图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic-area-chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">平滑曲线折线图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="smooth-line-chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">堆积面积图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Stacked_area_chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">堆叠折线图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Stacked_line_chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">大数据量面积图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Large_scale_area_chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/plugins/echarts/echarts.js"></script>
+<script src="dist/js/plugins/echarts/echarts-util.js"></script>
+<script type="text/javascript">
+    var data = {
+        groups: ["销量","销量1","销量2"],
+        category: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+        data: [
+            [5, 20, 36, 10, 10, 20],
+            [15, 30, 46, 20, 20, 40],
+            ["", 80, 90]
+        ]
+    }
+
+    var optionsLine = MyEcharts.EchartsOption.line(data,{
+        title: 'ECharts 入门示例',
+        subtext: '副标题'
+    });
+    MyEcharts.EchartsOption.initChart(optionsLine, 'Basic-line');
+
+    var Basic_area_chart = MyEcharts.EchartsOption.line(data,{
+        title: '基本面积图',
+        subtext: '副标题',
+        areaStyle: {}
+    });
+    MyEcharts.EchartsOption.initChart(Basic_area_chart, 'Basic-area-chart');
+
+    var smooth_line_chart = MyEcharts.EchartsOption.line(data,{
+        title: '平滑曲线折线图',
+        subtext: '副标题',
+        smooth:true
+    });
+    MyEcharts.EchartsOption.initChart(smooth_line_chart, 'smooth-line-chart');
+
+    var Stacked_area_chart = MyEcharts.EchartsOption.line(data,{
+        title: '堆积面积图',
+        subtext: '副标题',
+        stack: '总量',
+        areaStyle: {}
+    });
+    MyEcharts.EchartsOption.initChart(Stacked_area_chart, 'Stacked_area_chart')
+
+    var Stacked_line_chart = MyEcharts.EchartsOption.line(data,{
+        title: '堆叠折线图',
+        subtext: '副标题',
+        stack: '总量'
+    });
+    MyEcharts.EchartsOption.initChart(Stacked_line_chart, 'Stacked_line_chart')
+
+
+    var base = +new Date(1968, 9, 3);
+    var oneDay = 24 * 3600 * 1000;
+    var date = [];
+
+    var bigDate = [Math.random() * 300];
+
+    for (var i = 1; i < 1000; i++) {
+        var now = new Date(base += oneDay);
+        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+        bigDate.push(Math.round((Math.random() - 0.5) * 20 + bigDate[i - 1]));
+    }
+
+    console.log(date)
+    var big_data = {
+        groups: ["销量"],
+        category: date,
+        data: [bigDate]
+    }
+    var Large_scale_area_chart = MyEcharts.EchartsOption.line(big_data,{
+        title: '大数据量面积图',
+        subtext: '副标题',
+        areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: 'rgb(255, 158, 68)'
+            }, {
+                offset: 1,
+                color: 'rgb(255, 70, 131)'
+            }])
+        },
+    });
+    var ss = MyEcharts.EchartsOption.initChart(Large_scale_area_chart, 'Large_scale_area_chart')
+    var option = {
+        dataZoom: [{
+            type: 'inside',
+            start: 90,
+            end: 100
+        }, {
+            start: 0,
+            end: 50,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }]
+    }
+    ss.setOption(option)
+
+</script>
+</body>
+</html>

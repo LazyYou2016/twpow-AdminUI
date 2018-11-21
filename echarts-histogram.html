@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度图表-柱状图</title>
+    <style>
+        .echarts-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本柱状图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic-bar" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">堆叠柱状图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic_histogram_stack" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">设置双y轴</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Double_y_chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">柱状图+折线图</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="histogram_line_chart" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">柱状图-最大值和最小值</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic_MaxMin" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">柱状图-标记点自定义</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic_markPoint_custom" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">堆叠柱状图-自定义</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Basic-bar1" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/plugins/echarts/echarts.js"></script>
+<script src="dist/js/plugins/echarts/echarts-util.js"></script>
+<script type="text/javascript">
+    var data_empty = {
+        groups: [],
+        category: [],
+        data: []
+    }
+    var data = {
+        groups: ["销量","销量1","销量2"],
+        category: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+        data: [
+            [5, 20, 36, 10, 10, 20],
+            [15, 30, 46, 20, 20, 40],
+            ["", 80, 90]
+        ]
+    }
+    var optionsLine = MyEcharts.EchartsOption.histogram(data,{
+        title: 'ECharts 入门示例',
+        subtext: '副标题',
+    });
+    MyEcharts.EchartsOption.initChart(optionsLine, 'Basic-bar');
+
+    var Basic_histogram_stack = MyEcharts.EchartsOption.histogram(data,{
+        title: 'ECharts 入门示例',
+        subtext: '副标题',
+        stack: '总览'
+    });
+    MyEcharts.EchartsOption.initChart(Basic_histogram_stack, 'Basic_histogram_stack');
+
+    // 双Y轴
+    var Double_y_chart = MyEcharts.EchartsOption.histogram(data,{
+        title: '双Y轴',
+        axisSiteRight:['销量2'],
+        yAxis: [
+            {
+                type: 'value',
+                name: '电量(kWh)',
+            },
+            {
+                type: 'value',
+                name: '电费(￥)',
+            }
+        ]
+    });
+    MyEcharts.EchartsOption.initChart(Double_y_chart, 'Double_y_chart');
+
+    // 柱状图+折线图
+    var histogram_line_chart = MyEcharts.EchartsOption.histogram(data,{
+        title: '柱状图+折线图',
+        subtext: '柱状图+折线图',
+        showLine: ['销量1']
+    });
+    MyEcharts.EchartsOption.initChart(histogram_line_chart, 'histogram_line_chart');
+
+    // 最大值和最小值
+    var Basic_MaxMin = MyEcharts.EchartsOption.histogram(data,{
+        title: '最大值和最小值',
+        subtext: '最大值和最小值',
+        series: {
+            markPoint: true
+        }
+    });
+    MyEcharts.EchartsOption.initChart(Basic_MaxMin, 'Basic_MaxMin');
+
+    // 标记点自定义
+    var Basic_markPoint_custom = MyEcharts.EchartsOption.histogram(data,{
+        title: '标记点自定义',
+        subtext: '标记点自定义',
+    });
+    var markPoint_custom = MyEcharts.EchartsOption.initChart(Basic_markPoint_custom, 'Basic_markPoint_custom');
+
+    var markPoint_custom_option = {
+        series: [
+            {
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+            },
+            {
+                markPoint: {
+                    data : [
+                        {name : '年最高', value : 30, xAxis: 1, yAxis: 30},
+                        {name : '年最低', value : 46, xAxis: 2, yAxis: 46}
+                    ]
+                }
+            }
+        ]
+    };
+    markPoint_custom.setOption(markPoint_custom_option)
+
+
+    var optionsLine1 = MyEcharts.EchartsOption.histogram(data_empty);
+    var s = MyEcharts.EchartsOption.initChart(optionsLine1, 'Basic-bar1');
+    var option = {
+        legend: {
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他']
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                data:[320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name:'邮件营销',
+                type:'bar',
+                stack: '广告',
+                data:[120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name:'联盟广告',
+                type:'bar',
+                stack: '广告',
+                data:[220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name:'视频广告',
+                type:'bar',
+                stack: '广告',
+                data:[150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name:'搜索引擎',
+                type:'bar',
+                data:[862, 1018, 964, 1026, 1679, 1600, 1570],
+                markLine : {
+                    lineStyle: {
+                        normal: {
+                            type: 'dashed'
+                        }
+                    },
+                    data : [
+                        [{type : 'min'}, {type : 'max'}]
+                    ]
+                }
+            },
+            {
+                name:'百度',
+                type:'bar',
+                barWidth : 5,
+                stack: '搜索引擎',
+                data:[620, 732, 701, 734, 1090, 1130, 1120]
+            },
+            {
+                name:'谷歌',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[120, 132, 101, 134, 290, 230, 220]
+            },
+            {
+                name:'必应',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[60, 72, 71, 74, 190, 130, 110]
+            },
+            {
+                name:'其他',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[62, 82, 91, 84, 109, 110, 120]
+            }
+        ]
+    }
+    s.setOption(option);
+
+</script>
+</body>
+</html>
