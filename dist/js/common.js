@@ -6,6 +6,14 @@ function e_preventDefault() {
     e.returnValue = false;
   }
 }
+
+//bootstrap S
+$(function () {
+  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="tooltip"]').tooltip()
+})
+//bootstrap E
+
 // index S
 var getHref = $($("#metisMenu>li>a")[0]).attr("href");
 $("#iframe").attr("src", getHref);
@@ -60,3 +68,27 @@ textAreaCount($(".wordCount"));
 </div>
 */
 // 文本框字数限制 E
+
+
+// layer S
+function layerW() {
+  return "750px"
+}
+var winH = $(window).height(),
+  layerH;
+
+function layerH() {
+  if (winH > 720) {
+    layerH = "600px";
+  } else if (winH <= 720) {
+    layerH = "400px";
+  }
+  return layerH;
+}
+// layer E
+
+//dataTables S
+function tableFull() {
+  return winH - 210 + 'px'
+}
+//dataTables E

@@ -19,7 +19,7 @@
       <div class="panel-heading">单选选择框</div>
       <div class="panel-body">
         <div class="form-flex">
-          <div class="form-flex-container bl-radio">
+          <div class="form-flex-container">
             <div class="form-flex-label">单选选择框</div>
             <div class="form-flex-body">
               <select class="select2-event" name="state">
@@ -35,7 +35,7 @@
       <div class="panel-heading">多选选择框</div>
       <div class="panel-body">
         <div class="form-flex">
-          <div class="form-flex-container bl-radio">
+          <div class="form-flex-container">
             <div class="form-flex-label">多选选择框</div>
             <div class="form-flex-body">
               <select class="select2-event" name="states[]" multiple="multiple">
@@ -82,11 +82,9 @@
           dataType: 'json'
         },
         placeholder: "请选择",
-        closeOnSelect: false,
         allowClear: true,
         width: "100%"
       });
-
     });
   </script>
 </body>

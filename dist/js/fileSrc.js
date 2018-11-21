@@ -24,12 +24,22 @@ var fnExtend = {
 //插入css文件
 fnExtend.includFile(filesSrc.cssPath, ['bootstrap.min.css', 'style.css']);
 //插入js文件
-fnExtend.includFile(filesSrc.jsPath, ['jquery.min.js', 'bootstrap.min.js', 'common.js']);
+fnExtend.includFile(filesSrc.jsPath, [
+  'jquery.min.js',
+  'bootstrap.min.js',
+  'date.js',
+  'common.js'
+]);
 fnExtend.includFile(filesSrc.plugins, [
-  'layer/layer.js',
-  'dataTables.bootstrap/dataTables.bootstrap.min.js',
-  'select2/select2.min.js',
-  'bootstrap-datetimepicker/bootstrap-datetimepicker.min.js',
-  'bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js',
-  'My97DatePicker/WdatePicker.js'
+  'layer/layer.js', //layer对话框
+  'liMarquee/jquery.liMarquee.js', //走马灯无缝滚动插件
+  'dataTables/jquery.dataTables.min.js', //表格插件
+  'dataTables/dataTables.bootstrap.min.js', //表格插件
+  'dataTables/table.js', //表格公共插件
+  'select2/select2.min.js', //select2
+  'echo/echo.min.js', //图片懒加载
+  'zcircleMove/zcircleMove.js',
+  'bootstrap-datetimepicker/bootstrap-datetimepicker.min.js', //日期插件
+  'bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js', //日期插件
+  'My97DatePicker/WdatePicker.js' //百度上传控件
 ])

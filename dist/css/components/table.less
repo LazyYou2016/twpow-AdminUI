@@ -1,0 +1,145 @@
+@import '../base/variables.less';
+.table-container {
+  .table {
+    width: 100% !important;
+    &.text-center {
+      th {
+        text-align: center;
+      }
+    }
+    &.text-right {
+      th {
+        text-align: right;
+      }
+    }
+    .checkbox {
+      .tw-checkbox-inner {
+        margin-left: 0;
+      }
+    }
+    tbody {
+      > tr {
+        > td {
+          > .btn {
+            margin: 0 2px;
+          }
+        }
+      }
+    }
+  }
+  div.dataTables_wrapper {
+    .table-numpage {
+      width: 190px;
+    }
+    .table-search {
+      float: right;
+    }
+    .table-head-container {
+      display: inline-block;
+      .table-head {
+        select {
+          margin: 0 2px;
+        }
+        .btn {
+          margin-left: 2px;
+        }
+      }
+    }
+    div.dataTables_paginate {
+      margin-top: 6px;
+      .pagination {
+        float: right;
+      }
+      .gopage-container {
+        width: 92px;
+        margin: 4px 8px 0 0;
+      }
+    }
+    div.dataTables_processing {
+      background-color: #fff;
+      z-index: 1;
+    }
+  }
+}
+
+.table-bordered {
+  border: @table-border;
+  & {
+    > tbody,
+    > thead,
+    > tfoot {
+      > tr {
+        > td,
+        > th {
+          border: @table-border;
+        }
+      }
+    }
+  }
+}
+
+.table-bordered-row {
+  border: none;
+  > tbody,
+  > thead,
+  > tfoot {
+    > tr {
+      > td,
+      > th {
+        border-bottom: @table-border;
+      }
+    }
+  }
+}
+
+.table-bordered-col {
+  border: none;
+  > tbody,
+  > thead,
+  > tfoot {
+    > tr {
+      > td,
+      > th {
+        border: none;
+        border-right: @table-border;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.table-condensed {
+  > tbody,
+  > thead,
+  > tfoot {
+    > tr {
+      > td,
+      > th {
+        padding: @table-condensed;
+        font-size: @table-condensed-fs;
+      }
+    }
+  }
+}
+
+.table-striped {
+  > tbody {
+    > tr {
+      &:nth-of-type(odd) {
+        background-color: @table-striped;
+      }
+    }
+  }
+}
+
+.table-hover {
+  > tbody {
+    > tr {
+      &:hover {
+        background-color: @table-hover;
+      }
+    }
+  }
+}

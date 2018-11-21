@@ -108,9 +108,25 @@
                 <span>表格</span>
               </a>
               <ul class="mm-collapse">
-                <li><a href="parts.html">基本表格</a></li>
-                <li><a href="button.html">表格样式</a></li>
-                <li><a href="tab.html">DataTables</a></li>
+                <li><a href="table.html">表格样式</a></li>
+                <li>
+                  <a href="javascript:void(0)" class="has-arrow" href="#" aria-expanded="false">
+                    DataTables
+                  </a>
+                  <ul class="mm-collapse">
+                    <li><a href="table-datatables-base.html">默认表格</a></li>
+                    <li><a href="table-datatables-object.html">表格 ajax对象</a></li>
+                    <li><a href="table-datatables-array.html">表格 ajax数组</a></li>
+                    <li><a href="table-datatables-head.html">头部工具栏</a></li>
+                    <li><a href="table-datatables-sort.html">排序</a></li>
+                    <li><a href="table-datatables-check.html">复选</a></li>
+                    <li><a href="table-datatables-trbtn.html">操作按钮</a></li>
+                    <li><a href="table-datatables-full.html">高度最大适应</a></li>
+                    <li><a href="table-datatables-thead.html">复杂表头</a></li>
+                    <li><a href="table-datatables.html">全功能</a></li>
+                    <li><a href="table-datatables2.html">全功能2</a></li>
+                  </ul>
+                </li>
               </ul>
             </li>
             <li>
@@ -132,6 +148,11 @@
                     <li><a href="echarts-pie.html">饼图</a></li>
                   </ul>
                 </li>
+                <li><a href="lazyload.html">图片懒加载</a></li>
+                <li><a href="annular.html">环形进度条</a></li>
+                <li><a href="liMarquee.html">走马灯无缝滚动</a></li>
+                <li><a href="tooltip.html">工具提示tooltip</a></li>
+                <li><a href="popover.html">弹出框 popover</a></li>
               </ul>
             </li>
             <li>
@@ -184,7 +205,7 @@
       layer.open({
         type: 1,
         title: ['修改密码'],
-        area: ["600px", "300px"],
+        area: [layerW(), "300px"],
         content: '<div class="form-flex">' +
           '<div class="form-flex-container">' +
           '<div class="form-flex-label">' +

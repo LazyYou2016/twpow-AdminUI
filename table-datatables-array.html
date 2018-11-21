@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="card-fluid">
+    <div class="panel panel-default">
+      <div class="panel-heading">表格</div>
+      <div class="panel-body">
+        <div class="table-container">
+          <table id="table" class="table text-center table-bordered">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>位置</th>
+                <th>办公</th>
+                <th>人数</th>
+                <th>日期</th>
+                <th>薪水</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script>
+    var stringDate = dyDate().format('yyyy-MM-dd');
+    var httpUrl =
+      'https://www.easy-mock.com/mock/5bf22c3d7a08cf70839ea4e1/example/',
+      employee = {
+        tableId: 'table',
+        ajaxUrl: httpUrl + "arrays-min.json", //数租
+        columns: null,
+      };
+    $(function () {
+      dataTablesInit(employee);
+    });
+  </script>
+</body>
+
+</html>

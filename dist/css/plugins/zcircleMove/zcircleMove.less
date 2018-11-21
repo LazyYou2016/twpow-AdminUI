@@ -1,0 +1,28 @@
+.surepass {
+  position: relative;
+  display: inline-block; // width: 260px;
+  .surepass-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 24px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  canvas {
+    width: 200px;
+    height: 200px;
+  }
+  &.surepass-sm {
+    canvas {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  &.surepass-lg {
+    canvas {
+      width: 260px;
+      height: 260px;
+    }
+  }
+}
