@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历FullCalendar</title>
+    <link rel="stylesheet" href="dist/css/plugins/fullcalendar/fullcalendar.min.css">
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">可拖放事件</h3>
+                </div>
+                <div class="panel-body">
+                    <div id='external-events'>
+                        <div class='fc-event'>My Event 1</div>
+                        <div class='fc-event'>My Event 2</div>
+                        <div class='fc-event'>My Event 3</div>
+                        <div class='fc-event'>My Event 4</div>
+                        <div class='fc-event'>My Event 5</div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" id='drop-remove'>
+                                <span class="tw-checkbox-inner"></span>
+                                拖拽后删除
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">拖放事件</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/jquery-ui.min.js"></script>
+<script src="dist/js/moment.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/zh-cn.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+        /* initialize the external events
+        -----------------------------------------------------------------*/
+
+        $('#external-events .fc-event').each(function() {
+
+            // store data so the calendar knows to render an event upon drop
+            $(this).data('event', {
+                title: $.trim($(this).text()), // use the element's text as the event title
+                stick: true // maintain when user navigates (see docs on the renderEvent method)
+            });
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+
+
+        /* initialize the calendar
+        -----------------------------------------------------------------*/
+
+        $('#calendar').fullCalendar({
+            themeSystem: 'bootstrap3',
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar
+            drop: function( date, jsEvent, ui, resourceId) {
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>

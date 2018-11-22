@@ -1,0 +1,61 @@
+#external-events .fc-event{
+    margin: 10px 0;
+    cursor:pointer;
+    padding: 10px;
+    background-color: @primary;
+}
+.fc-event-container {
+    .fc-event{
+        background-color: @primary;
+        border-color: darken(@primary, 10%);
+    }
+    .fc-day-grid-event{
+        padding: 2px 4px;
+    }
+}
+
+// 排版系统
+#edit{
+    margin-bottom: 10px;
+}
+#event-body {
+    display: none;
+}
+#staff-events {
+    max-height: 500px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+.label-event{
+    position: relative;
+    cursor: move;
+    margin: 4px 0;
+    padding: 5px 10px;
+    background-color: @primary;
+    color: #fff;
+    border-radius: @main-radius-default;
+    .event-remove{
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+.group-event{
+    position: relative;
+    cursor: move;
+    margin: 4px 0;
+    padding: 10px;
+    border: 1px dashed @primary;
+    border-radius: @main-radius-default;
+    color: #fff;
+    background-color: #fff;
+}
+.team-kong{
+    background-color: #eee;
+    color: #333;
+    padding: 25px 10px;
+    &:after{
+        content: "空空的，快快把人员分配到这块内";
+    }
+}

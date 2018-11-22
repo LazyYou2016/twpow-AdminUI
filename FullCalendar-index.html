@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历FullCalendar</title>
+    <link rel="stylesheet" href="dist/css/plugins/fullcalendar/fullcalendar.min.css">
+    <style>
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 style="margin: 0">
+                        日历FullCalendar
+                        <small>demo目前版本是v3.8.0</small>
+                    </h2>
+                    <h4>官方文档地址：(最新版本是v3.9.0)</h4>
+                    <a href="https://fullcalendar.io/">https://fullcalendar.io/</a>
+                    <h4>中文文档地址：(翻译版本是v3.6.2)</h4>
+                    <a href="https://www.helloweba.net/javascript/445.html">https://www.helloweba.net/javascript/445.html</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本日历FullCalendar</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/moment.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/zh-cn.js"></script>
+<script>
+    $(function(){
+        $('#calendar').fullCalendar({
+            // 在这里输入选项和回调
+            themeSystem: 'bootstrap3',
+            weekends: false // 星期六和星期日隐藏
+        })
+    })
+</script>
+</body>
+</html>

@@ -9010,6 +9010,63 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
   width: 14px;
   height: 14px;
 }
+#external-events .fc-event {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #4a92ff;
+}
+.fc-event-container .fc-event {
+  background-color: #4a92ff;
+  border-color: #1773ff;
+}
+.fc-event-container .fc-day-grid-event {
+  padding: 2px 4px;
+}
+#edit {
+  margin-bottom: 10px;
+}
+#event-body {
+  display: none;
+}
+#staff-events {
+  max-height: 500px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+.label-event {
+  position: relative;
+  cursor: move;
+  margin: 4px 0;
+  padding: 5px 10px;
+  background-color: #4a92ff;
+  color: #fff;
+  border-radius: 4px;
+}
+.label-event .event-remove {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+}
+.group-event {
+  position: relative;
+  cursor: move;
+  margin: 4px 0;
+  padding: 10px;
+  border: 1px dashed #4a92ff;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #fff;
+}
+.team-kong {
+  background-color: #eee;
+  color: #333;
+  padding: 25px 10px;
+}
+.team-kong:after {
+  content: "空空的，快快把人员分配到这块内";
+}
 .fl {
   float: left;
 }
