@@ -18,10 +18,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">默认选项卡</div>
       <div class="panel-body">
-        <div class="textarea-container wordCount">
+        <div class="textarea-container wordCount1">
           <textarea rows=4 class="form-control" placeholder="请输入消息内容"></textarea>
           <div class="wordwrap">
-            <span>0</span>/<var class="word">300</var>
+            <span>0</span>/<var class="textarea-max">300</var>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
           <form method="get" class="form-horizontal">
             <label class="col-sm-2 control-label">单选选择框</label>
             <div class="col-sm-10">
-              <div class="textarea-container wordCount">
+              <div class="textarea-container wordCount2">
                 <textarea rows=4 class="form-control" placeholder="请输入消息内容"></textarea>
                 <div class="wordwrap">
                   <span>0</span>/<var class="textarea-max">300</var>
@@ -52,7 +52,7 @@
             <div class="form-flex-container">
               <div class="form-flex-label">用户名</div>
               <div class="form-flex-body">
-                <div class="textarea-container wordCount">
+                <div class="textarea-container wordCount3">
                   <textarea rows=4 class="form-control" placeholder="请输入消息内容"></textarea>
                   <div class="wordwrap">
                     <span>0</span>/<var class="textarea-max">300</var>
@@ -68,7 +68,9 @@
   <script src="dist/js/fileSrc.js"></script>
   <script>
     //调用
-    textAreaCount($(".wordCount"));
+    textAreaCount($(".wordCount1"));
+    textAreaCount($(".wordCount2"));
+    textAreaCount($(".wordCount3"));
   </script>
 </body>
 

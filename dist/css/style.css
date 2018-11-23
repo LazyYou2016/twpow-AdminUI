@@ -4630,11 +4630,42 @@ a.text-danger:focus {
 .nav-tabs.nav-tabs-card > li.active > a:focus {
   border-top-color: transparent;
 }
+.nav-tabs.nav-tabs-card > li:first-child a {
+  border-left: none;
+}
+.tab-content.nav-tabs-card {
+  border: 1px solid #ddd;
+  border-top: none;
+}
 .btn {
   border-radius: 4px;
 }
 .btn-radius {
   border-radius: 16px;
+}
+.btn-link {
+  color: #4a92ff;
+}
+.btn-link.disabled,
+.btn-link[disabled],
+fieldset[disabled] .btn-link,
+.btn-link.disabled:hover,
+.btn-link[disabled]:hover,
+fieldset[disabled] .btn-link:hover,
+.btn-link.disabled:focus,
+.btn-link[disabled]:focus,
+fieldset[disabled] .btn-link:focus,
+.btn-link.disabled.focus,
+.btn-link[disabled].focus,
+fieldset[disabled] .btn-link.focus,
+.btn-link.disabled:active,
+.btn-link[disabled]:active,
+fieldset[disabled] .btn-link:active,
+.btn-link.disabled.active,
+.btn-link[disabled].active,
+fieldset[disabled] .btn-link.active {
+  color: #4a92ff;
+  background-image: none;
 }
 .btn-default {
   color: #333;
@@ -4650,6 +4681,27 @@ a.text-danger:focus {
   background-color: #e6e6e6 !important;
   border-color: #e6e6e6 !important;
 }
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #e6e6e6;
+  background-image: none;
+}
 .btn-primary {
   color: #fff;
   background-color: #4a92ff;
@@ -4663,6 +4715,27 @@ a.text-danger:focus {
 .open > .btn-primary.dropdown-toggle {
   background-color: #1773ff !important;
   border-color: #1773ff !important;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #1773ff;
+  background-image: none;
 }
 .btn-success {
   color: #fff;
@@ -4678,6 +4751,27 @@ a.text-danger:focus {
   background-color: #3a9d5d !important;
   border-color: #3a9d5d !important;
 }
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+  background-color: #3a9d5d;
+  background-image: none;
+}
 .btn-info {
   color: #fff;
   background-color: #67dcff;
@@ -4691,6 +4785,27 @@ a.text-danger:focus {
 .open > .btn-info.dropdown-toggle {
   background-color: #34d0ff !important;
   border-color: #34d0ff !important;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #34d0ff;
+  background-image: none;
 }
 .btn-warning {
   color: #fff;
@@ -4706,6 +4821,27 @@ a.text-danger:focus {
   background-color: #ff980f !important;
   border-color: #ff980f !important;
 }
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus,
+.btn-warning[disabled].focus,
+fieldset[disabled] .btn-warning.focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
+  background-color: #ff980f;
+  background-image: none;
+}
 .btn-danger {
   color: #fff;
   background-color: #ff6152;
@@ -4719,6 +4855,27 @@ a.text-danger:focus {
 .open > .btn-danger.dropdown-toggle {
   background-color: #ff321f !important;
   border-color: #ff321f !important;
+}
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus,
+.btn-danger[disabled].focus,
+fieldset[disabled] .btn-danger.focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+  background-color: #ff321f;
+  background-image: none;
 }
 .btn-line.btn-default {
   color: #909399;
@@ -5538,14 +5695,12 @@ span.select2-dropdown {
   width: 20px;
   margin-right: 4px;
 }
-.sidebar-nav .metismenu li + li {
-  margin-top: 5px;
+.sidebar-nav .metismenu li a {
+  border-bottom: none;
 }
-.sidebar-nav .metismenu li:first-child {
-  margin-top: 5px;
-}
-.sidebar-nav .metismenu li:last-child {
-  margin-bottom: 5px;
+.sidebar-nav .metismenu li a span span.label {
+  vertical-align: middle;
+  padding-bottom: 0.1em;
 }
 .sidebar-nav .metismenu li > li {
   /*
@@ -5831,35 +5986,35 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
   float: right;
   line-height: 1.42857;
 }
-[dir=rtl] .metismenu .arrow {
+[dir='rtl'] .metismenu .arrow {
   float: left;
 }
 .metismenu .glyphicon.arrow:before {
-  content: "\e079";
+  content: '\e079';
 }
 .metismenu .mm-active > a > .glyphicon.arrow:before {
-  content: "\e114";
+  content: '\e114';
 }
 .metismenu .fa.arrow:before {
-  content: "\f104";
+  content: '\f104';
 }
 .metismenu .mm-active > a > .fa.arrow:before {
-  content: "\f107";
+  content: '\f107';
 }
 .metismenu .ion.arrow:before {
-  content: "\f3d2";
+  content: '\f3d2';
 }
 .metismenu .mm-active > a > .ion.arrow:before {
-  content: "\f3d0";
+  content: '\f3d0';
 }
 .metismenu .plus-times {
   float: right;
 }
-[dir=rtl] .metismenu .plus-times {
+[dir='rtl'] .metismenu .plus-times {
   float: left;
 }
 .metismenu .fa.plus-times:before {
-  content: "\f067";
+  content: '\f067';
 }
 .metismenu .mm-active > a > .fa.plus-times {
   -webkit-transform: rotate(45deg);
@@ -5868,14 +6023,14 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 .metismenu .plus-minus {
   float: right;
 }
-[dir=rtl] .metismenu .plus-minus {
+[dir='rtl'] .metismenu .plus-minus {
   float: left;
 }
 .metismenu .fa.plus-minus:before {
-  content: "\f067";
+  content: '\f067';
 }
 .metismenu .mm-active > a > .fa.plus-minus:before {
-  content: "\f068";
+  content: '\f068';
 }
 .metismenu .mm-collapse:not(.mm-show) {
   display: none;
@@ -5884,8 +6039,11 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
   position: relative;
   height: 0;
   overflow: hidden;
+  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
-  transition-duration: .35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
 }
 .metismenu .has-arrow {
@@ -5893,37 +6051,37 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 }
 .metismenu .has-arrow:after {
   position: absolute;
-  content: "";
-  width: .5em;
-  height: .5em;
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
   border-width: 1px 0 0 1px;
   border-style: solid;
   border-color: initial;
   right: 1em;
-  -webkit-transform: rotate(-45deg) translateY(-50%);
-  transform: rotate(-45deg) translateY(-50%);
+  -webkit-transform: rotate(135deg) translateY(-50%);
+  transform: rotate(135deg) translateY(-50%);
   -webkit-transform-origin: top;
   transform-origin: top;
   top: 50%;
+  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-[dir=rtl] .metismenu .has-arrow:after {
+[dir='rtl'] .metismenu .has-arrow:after {
   right: auto;
   left: 1em;
-  -webkit-transform: rotate(135deg) translateY(-50%);
-  transform: rotate(135deg) translateY(-50%);
+  -webkit-transform: rotate(225deg) translateY(-50%);
+  transform: rotate(225deg) translateY(-50%);
 }
-.metismenu .has-arrow[aria-expanded=true]:after,
+.metismenu .has-arrow[aria-expanded='true']:after,
 .metismenu .mm-active > .has-arrow:after {
   -webkit-transform: rotate(-135deg) translateY(-50%);
   transform: rotate(-135deg) translateY(-50%);
 }
-[dir=rtl] .metismenu .has-arrow[aria-expanded=true]:after,
-[dir=rtl] .metismenu .mm-active > .has-arrow:after {
+[dir='rtl'] .metismenu .has-arrow[aria-expanded='true']:after,
+[dir='rtl'] .metismenu .mm-active > .has-arrow:after {
   -webkit-transform: rotate(225deg) translateY(-50%);
   transform: rotate(225deg) translateY(-50%);
 }
-/*# sourceMappingURL=metisMenu.min.css.map */
 /**
  * Swiper 4.4.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -9302,4 +9460,3 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 img.lazyimg {
   background: url(../imgs/loading.gif) 50% no-repeat;
 }
-/*# sourceMappingURL=style.css.map */
