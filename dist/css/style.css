@@ -6039,8 +6039,8 @@ body .layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
 }
 .metismenu .has-arrow[aria-expanded='true']:after,
 .metismenu .mm-active > .has-arrow:after {
-  -webkit-transform: rotate(-135deg) translateY(-50%);
-  transform: rotate(-135deg) translateY(-50%);
+  -webkit-transform: rotate(225deg) translateY(-50%);
+  transform: rotate(225deg) translateY(-50%);
 }
 [dir='rtl'] .metismenu .has-arrow[aria-expanded='true']:after,
 [dir='rtl'] .metismenu .mm-active > .has-arrow:after {
