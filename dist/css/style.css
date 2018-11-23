@@ -18,6 +18,33 @@
 .text-info {
   color: #67dcff !important;
 }
+.bg-primary {
+  background-color: #4a92ff !important;
+}
+.bg-success {
+  background-color: #4dbd74 !important;
+}
+.bg-warning {
+  background-color: #ffae42 !important;
+}
+.bg-danger {
+  background-color: #ff6152 !important;
+}
+.bg-info {
+  background-color: #67dcff !important;
+}
+.bg-orange {
+  background-color: #ffa323 !important;
+}
+.bg-yellow {
+  background-color: #ead72d !important;
+}
+.bg-deepblue {
+  background-color: #212DF7 !important;
+}
+.bg-purple {
+  background-color: #8621F7 !important;
+}
 /*间距 8的倍数*/
 .m-t-0 {
   margin-top: 0 !important;
@@ -5247,14 +5274,14 @@ span.select2-dropdown {
   height: 100%;
 }
 .index.index-2 .index-nav {
-  width: 164px;
+  width: 200px;
   height: 100%;
 }
 .index.index-2 .index-body {
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 164px;
+  margin-left: 200px;
   height: 100%;
 }
 .index.index-2 .index-body .index-iframe {
@@ -5269,7 +5296,7 @@ span.select2-dropdown {
   float: left;
   position: absolute;
   top: 0;
-  width: 164px;
+  width: 200px;
   height: 100%;
   background-color: #212529;
   z-index: 10;
@@ -5280,7 +5307,7 @@ span.select2-dropdown {
   position: relative;
   background-color: #eee;
   height: 100%;
-  margin-left: 164px;
+  margin-left: 200px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -5299,7 +5326,7 @@ span.select2-dropdown {
   display: block;
   position: absolute;
   top: 50%;
-  left: 162px;
+  left: 198px;
   width: 20px;
   height: 150px;
   margin-top: -65px;
@@ -5381,7 +5408,7 @@ span.select2-dropdown {
   float: left;
   position: absolute;
   top: 0;
-  width: 164px;
+  width: 200px;
   height: 100%;
   background-color: #212529;
   z-index: 10;
@@ -5392,7 +5419,7 @@ span.select2-dropdown {
   position: relative;
   background-color: #eee;
   height: 100%;
-  margin-left: 164px;
+  margin-left: 200px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -5569,6 +5596,14 @@ span.select2-dropdown {
 }
 .table-container .table .checkbox .tw-checkbox-inner {
   margin-left: 0;
+}
+.table-container .table > tbody > tr > td,
+.table-container .table > thead > tr > td,
+.table-container .table > tfoot > tr > td,
+.table-container .table > tbody > tr > th,
+.table-container .table > thead > tr > th,
+.table-container .table > tfoot > tr > th {
+  vertical-align: middle;
 }
 .table-container .table tbody > tr > td > .btn {
   margin: 0 2px;
@@ -9023,6 +9058,80 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 .fc-event-container .fc-day-grid-event {
   padding: 2px 4px;
 }
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #b0cfff;
+}
+.fc-view-container .fc-head-container table thead tr th.fc-day-header {
+  background-color: #4a92ff !important;
+  color: #fff;
+  border: 0;
+  font-weight: normal;
+}
+.fc-view-container .fc-head-container table thead tr th.fc-day-header a {
+  color: #fff;
+}
+.fc button {
+  background-color: #4a92ff !important;
+  color: #fff !important;
+  border: 0;
+}
+.fc .glyphicon {
+  color: #fff;
+}
+.fc .btn-default:hover,
+.fc .btn-default:active,
+.fc .btn-default:focus,
+.fc .btn-default:active,
+.fc .btn-default.active,
+.fc .open > .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #4a92ff;
+  border-color: #4a92ff;
+}
+.fc .btn-default:hover:hover,
+.fc .btn-default:active:hover,
+.fc .btn-default:focus:hover,
+.fc .btn-default:active:hover,
+.fc .btn-default.active:hover,
+.fc .open > .btn-default.dropdown-toggle:hover,
+.fc .btn-default:hover:active,
+.fc .btn-default:active:active,
+.fc .btn-default:focus:active,
+.fc .btn-default:active:active,
+.fc .btn-default.active:active,
+.fc .open > .btn-default.dropdown-toggle:active,
+.fc .btn-default:hover:focus,
+.fc .btn-default:active:focus,
+.fc .btn-default:focus:focus,
+.fc .btn-default:active:focus,
+.fc .btn-default.active:focus,
+.fc .open > .btn-default.dropdown-toggle:focus,
+.fc .btn-default:hover:active,
+.fc .btn-default:active:active,
+.fc .btn-default:focus:active,
+.fc .btn-default:active:active,
+.fc .btn-default.active:active,
+.fc .open > .btn-default.dropdown-toggle:active,
+.fc .btn-default:hover.active,
+.fc .btn-default:active.active,
+.fc .btn-default:focus.active,
+.fc .btn-default:active.active,
+.fc .btn-default.active.active,
+.fc .open > .btn-default.dropdown-toggle.active,
+.open > .fc .btn-default:hover.dropdown-toggle,
+.open > .fc .btn-default:active.dropdown-toggle,
+.open > .fc .btn-default:focus.dropdown-toggle,
+.open > .fc .btn-default:active.dropdown-toggle,
+.open > .fc .btn-default.active.dropdown-toggle,
+.open > .fc .open > .btn-default.dropdown-toggle.dropdown-toggle {
+  background-color: #1773ff !important;
+  border-color: #1773ff !important;
+}
 #edit {
   margin-bottom: 10px;
 }
@@ -9066,6 +9175,88 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 }
 .team-kong:after {
   content: "空空的，快快把人员分配到这块内";
+}
+/*项目管理日历*/
+.taskType-legend {
+  margin-bottom: 10px;
+}
+.taskType-legend ul li {
+  display: inline-block;
+}
+.taskType-legend ul li .taskType-legend-content {
+  margin-right: 10px;
+}
+.taskType-legend ul li .taskType-legend-content .dot {
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  background-color: #4a92ff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  vertical-align: bottom;
+}
+#project_calendar {
+  position: relative;
+}
+#project_calendar .calendar-select {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#project_calendar .fc-event-container {
+  position: relative;
+  padding: 0 10px;
+}
+#project_calendar .fc-event-container .fc-event {
+  display: inline-block;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}
+#project_calendar .complete {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+#project_calendar .complete:after {
+  content: "\f058";
+  position: absolute;
+  bottom: -6px;
+  right: -8px;
+  z-index: 2;
+  font-size: 20px;
+  color: #0ad384;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  background: #fff;
+  border-radius: 50%;
+  /*content: "\e6aa";
+        position: absolute;
+        bottom: -11px;
+        left: 4px;*/
+  /*content: "\e721";
+        position: absolute;
+       bottom: -11px;
+       left: 4px;*/
+  /*position: absolute;
+        bottom: -11px;
+        left: 4px;
+        z-index: 2;
+        width: 34px;
+        height: 34px;
+        display: block;
+        background: url(../imgs/icon-finish.png) no-repeat;
+        background-size: 100% 100%;*/
 }
 .fl {
   float: left;
