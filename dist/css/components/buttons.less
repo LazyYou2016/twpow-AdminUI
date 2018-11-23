@@ -16,9 +16,9 @@
   &:focus,
   &:active,
   &.active,
-  .open > &.dropdown-toggle {
-    background-color: @btn-active !important;
-    border-color: @btn-active !important;
+  .open>&.dropdown-toggle {
+    background-color: @btn-active  !important;
+    border-color: @btn-active  !important;
   }
 }
 
@@ -31,34 +31,73 @@
   &:focus,
   &:active,
   &.active,
-  .open > &.dropdown-toggle {
+  .open>&.dropdown-toggle {
     background-color: transparent !important;
-    border-color: @btn-active !important;
+    border-color: @btn-active  !important;
+  }
+}
+
+.btn-disabled(@btn-color) {
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @btn-color;
+      background-image: none; // border-color: @btn-color;
+    }
+  }
+}
+
+.btn-link {
+  color: @primary;
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: @primary;
+      background-image: none; // border-color: @btn-color;
+    }
   }
 }
 
 .btn-default {
   .btn-variables(@font-color, @default, @btn-default-border, @default-active);
+  .btn-disabled(@default-active);
 }
 
 .btn-primary {
   .btn-variables(@btn-font-color, @primary, @primary, @primary-active);
+  .btn-disabled(@primary-active);
 }
 
 .btn-success {
   .btn-variables(@btn-font-color, @success, @success, @success-active);
+  .btn-disabled(@success-active);
 }
 
 .btn-info {
   .btn-variables(@btn-font-color, @info, @info, @info-active);
+  .btn-disabled(@info-active);
 }
 
 .btn-warning {
   .btn-variables(@btn-font-color, @warning, @warning, @warning-active);
+  .btn-disabled(@warning-active);
 }
 
 .btn-danger {
   .btn-variables(@btn-font-color, @danger, @danger, @danger-active);
+  .btn-disabled(@danger-active);
 }
 
 .btn-line {

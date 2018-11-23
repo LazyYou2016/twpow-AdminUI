@@ -18,7 +18,7 @@
   background-color: #4a92ff;
 }
 .nav-tabs.nav-tabs-card {
-  background-color: #f2f2f2;
+  background-color: #e9eef5;
   border: 1px solid #ddd;
 }
 .nav-tabs.nav-tabs-card > li > a {
@@ -28,4 +28,11 @@
 .nav-tabs.nav-tabs-card > li.active > a:hover,
 .nav-tabs.nav-tabs-card > li.active > a:focus {
   border-top-color: transparent;
+}
+.nav-tabs.nav-tabs-card > li:first-child a {
+  border-left: none;
+}
+.tab-content.nav-tabs-card {
+  border: 1px solid #ddd;
+  border-top: none;
 }

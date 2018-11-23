@@ -47,12 +47,16 @@ $("body").delegate(".eye i", "click", function () {
 // 修改密码 点击“眼睛”隐藏显示 E
 // 文本框字数限制 S
 function textAreaCount(textArea) {
-  var max = textArea.find(".textarea-max").text(),
+  var max = $(textArea).find(".textarea-max").text(),
+
     textAreaContent = textArea.find("textarea");
   textAreaContent.on('input propertychange', function () {
     var textAreaText = $(this).parent("div").find(".wordwrap span");
     textAreaText.text($(this).val().length);
-    if ($(this).val().length > max) {
+    console.log(Number(max));
+
+    if ($(this).val().length > Number(max)) {
+
       layer.msg('字数已超出限制');
       $(this).val($(this).val().substr(0, max))
       textAreaText.text($(this).val().length);

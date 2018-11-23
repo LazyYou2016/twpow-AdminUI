@@ -1,7 +1,7 @@
 @import '../base/variables.less';
 .nav-tabs {
-  > li {
-    > a {
+  >li {
+    >a {
       color: @font-color;
     }
   }
@@ -9,8 +9,8 @@
 
 .nav-tabs {
   &.nav-tabs-line {
-    > li {
-      &.active > a {
+    >li {
+      &.active>a {
         &,
         &:hover,
         &:focus {
@@ -30,18 +30,30 @@
   }
   &.nav-tabs-card {
     background-color: @gray-l;
-    border: 1px solid #ddd; // border-bottom-color: transparent;
-    > li {
-      > a {
+    border: 1px solid @tab-card-border; // border-bottom-color: transparent;
+    >li {
+      >a {
         border-radius: 0;
       }
-      &.active > a {
+      &.active>a {
         &,
         &:hover,
         &:focus {
           border-top-color: transparent;
         }
       }
+      &:first-child {
+        a {
+          border-left: none;
+        }
+      }
     }
+  }
+}
+
+.tab-content {
+  &.nav-tabs-card {
+    border: 1px solid @tab-card-border;
+    border-top: none;
   }
 }
