@@ -118,14 +118,14 @@
     .index-nav {
       width: @index-body-left-mini;
       .metismenu {
-        > li {
+        >li {
           // position: relative;
-          > a {
-            > span {
+          >a {
+            >span {
               display: none;
             }
           }
-          > ul {
+          >ul {
             position: absolute; // top: 0;
             left: @index-body-left-mini;
             width: @index-body-mini-ul-width;
@@ -133,7 +133,7 @@
             z-index: 999;
           }
           &.mm-active {
-            > a.has-arrow {
+            >a.has-arrow {
               &:after {
                 -webkit-transform: rotate(135deg);
                 transform: rotate(135deg);
@@ -147,18 +147,18 @@
       left: @index-body-left-mini;
     }
     .sidebar-nav .metismenu {
-      > li {
-        > ul {
+      >li {
+        >ul {
           &.mm-show {
             display: none;
           }
         }
         &:hover {
-          > ul,
-          > ul.mm-collapse {
+          >ul,
+          >ul.mm-collapse {
             display: block;
           }
-          > a.has-arrow {
+          >a.has-arrow {
             &:after {
               -webkit-transform: rotate(135deg);
               transform: rotate(135deg);
@@ -166,8 +166,8 @@
           }
         }
       }
-      > li:hover > ul,
-      .index.index-mini .sidebar-nav .metismenu > li:hover ul.mm-collapse {
+      >li:hover>ul,
+      .index.index-mini .sidebar-nav .metismenu>li:hover ul.mm-collapse {
         overflow: hidden;
       }
     }
@@ -226,7 +226,7 @@
     }
   }
   .navbar-right {
-    .dropdown > a {
+    .dropdown>a {
       padding: 12px 15px;
       color: @gray-l;
       background-color: @index-head-bg;
@@ -241,7 +241,7 @@
         padding: 12px 15px;
       }
     }
-    .open > .dropdown-menu {
+    .open>.dropdown-menu {
       -webkit-animation: menuamin 0.3s linear;
       animation: menuamin 0.3s linear;
     }
@@ -311,8 +311,7 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    // .has-arrow {
+    flex-direction: column; // .has-arrow {
     //   &:after {
     //     -webkit-transform: @menu-arrow !important;
     //     transform: @menu-arrow !important;
@@ -326,9 +325,9 @@
     //     }
     //   }
     // }
-    > li {
-      > a {
-        > i {
+    >li {
+      >a {
+        >i {
           display: inline-block;
           width: @menu-icon-width;
           margin-right: @menu-icon-mr;
@@ -353,7 +352,7 @@
       // &:last-child {
       //   margin-bottom: 5px;
       // }
-      & > li {
+      &>li {
         /*
         -webkit-box-flex: 1;
         -ms-flex: 1 1 0%;
