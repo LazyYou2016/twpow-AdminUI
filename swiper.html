@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    .swiper-container {
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-fluid">
+    <div class="panel panel-default">
+      <div class="panel-heading">基础滑动</div>
+      <div class="panel-body">
+        <div class="swiper-container swiper-container1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">分组滑动</div>
+      <div class="panel-body">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-container2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">相册滑动</div>
+      <div class="panel-body">
+        <div class="swiper-container swiper-container2">
+          <div id="lightgallery" class="swiper-wrapper">
+            <a class="swiper-slide" href="dist/imgs/other/1.jpg">
+              <img src="dist/imgs/other/1.jpg">
+            </a>
+            <a class="swiper-slide" href="dist/imgs/other/2.jpg">
+              <img src="dist/imgs/other/2.jpg">
+            </a>
+            <a class="swiper-slide" href="dist/imgs/other/3.jpg">
+              <img src="dist/imgs/other/3.jpg">
+            </a>
+            <a class="swiper-slide" href="dist/imgs/other/4.jpg">
+              <img src="dist/imgs/other/4.jpg">
+            </a>
+            <a class="swiper-slide" href="dist/imgs/other/5.jpg">
+              <img src="dist/imgs/other/5.jpg">
+            </a>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script src="dist/js/plugins/swiper/swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container1');
+
+    var swiper = new Swiper('.swiper-container2', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>

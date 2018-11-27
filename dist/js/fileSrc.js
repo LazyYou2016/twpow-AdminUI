@@ -41,5 +41,6 @@ fnExtend.includFile(filesSrc.plugins, [
   'zcircleMove/zcircleMove.js',
   'bootstrap-datetimepicker/bootstrap-datetimepicker.min.js', //日期插件
   'bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js', //日期插件
-  'My97DatePicker/WdatePicker.js' //百度上传控件
+  'My97DatePicker/WdatePicker.js', //百度上传控件
+  'zTree/jquery.ztree.min.js' //树形菜单
 ])

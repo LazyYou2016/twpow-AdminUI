@@ -28,9 +28,9 @@
       }
     }
     tbody {
-      > tr {
-        > td {
-          > .btn {
+      >tr {
+        >td {
+          >.btn {
             margin: 0 2px;
           }
         }
@@ -56,13 +56,12 @@
       }
     }
     div.dataTables_paginate {
-      margin-top: 6px;
-      .pagination {
-        float: right;
-      }
+      margin-top: 6px; // .pagination {
+      //   float: right; // margin-left: 4px;
+      // }
       .gopage-container {
         width: 92px;
-        margin: 4px 8px 0 0;
+        margin: -30px 8px 0 0;
       }
     }
     div.dataTables_processing {
@@ -75,12 +74,12 @@
 .table-bordered {
   border: @table-border;
   & {
-    > tbody,
-    > thead,
-    > tfoot {
-      > tr {
-        > td,
-        > th {
+    >tbody,
+    >thead,
+    >tfoot {
+      >tr {
+        >td,
+        >th {
           border: @table-border;
         }
       }
@@ -89,13 +88,13 @@
 }
 
 .table-bordered-row {
-  border: none;
-  > tbody,
-  > thead,
-  > tfoot {
-    > tr {
-      > td,
-      > th {
+  border: @table-border;
+  >tbody,
+  >thead,
+  >tfoot {
+    >tr {
+      >td,
+      >th {
         border-bottom: @table-border;
       }
     }
@@ -103,13 +102,13 @@
 }
 
 .table-bordered-col {
-  border: none;
-  > tbody,
-  > thead,
-  > tfoot {
-    > tr {
-      > td,
-      > th {
+  border: @table-border;
+  >tbody,
+  >thead,
+  >tfoot {
+    >tr {
+      >td,
+      >th {
         border: none;
         border-right: @table-border;
         &:last-child {
@@ -121,12 +120,12 @@
 }
 
 .table-condensed {
-  > tbody,
-  > thead,
-  > tfoot {
-    > tr {
-      > td,
-      > th {
+  >tbody,
+  >thead,
+  >tfoot {
+    >tr {
+      >td,
+      >th {
         padding: @table-condensed;
         font-size: @table-condensed-fs;
       }
@@ -135,8 +134,8 @@
 }
 
 .table-striped {
-  > tbody {
-    > tr {
+  >tbody {
+    >tr {
       &:nth-of-type(odd) {
         background-color: @table-striped;
       }
@@ -145,8 +144,8 @@
 }
 
 .table-hover {
-  > tbody {
-    > tr {
+  >tbody {
+    >tr {
       &:hover {
         background-color: @table-hover;
       }
