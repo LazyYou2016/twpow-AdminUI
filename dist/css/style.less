@@ -1,4 +1,4 @@
-@import 'base/module';
+@import 'base/module.less';
 @import 'base/variables.less';
 //基础样式 S
 .fl {
@@ -51,6 +51,34 @@
 
 img.lazyimg {
   background: url(../imgs/loading.gif) 50% no-repeat;
+}
+
+.page-tips {
+  text-align: center;
+  color: @page-tips-color;
+  .page-tips-title {
+    font-size: 30px;
+  }
+  .page-tips-content {
+    font-size: 18px;
+    p {
+      margin: 10px 0;
+    }
+  }
+  img {
+    width: 500px;
+    margin: 30px 0;
+  }
+  .page-tips-btn {
+    width: 220px;
+    margin: 40px auto 0;
+    text-align: left;
+    .btn {
+      &:last-child {
+        float: right;
+      }
+    }
+  }
 }
 
 //公共组件 E

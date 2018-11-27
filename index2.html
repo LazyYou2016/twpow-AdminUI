@@ -118,6 +118,7 @@
               <li><a href="liMarquee.html">走马灯无缝滚动</a></li>
               <li><a href="tooltip.html">工具提示tooltip</a></li>
               <li><a href="popover.html">弹出框 popover</a></li>
+              <li><a href="zTree.html">树形菜单 zTree</a></li>
             </ul>
           </li>
           <li>
@@ -138,10 +139,12 @@
                   <li><a href="login-full.html">铺满</a></li>
                 </ul>
               </li>
-              <li><a href="select2.html">404</a></li>
-              <li><a href="switch.html">500</a></li>
-              <li><a href="switch.html">空白页</a></li>
-              <li><a href="switch.html">IE低版本提示</a></li>
+              <li><a href="404.html">404</a></li>
+              <li><a href="500.html">500</a></li>
+              <li><a href="error.html">错误页</a></li>
+              <li><a href="nodata.html">空白页</a></li>
+              <li><a href="panel-full-nodata.html">卡片式空白页</a></li>
+              <li><a href="ie.html">IE低版本提示</a></li>
             </ul>
           </li>
         </ul>
@@ -238,6 +241,12 @@
           //右上角关闭回调
         }
       });
+    }
+
+    function parenttest() {
+      $(".metismenu a").removeClass("active");
+      $(".metismenu>li:first-child a").addClass("active");
+      $("#iframe").attr("src", "button.html");
     }
   </script>
 </body>

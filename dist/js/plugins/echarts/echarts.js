@@ -20123,7 +20123,7 @@ function prepareSource(seriesModel) {
     var fromDataset = false;
 
     var seriesLayoutBy = seriesOption.seriesLayoutBy;
-    var sourceHeader = seriesOption.sourceHeader;
+    var sourceheader = seriesOption.sourceheader;
     var dimensionsDefine = seriesOption.dimensions;
 
     var datasetModel = getDatasetModel(seriesModel);
@@ -20136,12 +20136,12 @@ function prepareSource(seriesModel) {
 
         // These settings from series has higher priority.
         seriesLayoutBy = seriesLayoutBy || datasetOption.seriesLayoutBy;
-        sourceHeader == null && (sourceHeader = datasetOption.sourceHeader);
+        sourceheader == null && (sourceheader = datasetOption.sourceheader);
         dimensionsDefine = dimensionsDefine || datasetOption.dimensions;
     }
 
     var completeResult = completeBySourceData(
-        data, sourceFormat, seriesLayoutBy, sourceHeader, dimensionsDefine
+        data, sourceFormat, seriesLayoutBy, sourceheader, dimensionsDefine
     );
 
     // Note: dataset option does not have `encode`.
@@ -20165,7 +20165,7 @@ function prepareSource(seriesModel) {
 }
 
 // return {startIndex, dimensionsDefine, dimensionsCount}
-function completeBySourceData(data, sourceFormat, seriesLayoutBy, sourceHeader, dimensionsDefine) {
+function completeBySourceData(data, sourceFormat, seriesLayoutBy, sourceheader, dimensionsDefine) {
     if (!data) {
         return {dimensionsDefine: normalizeDimensionsDefine(dimensionsDefine)};
     }
@@ -20179,7 +20179,7 @@ function completeBySourceData(data, sourceFormat, seriesLayoutBy, sourceHeader, 
         // Caution: consider a line with 5 string and 1 number,
         // it still can not be sure it is a head, because the
         // 5 string may be 5 values of category columns.
-        if (sourceHeader === 'auto' || sourceHeader == null) {
+        if (sourceheader === 'auto' || sourceheader == null) {
             arrayRowsTravelFirst(function (val) {
                 // '-' is regarded as null/undefined.
                 if (val != null && val !== '-') {
@@ -20194,7 +20194,7 @@ function completeBySourceData(data, sourceFormat, seriesLayoutBy, sourceHeader, 
             }, seriesLayoutBy, data, 10);
         }
         else {
-            startIndex = sourceHeader ? 1 : 0;
+            startIndex = sourceheader ? 1 : 0;
         }
 
         if (!dimensionsDefine && startIndex === 1) {
@@ -23565,16 +23565,16 @@ var SeriesModel = ComponentModel.extend({
                 }
                 var dimType = dimInfo.type;
                 var markName = 'sub' + series.seriesIndex + 'at' + markerId;
-                var dimHead = getTooltipMarker({
+                var dimhead = getTooltipMarker({
                     color: color,
                     type: 'subItem',
                     renderMode: renderMode,
                     markerId: markName
                 });
 
-                var dimHeadStr = typeof dimHead === 'string' ? dimHead : dimHead.content;
+                var dimheadStr = typeof dimhead === 'string' ? dimhead : dimhead.content;
                 var valStr = (vertially
-                        ? dimHeadStr + encodeHTML(dimInfo.displayName || '-') + ': '
+                        ? dimheadStr + encodeHTML(dimInfo.displayName || '-') + ': '
                         : ''
                     )
                     // FIXME should not format time for raw data?
@@ -25611,7 +25611,7 @@ ComponentModel.extend({
         seriesLayoutBy: SERIES_LAYOUT_BY_COLUMN,
 
         // null/'auto': auto detect header, see "module:echarts/data/helper/sourceHelper"
-        sourceHeader: null,
+        sourceheader: null,
 
         dimensions: null,
 

@@ -2538,7 +2538,7 @@ function datepickerLocale(localeCode, dpLocaleCode, dpOptions) {
     var fcOptions = exports.localeOptionHash[localeCode] || (exports.localeOptionHash[localeCode] = {});
     // transfer some simple options from datepicker to fc
     fcOptions.isRTL = dpOptions.isRTL;
-    fcOptions.weekNumberTitle = dpOptions.weekHeader;
+    fcOptions.weekNumberTitle = dpOptions.weekheader;
     // compute some more complex options from datepicker
     $.each(dpComputableOptions, function (name, func) {
         fcOptions[name] = func(dpOptions);
@@ -2607,7 +2607,7 @@ exports.globalDefaults = {
     forceEventDuration: false,
     nextDayThreshold: '09:00:00',
     // display
-    columnHeader: true,
+    columnheader: true,
     defaultView: 'month',
     aspectRatio: 1.35,
     header: {
@@ -6057,10 +6057,10 @@ var DayTableMixin = /** @class */ (function (_super) {
     // Computes and assigned the colCnt property and updates any options that may be computed from it
     DayTableMixin.prototype.updateDayTableCols = function () {
         this.colCnt = this.computeColCnt();
-        this.colHeadFormat =
-            this.opt('columnHeaderFormat') ||
+        this.colheadFormat =
+            this.opt('columnheaderFormat') ||
                 this.opt('columnFormat') || // deprecated
-                this.computeColHeadFormat();
+                this.computeColheadFormat();
     };
     // Determines how many columns there should be in the table
     DayTableMixin.prototype.computeColCnt = function () {
@@ -6110,7 +6110,7 @@ var DayTableMixin = /** @class */ (function (_super) {
     /* Options
     ------------------------------------------------------------------------------------------------------------------*/
     // Computes a default column header formatting string if `colFormat` is not explicitly defined
-    DayTableMixin.prototype.computeColHeadFormat = function () {
+    DayTableMixin.prototype.computeColheadFormat = function () {
         // if more than one week row, or if there are a lot of columns with not much space,
         // put just the day numbers will be in each cell
         if (this.rowCnt > 1 || this.colCnt > 10) {
@@ -6199,59 +6199,59 @@ var DayTableMixin = /** @class */ (function (_super) {
         }
         return segs;
     };
-    /* Header Rendering
+    /* header Rendering
     ------------------------------------------------------------------------------------------------------------------*/
-    DayTableMixin.prototype.renderHeadHtml = function () {
+    DayTableMixin.prototype.renderheadHtml = function () {
         var theme = this.view.calendar.theme;
         return '' +
             '<div class="fc-row ' + theme.getClass('headerRow') + '">' +
             '<table class="' + theme.getClass('tableGrid') + '">' +
             '<thead>' +
-            this.renderHeadTrHtml() +
+            this.renderheadTrHtml() +
             '</thead>' +
             '</table>' +
             '</div>';
     };
-    DayTableMixin.prototype.renderHeadIntroHtml = function () {
+    DayTableMixin.prototype.renderheadIntroHtml = function () {
         return this.renderIntroHtml(); // fall back to generic
     };
-    DayTableMixin.prototype.renderHeadTrHtml = function () {
+    DayTableMixin.prototype.renderheadTrHtml = function () {
         return '' +
             '<tr>' +
-            (this.isRTL ? '' : this.renderHeadIntroHtml()) +
-            this.renderHeadDateCellsHtml() +
-            (this.isRTL ? this.renderHeadIntroHtml() : '') +
+            (this.isRTL ? '' : this.renderheadIntroHtml()) +
+            this.renderheadDateCellsHtml() +
+            (this.isRTL ? this.renderheadIntroHtml() : '') +
             '</tr>';
     };
-    DayTableMixin.prototype.renderHeadDateCellsHtml = function () {
+    DayTableMixin.prototype.renderheadDateCellsHtml = function () {
         var htmls = [];
         var col;
         var date;
         for (col = 0; col < this.colCnt; col++) {
             date = this.getCellDate(0, col);
-            htmls.push(this.renderHeadDateCellHtml(date));
+            htmls.push(this.renderheadDateCellHtml(date));
         }
         return htmls.join('');
     };
     // TODO: when internalApiVersion, accept an object for HTML attributes
     // (colspan should be no different)
-    DayTableMixin.prototype.renderHeadDateCellHtml = function (date, colspan, otherAttrs) {
+    DayTableMixin.prototype.renderheadDateCellHtml = function (date, colspan, otherAttrs) {
         var t = this;
         var view = t.view;
         var isDateValid = t.dateProfile.activeUnzonedRange.containsDate(date); // TODO: called too frequently. cache somehow.
         var classNames = [
             'fc-day-header',
-            view.calendar.theme.getClass('widgetHeader')
+            view.calendar.theme.getClass('widgetheader')
         ];
         var innerHtml;
-        if (typeof t.opt('columnHeaderHtml') === 'function') {
-            innerHtml = t.opt('columnHeaderHtml')(date);
+        if (typeof t.opt('columnheaderHtml') === 'function') {
+            innerHtml = t.opt('columnheaderHtml')(date);
         }
-        else if (typeof t.opt('columnHeaderText') === 'function') {
-            innerHtml = util_1.htmlEscape(t.opt('columnHeaderText')(date));
+        else if (typeof t.opt('columnheaderText') === 'function') {
+            innerHtml = util_1.htmlEscape(t.opt('columnheaderText')(date));
         }
         else {
-            innerHtml = util_1.htmlEscape(date.format(t.colHeadFormat));
+            innerHtml = util_1.htmlEscape(date.format(t.colheadFormat));
         }
         // if only one row of days, the classNames on the header can represent the specific days beneath
         if (t.rowCnt === 1) {
@@ -6736,7 +6736,7 @@ var DayGrid = /** @class */ (function (_super) {
         var row;
         var col;
         if (this.headContainerEl) {
-            this.headContainerEl.html(this.renderHeadHtml());
+            this.headContainerEl.html(this.renderheadHtml());
         }
         for (row = 0; row < rowCnt; row++) {
             html += this.renderDayRowHtml(row, this.isRigid);
@@ -7196,7 +7196,7 @@ var DayGrid = /** @class */ (function (_super) {
         var view = this.view;
         var theme = view.calendar.theme;
         var title = this.getCellDate(row, col).format(this.opt('dayPopoverFormat'));
-        var content = $('<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
+        var content = $('<div class="fc-header ' + theme.getClass('popoverheader') + '">' +
             '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
             '<span class="fc-title">' +
             util_1.htmlEscape(title) +
@@ -7354,10 +7354,10 @@ var BasicView = /** @class */ (function (_super) {
         var theme = this.calendar.theme;
         return '' +
             '<table class="' + theme.getClass('tableGrid') + '">' +
-            (this.opt('columnHeader') ?
+            (this.opt('columnheader') ?
                 '<thead class="fc-head">' +
                     '<tr>' +
-                    '<td class="fc-head-container ' + theme.getClass('widgetHeader') + '">&nbsp;</td>' +
+                    '<td class="fc-head-container ' + theme.getClass('widgetheader') + '">&nbsp;</td>' +
                     '</tr>' +
                     '</thead>' :
                 '') +
@@ -7474,11 +7474,11 @@ function makeDayGridSubclass(SuperClass) {
             return _this;
         }
         // Generates the HTML that will go before the day-of week header cells
-        SubClass.prototype.renderHeadIntroHtml = function () {
+        SubClass.prototype.renderheadIntroHtml = function () {
             var view = this.view;
             if (this.colWeekNumbersVisible) {
                 return '' +
-                    '<th class="fc-week-number ' + view.calendar.theme.getClass('widgetHeader') + '" ' + view.weekNumberStyleAttr() + '>' +
+                    '<th class="fc-week-number ' + view.calendar.theme.getClass('widgetheader') + '" ' + view.weekNumberStyleAttr() + '>' +
                     '<span>' + // needed for matchCellWidths
                     util_1.htmlEscape(this.opt('weekNumberTitle')) +
                     '</span>' +
@@ -8237,7 +8237,7 @@ var StandardTheme = /** @class */ (function (_super) {
 exports.default = StandardTheme;
 StandardTheme.prototype.classes = {
     widget: 'fc-unthemed',
-    widgetHeader: 'fc-widget-header',
+    widgetheader: 'fc-widget-header',
     widgetContent: 'fc-widget-content',
     buttonGroup: 'fc-button-group',
     button: 'fc-button',
@@ -8248,7 +8248,7 @@ StandardTheme.prototype.classes = {
     stateDisabled: 'fc-state-disabled',
     stateHover: 'fc-state-hover',
     stateDown: 'fc-state-down',
-    popoverHeader: 'fc-widget-header',
+    popoverheader: 'fc-widget-header',
     popoverContent: 'fc-widget-content',
     // day grid
     headerRow: 'fc-widget-header',
@@ -8286,7 +8286,7 @@ var JqueryUiTheme = /** @class */ (function (_super) {
 exports.default = JqueryUiTheme;
 JqueryUiTheme.prototype.classes = {
     widget: 'ui-widget',
-    widgetHeader: 'ui-widget-header',
+    widgetheader: 'ui-widget-header',
     widgetContent: 'ui-widget-content',
     buttonGroup: 'fc-button-group',
     button: 'ui-button',
@@ -8298,7 +8298,7 @@ JqueryUiTheme.prototype.classes = {
     stateHover: 'ui-state-hover',
     stateDown: 'ui-state-down',
     today: 'ui-state-highlight',
-    popoverHeader: 'ui-widget-header',
+    popoverheader: 'ui-widget-header',
     popoverContent: 'ui-widget-content',
     // day grid
     headerRow: 'ui-widget-header',
@@ -9529,7 +9529,7 @@ var Calendar = /** @class */ (function () {
         });
         this.contentEl = $("<div class='fc-view-container'/>").prependTo(el);
         this.initToolbars();
-        this.renderHeader();
+        this.renderheader();
         this.renderFooter();
         this.renderView(this.opt('defaultView'));
         if (this.opt('handleWindowResize')) {
@@ -9611,7 +9611,7 @@ var Calendar = /** @class */ (function () {
         }
         this.thawContentHeight();
     };
-    // Unrenders the current view and reflects this change in the Header.
+    // Unrenders the current view and reflects this change in the header.
     // Unregsiters the `view`, but does not remove from viewByType hash.
     Calendar.prototype.clearView = function () {
         var currentView = this.view;
@@ -9733,11 +9733,11 @@ var Calendar = /** @class */ (function () {
     // Toolbar
     // -----------------------------------------------------------------------------------------------------------------
     Calendar.prototype.initToolbars = function () {
-        this.header = new Toolbar_1.default(this, this.computeHeaderOptions());
+        this.header = new Toolbar_1.default(this, this.computeheaderOptions());
         this.footer = new Toolbar_1.default(this, this.computeFooterOptions());
         this.toolbarsManager = new Iterator_1.default([this.header, this.footer]);
     };
-    Calendar.prototype.computeHeaderOptions = function () {
+    Calendar.prototype.computeheaderOptions = function () {
         return {
             extraClasses: 'fc-header-toolbar',
             layout: this.opt('header')
@@ -9749,10 +9749,10 @@ var Calendar = /** @class */ (function () {
             layout: this.opt('footer')
         };
     };
-    // can be called repeatedly and Header will rerender
-    Calendar.prototype.renderHeader = function () {
+    // can be called repeatedly and header will rerender
+    Calendar.prototype.renderheader = function () {
         var header = this.header;
-        header.setToolbarOptions(this.computeHeaderOptions());
+        header.setToolbarOptions(this.computeheaderOptions());
         header.render();
         if (header.el) {
             this.el.prepend(header.el);
@@ -11362,10 +11362,10 @@ var AgendaView = /** @class */ (function (_super) {
         var theme = this.calendar.theme;
         return '' +
             '<table class="' + theme.getClass('tableGrid') + '">' +
-            (this.opt('columnHeader') ?
+            (this.opt('columnheader') ?
                 '<thead class="fc-head">' +
                     '<tr>' +
-                    '<td class="fc-head-container ' + theme.getClass('widgetHeader') + '">&nbsp;</td>' +
+                    '<td class="fc-head-container ' + theme.getClass('widgetheader') + '">&nbsp;</td>' +
                     '</tr>' +
                     '</thead>' :
                 '') +
@@ -11374,7 +11374,7 @@ var AgendaView = /** @class */ (function (_super) {
             '<td class="' + theme.getClass('widgetContent') + '">' +
             (this.dayGrid ?
                 '<div class="fc-day-grid"/>' +
-                    '<hr class="fc-divider ' + theme.getClass('widgetHeader') + '"/>' :
+                    '<hr class="fc-divider ' + theme.getClass('widgetheader') + '"/>' :
                 '') +
             '</td>' +
             '</tr>' +
@@ -11552,7 +11552,7 @@ function makeTimeGridSubclass(SuperClass) {
             return _super !== null && _super.apply(this, arguments) || this;
         }
         // Generates the HTML that will go before the day-of week header cells
-        SubClass.prototype.renderHeadIntroHtml = function () {
+        SubClass.prototype.renderheadIntroHtml = function () {
             var view = this.view;
             var calendar = view.calendar;
             var weekStart = calendar.msToUtcMoment(this.dateProfile.renderUnzonedRange.startMs, true);
@@ -11560,14 +11560,14 @@ function makeTimeGridSubclass(SuperClass) {
             if (this.opt('weekNumbers')) {
                 weekText = weekStart.format(this.opt('smallWeekFormat'));
                 return '' +
-                    '<th class="fc-axis fc-week-number ' + calendar.theme.getClass('widgetHeader') + '" ' + view.axisStyleAttr() + '>' +
+                    '<th class="fc-axis fc-week-number ' + calendar.theme.getClass('widgetheader') + '" ' + view.axisStyleAttr() + '>' +
                     view.buildGotoAnchorHtml(// aside from link, important for matchCellWidths
                     { date: weekStart, type: 'week', forceOff: this.colCnt > 1 }, util_1.htmlEscape(weekText) // inner HTML
                     ) +
                     '</th>';
             }
             else {
-                return '<th class="fc-axis ' + calendar.theme.getClass('widgetHeader') + '" ' + view.axisStyleAttr() + '></th>';
+                return '<th class="fc-axis ' + calendar.theme.getClass('widgetheader') + '" ' + view.axisStyleAttr() + '></th>';
             }
         };
         // Generates the HTML that goes before the bg of the TimeGrid slot area. Long vertical column.
@@ -11754,7 +11754,7 @@ var TimeGrid = /** @class */ (function (_super) {
         var theme = this.view.calendar.theme;
         this.el.html('<div class="fc-bg"></div>' +
             '<div class="fc-slats"></div>' +
-            '<hr class="fc-divider ' + theme.getClass('widgetHeader') + '" style="display:none" />');
+            '<hr class="fc-divider ' + theme.getClass('widgetheader') + '" style="display:none" />');
         this.bottomRuleEl = this.el.find('hr');
     };
     TimeGrid.prototype.renderSlats = function () {
@@ -11815,7 +11815,7 @@ var TimeGrid = /** @class */ (function (_super) {
             return new UnzonedRange_1.default(dayDate.clone().add(dateProfile.minTime), dayDate.clone().add(dateProfile.maxTime));
         });
         if (this.headContainerEl) {
-            this.headContainerEl.html(this.renderHeadHtml());
+            this.headContainerEl.html(this.renderheadHtml());
         }
         this.el.find('> .fc-bg').html('<table class="' + theme.getClass('tableGrid') + '">' +
             this.renderBgTrHtml(0) + // row=0
@@ -12304,7 +12304,7 @@ var ListView = /** @class */ (function (_super) {
             daySegs = segsByDay[dayIndex];
             if (daySegs) {
                 // append a day header
-                tbodyEl.append(this.dayHeaderHtml(this.dayDates[dayIndex]));
+                tbodyEl.append(this.dayheaderHtml(this.dayDates[dayIndex]));
                 this.eventRenderer.sortEventSegs(daySegs);
                 for (i = 0; i < daySegs.length; i++) {
                     tbodyEl.append(daySegs[i].el); // append event row
@@ -12326,11 +12326,11 @@ var ListView = /** @class */ (function (_super) {
         return segsByDay;
     };
     // generates the HTML for the day headers that live amongst the event rows
-    ListView.prototype.dayHeaderHtml = function (dayDate) {
+    ListView.prototype.dayheaderHtml = function (dayDate) {
         var mainFormat = this.opt('listDayFormat');
         var altFormat = this.opt('listDayAltFormat');
         return '<tr class="fc-list-heading" data-date="' + dayDate.format('YYYY-MM-DD') + '">' +
-            '<td class="' + this.calendar.theme.getClass('widgetHeader') + '" colspan="3">' +
+            '<td class="' + this.calendar.theme.getClass('widgetheader') + '" colspan="3">' +
             (mainFormat ?
                 this.buildGotoAnchorHtml(dayDate, { 'class': 'fc-list-heading-main' }, util_1.htmlEscape(dayDate.format(mainFormat)) // inner HTML
                 ) :
@@ -12761,7 +12761,7 @@ var OptionsManager = /** @class */ (function (_super) {
             }
         }
         // catch-all. rerender the header and footer and rebuild/rerender the current view
-        this._calendar.renderHeader();
+        this._calendar.renderheader();
         this._calendar.renderFooter();
         // even non-current views will be affected by this option change. do before rerender
         // TODO: detangle
@@ -14800,7 +14800,7 @@ BootstrapTheme.prototype.classes = {
     stateDisabled: 'disabled',
     today: 'alert alert-info',
     popover: 'panel panel-default',
-    popoverHeader: 'panel-heading',
+    popoverheader: 'panel-heading',
     popoverContent: 'panel-body',
     // day grid
     headerRow: 'panel-default',

@@ -1997,7 +1997,7 @@
             crop: false,
 
             // 是否保留头部信息
-            preserveHeaders: false,
+            preserveheaders: false,
 
             // 是否允许放大。
             allowMagnify: false
@@ -2137,7 +2137,7 @@
                 quality: 70,
                 allowMagnify: true,
                 crop: true,
-                preserveHeaders: false,
+                preserveheaders: false,
 
                 // 为空的话则保留原有图片格式。
                 // 否则强制转换成指定的类型。
@@ -2169,7 +2169,7 @@
              *     crop: false,
              *
              *     // 是否保留头部meta信息。
-             *     preserveHeaders: true,
+             *     preserveheaders: true,
              *
              *     // 如果发现压缩后文件大小比原来还大，则使用原来图片
              *     // 此属性可能会影响图片自动纠正功能
@@ -2186,7 +2186,7 @@
                 quality: 90,
                 allowMagnify: false,
                 crop: false,
-                preserveHeaders: true
+                preserveheaders: true
             }
         });
 
@@ -3239,7 +3239,7 @@
                 }
             },
 
-            setRequestHeader: function( key, value ) {
+            setRequestheader: function( key, value ) {
                 if ( typeof key === 'object' ) {
                     $.extend( this._headers, key );
                 } else {
@@ -4104,7 +4104,7 @@
                 // 开始发送。
                 tr.appendBlob( opts.fileVal, block.blob, file.name );
                 tr.append( data );
-                tr.setRequestHeader( headers );
+                tr.setRequestheader( headers );
                 tr.send();
             },
 
@@ -5078,7 +5078,7 @@
             },
 
             // imagemeat会复写这个方法，如果用户选择加载那个文件了的话。
-            updateImageHead: function( data ) {
+            updateImagehead: function( data ) {
                 return data;
             }
         };
@@ -5164,11 +5164,11 @@
 
                     if ( headLength > 6 ) {
                         if ( buffer.slice ) {
-                            ret.imageHead = buffer.slice( 2, headLength );
+                            ret.imagehead = buffer.slice( 2, headLength );
                         } else {
                             // Workaround for IE10, which does not yet
                             // support ArrayBuffer.slice:
-                            ret.imageHead = new Uint8Array( buffer )
+                            ret.imagehead = new Uint8Array( buffer )
                                     .subarray( 2, headLength );
                         }
                     }
@@ -5177,14 +5177,14 @@
                 return ret;
             },
 
-            updateImageHead: function( buffer, head ) {
+            updateImagehead: function( buffer, head ) {
                 var data = this._parse( buffer, true ),
                     buf1, buf2, bodyoffset;
 
 
                 bodyoffset = 2;
-                if ( data.imageHead ) {
-                    bodyoffset = 2 + data.imageHead.byteLength;
+                if ( data.imagehead ) {
+                    bodyoffset = 2 + data.imagehead.byteLength;
                 }
 
                 if ( buffer.slice ) {
@@ -5208,8 +5208,8 @@
             return api.parse.apply( api, arguments );
         };
 
-        Util.updateImageHead = function() {
-            return api.updateImageHead.apply( api, arguments );
+        Util.updateImagehead = function() {
+            return api.updateImagehead.apply( api, arguments );
         };
 
         return api;
@@ -6426,7 +6426,7 @@
                 cvs.width = w;
                 cvs.height = h;
 
-                opts.preserveHeaders || this._rotate2Orientaion( cvs, orientation );
+                opts.preserveheaders || this._rotate2Orientaion( cvs, orientation );
                 this._renderImageToCanvas( cvs, img, -x, -y, iw * s, ih * s );
 
                 this._blob = null;    // 没用了，可以删掉了。
@@ -6449,12 +6449,12 @@
 
                         blob = Util.canvasToDataUrl( canvas, type, opts.quality );
 
-                        if ( opts.preserveHeaders && this._metas &&
-                                this._metas.imageHead ) {
+                        if ( opts.preserveheaders && this._metas &&
+                                this._metas.imagehead ) {
 
                             blob = Util.dataURL2ArrayBuffer( blob );
-                            blob = Util.updateImageHead( blob,
-                                    this._metas.imageHead );
+                            blob = Util.updateImagehead( blob,
+                                    this._metas.imagehead );
                             blob = Util.arrayBufferToBlob( blob, type );
                             return blob;
                         }
@@ -6561,7 +6561,7 @@
                 x = (cvs.width - w) / 2;
                 y = (cvs.height - h) / 2;
 
-                opts.preserveHeaders || this._rotate2Orientaion( cvs, orientation );
+                opts.preserveheaders || this._rotate2Orientaion( cvs, orientation );
 
                 this._renderImageToCanvas( cvs, img, x, y, w, h );
             },
@@ -6812,7 +6812,7 @@
                     xhr.open( opts.method, server );
                 }
 
-                this._setRequestHeader( xhr, opts.headers );
+                this._setRequestheader( xhr, opts.headers );
 
                 if ( binary ) {
                     // 强制设置成 content-type 为文件流。
@@ -6915,9 +6915,9 @@
                 return xhr;
             },
 
-            _setRequestHeader: function( xhr, headers ) {
+            _setRequestheader: function( xhr, headers ) {
                 $.each( headers, function( key, val ) {
-                    xhr.setRequestHeader( key, val );
+                    xhr.setRequestheader( key, val );
                 });
             },
 
@@ -7854,7 +7854,7 @@
                             opts.filename || owner._formData.name || '' );
                 }
 
-                this._setRequestHeader( xhr, opts.headers );
+                this._setRequestheader( xhr, opts.headers );
                 xhr.exec( 'send', {
                     method: opts.method,
                     url: server,
@@ -7958,9 +7958,9 @@
                 return xhr;
             },
 
-            _setRequestHeader: function( xhr, headers ) {
+            _setRequestheader: function( xhr, headers ) {
                 $.each( headers, function( key, val ) {
-                    xhr.exec( 'setRequestHeader', key, val );
+                    xhr.exec( 'setRequestheader', key, val );
                 });
             }
         });
