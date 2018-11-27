@@ -4,5 +4,5 @@
 
 /dist/css/components/*.css
 /dist/css/components/*.css.map
-/dist/css/plugins/*.css
-/dist/css/plugins/*.css.map
+/dist/css/**/*.css
+/dist/css/**/*.css.map

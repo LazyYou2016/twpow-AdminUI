@@ -9216,14 +9216,6 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 .fc-event-container .fc-day-grid-event {
   padding: 2px 4px;
 }
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 1px solid #b0cfff;
-}
 .fc-view-container .fc-head-container table thead tr th.fc-day-header {
   background-color: #4a92ff !important;
   color: #fff;
@@ -9232,6 +9224,14 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 }
 .fc-view-container .fc-head-container table thead tr th.fc-day-header a {
   color: #fff;
+}
+.fc-view-container .table-bordered > thead > tr > th,
+.fc-view-container .table-bordered > tbody > tr > th,
+.fc-view-container .table-bordered > tfoot > tr > th,
+.fc-view-container .table-bordered > thead > tr > td,
+.fc-view-container .table-bordered > tbody > tr > td,
+.fc-view-container .table-bordered > tfoot > tr > td {
+  border: 1px solid #b0cfff;
 }
 .fc button {
   background-color: #4a92ff !important;

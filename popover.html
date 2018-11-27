@@ -10,38 +10,175 @@
   <meta name="keywords" content="关键词" />
   <title></title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    .tip-demo{
+      font-size: 18px;
+      color: red;
+      font-weight:bold;
+    }
+    .popover-demo{
+      border-color: #040538 !important;
+      padding: 0 !important;
+    }
+    .popover-demo .popover-title{
+      background-color: #040538;
+      color: #ebebeb;
+    }
+    .popover-demo.popover.bottom>.arrow:after{
+      border-bottom-color: #040538 !important;
+    }
+  </style>
 </head>
 
 <body>
   <div class="card-fluid">
-    <div class="panel panel-default">
-      <div class="panel-heading">popover</div>
-      <div class="panel-body text-center">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">popover</div>
+          <div class="panel-body text-center">
 
-        <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
-          data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on 左侧
-        </button>
+            <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
+                    data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on 左侧
+            </button>
 
-        <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
-          data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on 顶部
-        </button>
+            <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
+                    data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on 顶部
+            </button>
 
-        <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
-          data-placement="bottom" data-content="Vivamus
+            <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
+                    data-placement="bottom" data-content="Vivamus
             sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on 底部
-        </button>
+              Popover on 底部
+            </button>
 
-        <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
-          data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-          Popover on 右侧
-        </button>
+            <button type="button" class="btn btn-default" title="Popover title" data-container="body" data-toggle="popover"
+                    data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on 右侧
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">触发</div>
+          <div class="panel-body text-center">
+            <a tabindex="0"
+               class="btn btn-danger"
+               role="button"
+               data-toggle="popover"
+               data-trigger="focus"
+               title="Dismissible popover"
+               data-content="And here's some amazing content. It's very engaging. Right?">
+              可消失的弹出框
+            </a>
+
+            <a tabindex="0"
+               class="btn btn-default"
+               role="button"
+               data-toggle="popover"
+               data-trigger="click"
+               data-content="默认是click">
+              默认click
+            </a>
+
+            <a tabindex="0"
+               class="btn btn-default"
+               role="button"
+               data-toggle="popover"
+               data-trigger="hover"
+               title="Dismissible popover"
+               data-content="hover">
+              hover
+            </a>
+            <a tabindex="0"
+               class="btn btn-default"
+               role="button"
+               data-toggle="popover"
+               data-trigger="focus"
+               title="Dismissible popover"
+               data-content="And here's some amazing content. It's very engaging. Right?">
+              focus
+            </a>
+            <a tabindex="0"
+               class="btn btn-default"
+               role="button"
+               data-toggle="popover"
+               data-trigger="manual"
+               title="Dismissible popover"
+               data-content="And here's some amazing content. It's very engaging. Right?">
+              manual
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">自定义</div>
+          <div class="panel-body text-center">
+            <!-- HTML to write -->
+            <a href="#"
+               class="btn btn-default"
+               data-toggle="popover"
+               role="button"
+               id="example">popover表格</a>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="#"
+               class="btn btn-default"
+               data-toggle="popover"
+               id="example-css"
+               title="在tooltip添加css类名">
+              在popover添加css类名
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script src="dist/js/fileSrc.js"></script>
+  <script>
+    var html = '<table class="table table-bordered">\n' +
+        '    <thead>\n' +
+        '    <tr>\n' +
+        '      <th>ID</th>\n' +
+        '      <th>姓名</th>\n' +
+        '      <th>年龄</th>\n' +
+        '    </tr>\n' +
+        '    </thead>\n' +
+        '    <tbody>\n' +
+        '    <tr>\n' +
+        '      <td>1</td>\n' +
+        '      <td>小红小红小红小红小红小红小红小红小红小红小红</td>\n' +
+        '      <td>23</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <td>1</td>\n' +
+        '      <td>小红</td>\n' +
+        '      <td>23</td>\n' +
+        '    </tr>\n' +
+        '    </tbody>\n' +
+        '  </table>';
+    $('#example').popover({
+        html: true,
+        placement: 'bottom',
+        trigger: 'hover',
+        title: '<b>表格</b>',
+        content: html
+    })
+    $('#example-css').popover({
+        html: true,
+        placement: 'bottom',
+        trigger: 'foucus',
+        title: '<b>表格</b>',
+        content: '啥鬼啊，样式真好丑！',
+        template: '<div class="popover popover-demo" role="tooltip"><div class="arrow"></div><h3 class="popover-title text-danger"></h3><p style="font-size: 12px;color: #999;">注意：这是无法删除哈</p><div class="popover-content"></div></div>'
+    })
+  </script>
 </body>
 
 </html>

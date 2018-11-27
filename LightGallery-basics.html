@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LightGallery 图库</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="dist/css/plugins/lightgallery/lightgallery.css">
+    <link rel="stylesheet" href="dist/css/plugins/lightgallery/style.css">
+    <style type="text/css">
+        body{
+            background-color: #152836
+        }
+        .demo-header{
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <header class="demo-header">
+                <h1>基本相册</h1>
+            </header>
+            <div class="demo-gallery">
+                <div id="lightgallery" class="justified-gallery">
+                    <a href="dist/imgs/light/1.jpg">
+                        <img src="dist/imgs/light/1-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/plugins/lightgallery/jquery.mousewheel.min.js"></script>
+<script src="dist/js/plugins/lightgallery/lightgallery-custom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery({
+            thumbnail:true
+        });
+    });
+</script>
+</body>
+</html>
