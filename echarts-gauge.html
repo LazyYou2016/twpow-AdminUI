@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度图表-仪表盘</title>
+    <style>
+        .echarts-content {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本仪表盘</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="basic_gauge" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">温度仪表盘</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="wendu_gauge" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">湿度仪表盘</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="shidu_gauge" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">自定义仪表盘</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="Gauge_Car" class="echarts-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/plugins/echarts/echarts.js"></script>
+<script src="dist/js/plugins/echarts/echarts-util.js"></script>
+<script type="text/javascript">
+    var basic_data = {
+        groups: ['业务指标'],
+        data: [
+            {name: '完成率', value: 50}
+        ]
+    };
+    var data = {
+        groups: ['温度'],
+        data: [
+            {name: '温度', value: 25.65}
+        ]
+    };
+    /**
+     * 基本仪表盘
+     * */
+    var basic_gauge = MyEcharts.EchartsOption.gauge(basic_data, {
+        title: '业务指标',
+        subtext: '完成率'
+    });
+    var basic_gauge_init = MyEcharts.EchartsOption.initChart(basic_gauge, 'basic_gauge')
+    /**
+     * 温度仪表盘
+     * */
+    var wendu_gauge = MyEcharts.EchartsOption.gauge(data, {
+        title: '温度',
+        subtext: '%',
+        series: [{
+            min: '-30',
+            max: '50',
+            splitNumber: 16,
+            detail: {
+                formatter: '{value}°C'
+            },
+            axisLine: {
+                lineStyle: {
+                    color: [[0.564, '#00B7F6'], [0.69, '#22A75D'], [1, '#F56F33']]
+                }
+            }
+        }]
+    });
+
+    var wendu_gauge_init =  MyEcharts.EchartsOption.initChart(wendu_gauge, 'wendu_gauge');
+    /**
+     * 湿度仪表盘
+     * */
+    var shidu_gauge = MyEcharts.EchartsOption.gauge(data, {
+        title: '湿度',
+        subtext: '%',
+        series: [{
+            min: '20',
+            max: '100',
+            splitNumber: 8,
+            detail: {
+                formatter: '{value}%',
+                fontWeight: 'bolder',
+                borderRadius: 30,
+                backgroundColor: '#333',
+                fontSize: 20
+                // borderColor: '#aaa',
+                // shadowBlur: 5,
+                // shadowColor: '#333',
+                // shadowOffsetX: 0,
+                // shadowOffsetY: 3,
+                // borderWidth: 2,
+                // textBorderColor: '#000',
+                // textBorderWidth: 2,
+                // textShadowBlur: 2,
+                // textShadowColor: '#fff',
+                // textShadowOffsetX: 0,
+                // textShadowOffsetY: 0,
+                // fontFamily: 'Arial',
+                // width: 100,
+                // color: '#eee',
+            },
+            title: {
+                color: 'red',
+                offsetCenter: [0, 100]
+            },
+            axisLine: {
+                lineStyle: {
+                    color: [[0.25, '#00B7F6'], [0.625, '#22A75D'], [1, '#F56F33']]
+                }
+            }
+        }]
+    });
+
+    var shidu_gauge_init =  MyEcharts.EchartsOption.initChart(shidu_gauge, 'shidu_gauge');
+
+    setInterval(function(){
+        basic_data.data[0].value = (Math.random()*100).toFixed(2) - 0;
+        data.data[0].value = (Math.random()*100).toFixed(2) - 0;
+        basic_gauge_init.setOption(basic_gauge)
+        wendu_gauge_init.setOption(wendu_gauge)
+        shidu_gauge_init.setOption(shidu_gauge)
+    },2000)
+
+    /**
+     * Gauge_Car 车仪表盘
+     * */
+    // var Gauge_Car = MyEcharts.EchartsOption.gauge(data, {
+    //     title: '车仪表盘',
+    //     subtext: '牧马人'
+    // });
+    var option_car = {
+        tooltip : {
+            formatter: "{a} <br/>{c} {b}"
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        series : [
+            {
+                name: '速度',
+                type: 'gauge',
+                z: 3,
+                min: 0,
+                max: 220,
+                splitNumber: 11,
+                radius: '75%',
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 10
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length: 15,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                axisLabel: {
+                    backgroundColor: 'auto',
+                    borderRadius: 2,
+                    color: '#eee',
+                    padding: 3,
+                    textShadowBlur: 2,
+                    textShadowOffsetX: 1,
+                    textShadowOffsetY: 1,
+                    textShadowColor: '#222'
+                },
+                title : {
+                    // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder',
+                    fontSize: 20,
+                    fontStyle: 'italic'
+                },
+                detail : {
+                    // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    formatter: function (value) {
+                        value = (value + '').split('.');
+                        value.length < 2 && (value.push('00'));
+                        return ('00' + value[0]).slice(-2)
+                            + '.' + (value[1] + '00').slice(0, 2);
+                    },
+                    fontWeight: 'bolder',
+                    borderRadius: 3,
+                    backgroundColor: '#444',
+                    borderColor: '#aaa',
+                    shadowBlur: 5,
+                    shadowColor: '#333',
+                    shadowOffsetX: 0,
+                    shadowOffsetY: 3,
+                    borderWidth: 2,
+                    textBorderColor: '#000',
+                    textBorderWidth: 2,
+                    textShadowBlur: 2,
+                    textShadowColor: '#fff',
+                    textShadowOffsetX: 0,
+                    textShadowOffsetY: 0,
+                    fontFamily: 'Arial',
+                    width: 100,
+                    color: '#eee',
+                    rich: {}
+                },
+                data:[{value: 40, name: 'km/h'}]
+            },
+            {
+                name: '转速',
+                type: 'gauge',
+                center: ['20%', '55%'],    // 默认全局居中
+                radius: '55%',
+                min:0,
+                max:7,
+                endAngle:45,
+                splitNumber:7,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    length:12,        // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length:20,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:5
+                },
+                title: {
+                    offsetCenter: [0, '-30%'],       // x, y，单位px
+                },
+                detail: {
+                    // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontWeight: 'bolder'
+                },
+                data:[{value: 1.5, name: 'x1000 r/min'}]
+            },
+            {
+                name: '油表',
+                type: 'gauge',
+                center: ['77%', '50%'],    // 默认全局居中
+                radius: '55%',
+                min: 0,
+                max: 2,
+                startAngle: 135,
+                endAngle: 45,
+                splitNumber: 2,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    splitNumber: 5,
+                    length: 10,        // 属性length控制线长
+                    lineStyle: {        // 属性lineStyle控制线条样式
+                        color: 'auto'
+                    }
+                },
+                axisLabel: {
+                    formatter:function(v){
+                        switch (v + '') {
+                            case '0' : return 'E';
+                            case '1' : return 'Gas';
+                            case '2' : return 'F';
+                        }
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 15,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:2
+                },
+                title : {
+                    show: false
+                },
+                detail : {
+                    show: false
+                },
+                data:[{value: 0.5, name: 'gas'}]
+            },
+            {
+                name: '水表',
+                type: 'gauge',
+                center : ['77%', '50%'],    // 默认全局居中
+                radius : '55%',
+                min: 0,
+                max: 2,
+                startAngle: 315,
+                endAngle: 225,
+                splitNumber: 2,
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        width: 8
+                    }
+                },
+                axisTick: {            // 坐标轴小标记
+                    show: false
+                },
+                axisLabel: {
+                    formatter:function(v){
+                        switch (v + '') {
+                            case '0' : return 'H';
+                            case '1' : return 'Water';
+                            case '2' : return 'C';
+                        }
+                    }
+                },
+                splitLine: {           // 分隔线
+                    length: 15,         // 属性length控制线长
+                    lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                        color: 'auto'
+                    }
+                },
+                pointer: {
+                    width:2
+                },
+                title: {
+                    show: false
+                },
+                detail: {
+                    show: false
+                },
+                data:[{value: 0.5, name: 'gas'}]
+            }
+        ]
+    };
+    var Gauge_Car_init =  MyEcharts.EchartsOption.initChart(option_car, 'Gauge_Car');
+    Gauge_Car_init.setOption(option_car)
+
+    setInterval(function (){
+        option_car.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+        option_car.series[1].data[0].value = (Math.random()*7).toFixed(2) - 0;
+        option_car.series[2].data[0].value = (Math.random()*2).toFixed(2) - 0;
+        option_car.series[3].data[0].value = (Math.random()*2).toFixed(2) - 0;
+        Gauge_Car_init.setOption(option_car,true);
+    },2000);
+</script>
+</body>
+</html>

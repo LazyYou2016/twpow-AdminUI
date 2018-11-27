@@ -204,7 +204,46 @@ var MyEcharts = {
                 temp_data.push(temp_series)
             }
             return temp_data
-        }
+        },
+        RadarFormate: function (data, type) {
+            //存储最大值数组
+            var indicators = new Array();
+            //定义data.value数据存储
+            var dataValues = [];
+            // 遍历分类
+            for (var i =0; i <data.groups.length;i++) {
+                dataValues.push({name:data.groups[i], value:data.data[i]})
+            }
+            indicators = {
+                type : 'radar',
+                data:dataValues
+            };
+            return indicators
+        },
+        //整理从data数组转成series格式，适合通用仪表盘
+        //数据格式：{
+        //         groups: ['温度'],
+        //         data: [
+        //             {name: '温度', value: 25},
+        //         ]
+        //     }
+        /**
+         * @param data:  json数据
+         * @param type:  图表类型
+         *
+         */
+        /*GaugeFormate: function (data, type) {
+            var temps_datas = data.data
+            var arr = []
+            arr.push({
+                name: '业务指标',
+                type: 'gauge',
+                detail: {formatter: '{value}%'},
+                data: temps_datas
+            })
+            console.log(arr)
+            return arr
+        }*/
     },
     // 生成图形option
     EchartsOption: {
@@ -512,8 +551,98 @@ var MyEcharts = {
             return option
         },
         /**
-         *  @param option : option
-         *  @param echartId : 图表的id 需要加引号
+         * radar    雷达图
+         * @param data: json 数据
+         * @param opts  配置
+         */
+        radar: function (data, opts) {
+            var settings = {
+                title: '', // 标题
+                subtext: '', // 副标题
+                radius: '50%',
+                center: ['50%', '50%']
+            };
+            $.extend(settings,opts);
+            // 数据格式
+            var series = MyEcharts.EchartsDataFormate.RadarFormate(data);
+            option = {
+                title: {
+                    text: settings.title,
+                    subtext: settings.subtext
+                },
+                tooltip: {},
+                legend: {
+                    data: data.groups
+                },
+                radar: {
+                    // shape: 'circle',
+                    name: {
+                        textStyle: {
+                            color: '#fff',
+                            backgroundColor: '#999',
+                            borderRadius: 3,
+                            padding: [3, 5]
+                        }
+                    },
+                    indicator: data.indicator,
+                    radius: settings.radius,
+                    center: settings.center
+                },
+                series: series
+            };
+            return option
+        },
+        /**
+         * gauge    仪表盘
+         * @param data: json 数据
+         * @param opts  配置
+         */
+        gauge: function (data, opts) {
+
+            var settings = {
+                title: '', // 标题
+                subtext: '', // 副标题
+                radius: '75%',
+                center: ['50%', '50%'],
+                // min:0,
+                // max:100,
+            };
+            $.extend(settings,opts);
+            // if(opts.series[0] === undefined) return false
+            var series = [
+                {
+                    name: data.groups,
+                    type: 'gauge',
+                    radius: settings.radius,
+                    center: settings.center,
+                    detail: {
+                        formatter: '{value}'
+                    },
+                    data: data.data
+                }
+            ];
+            if (opts.series) {
+                $.extend(series[0], opts.series[0]);
+            }
+
+            // 数据格式
+            // var series = MyEcharts.EchartsDataFormate.GaugeFormate(data);
+            // console.log(series)
+            option = {
+                title: {
+                    text: settings.title,
+                    subtext: settings.subtext
+                },
+                tooltip : {
+                    formatter: "{a} <br/>{b} : {c}%"
+                },
+                series: series
+            };
+            return option
+        },
+        /**
+         *  @param option: option
+         *  @param echartId: 图表的id 需要加引号
          */
         initChart: function (option, echartId) {
             var container = eval('document.getElementById("' + echartId + '")');

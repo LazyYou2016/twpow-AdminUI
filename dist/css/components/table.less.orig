@@ -17,6 +17,11 @@
         margin-left: 0;
       }
     }
+<<<<<<< HEAD
+    thead {
+      th {
+        background-color: @gray-l;
+=======
     > tbody,
     > thead,
     > tfoot {
@@ -25,6 +30,7 @@
         > th {
           vertical-align: middle;
         }
+>>>>>>> bd2c7b4bc8f0af6f1990853e79aa9d24ab91208b
       }
     }
     tbody {

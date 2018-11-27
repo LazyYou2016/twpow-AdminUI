@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历FullCalendar-项目管理</title>
+    <link rel="stylesheet" href="dist/css/plugins/fullcalendar/fullcalendar.min.css">
+</head>
+<body>
+<div class="card-fluid">
+    <h1>项目管理</h1>
+    <div class="row">
+        <!--日历-->
+        <div class="col-sm-12" id="calendar-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">2017年04月排班表</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="taskType-legend">
+                        <ul>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-red"></i>
+                                    土建任务
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-orange"></i>
+                                    高压电缆
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-yellow"></i>
+                                    低压电缆
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-success"></i>
+                                    开关站
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-blue"></i>
+                                    高基配电室
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-deepblue"></i>
+                                    低基配电室
+                                </div>
+                            </li>
+                            <li>
+                                <div class="taskType-legend-content">
+                                    <i class="dot bg-purple"></i>
+                                    电缆分界室
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="project_calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/jquery-ui.min.js"></script>
+<script src="dist/js/moment.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/zh-cn.js"></script>
+<script>
+    var calendar_select = '<div class="calendar-select">' +
+        '<div class="checkbox">' +
+        '<label>' +
+        '<input type="checkbox" value="">' +
+        '<span class="tw-checkbox-inner"></span>只显示重要节点</label>' +
+        '</div>' +
+        '</div>';
+    $('#project_calendar').fullCalendar({
+        // 演示 正式的需要删除代码
+        defaultDate: '2018-11-22', // 默认日期
+        // 在这里输入选项和回调
+        themeSystem: 'bootstrap3',
+        header: {
+            left: 'today myButton',
+            center: 'prev title next',
+            right: ''
+        },
+        weekNumbers: true, // 是否在日历中显示第几周
+        weekNumbersWithinDays: true,
+        weekNumberCalculation: 'ISO',
+
+        fixedWeekCount: true, // 设置月试图时显示的周数，默认true。如果是true则每次固定显示6周，如果设置为false，则每月根据实际周数显示4，5，6周。
+
+        navLinks: true, // 允许天/周名称是否可点击，包括周次weekNumber，点击之后可以跳转到对于的天/周视图，默认false。
+        editable: false, // 是否允许事件可以被编辑
+        eventLimit: false, // 太多的事件, 允许“更多”链接时
+        droppable: true,
+        //回调函数，当新的日期区间渲染后或者视图切换后触发：
+        viewRender:function(view,element){
+            // console.log(view,element);
+            // console.log(view.start.format())
+            setMonthBg();
+            event_limit();
+            $('#project_calendar').append(calendar_select);
+        },
+        drop: function (date, jsEvent, ui, resourceId) {
+            var eventObject = $(this).data('eventObject');
+            if (eventObject === undefined || eventObject.title === '') return false;
+            // retrieve the dropped element's stored Event Object
+            var originalEventObject = $(this).data('eventObject');
+            // we need to copy it, so that multiple events don't have a reference to the same object
+            var copiedEventObject = $.extend({}, originalEventObject);
+            console.log(copiedEventObject)
+            // assign it the date that was repiorted
+            // var date_str=fsetDateTime(date);
+            var uuid_current = uuid(8, 10);
+            // console.log(date_str);
+            // console.log(group_id);
+            copiedEventObject.id = uuid_current;
+            // eliminate_duplicate_load_history(uuid_current);/*j载入历史数组*/
+
+            copiedEventObject.start = date;
+            copiedEventObject.jsEvent = jsEvent;
+            // console.log(copiedEventObject.id = num_rand(),copiedEventObject.start = date,copiedEventObject.allDay = allDay)
+            // render the event on the calendar
+            // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+            // console.log( copiedEventObject,copiedEventObject.id);
+            $('#project_calendar').fullCalendar('renderEvent', copiedEventObject, true);
+        },
+        //当点击日历中某个事件的时候触发eventClick 回调
+        eventClick: function (calEvent, jsEvent, view) {
+            console.log(calEvent);
+            window.location.href="项目管理——任务节点列表.html?date="+calEvent.start.format();
+            //do something here...
+            // console.log('eventClick中选中Event的id属性值为：', event.id);
+            // console.log('eventClick中选中Event的title属性值为：', event.title);
+            // console.log('eventClick中选中Event的color属性值为：', event.color);
+            // console.log('eventClick中选中Event的className属性值为：', event.className);
+            // console.log(date.start.format())
+        },
+        // 当用户点击日历上面某一天的时候触发，回调方法：
+        dayClick: function (date, allDay, jsEvent, view) {
+            // console.log(date,allDay,jsEvent);
+
+            var events = $('#project_calendar').fullCalendar('clientEvents', function (event) {
+                var eventStart = event.start.format('YYYY-MM-DD');
+                var eventEnd = event.end ? event.end.format('YYYY-MM-DD') : null;
+                var theDate = date.format('YYYY-MM-DD');
+                // Make sure the event starts on or before date and ends afterward
+                // Events that have no end date specified (null) end that day, so check if start = date
+                return (eventStart <= theDate && (eventEnd >= theDate) && !(eventStart < theDate && (eventEnd == theDate))) || (eventStart == theDate && (eventEnd === null));
+            });
+            console.log(events); // do whatever with the console.log(events[0]._allDay);
+            window.location.href = "项目管理——任务节点列表.html?date=" + date.format();
+            // $(this).css('background-color', 'rgba(255,0,0,0.15)');
+        },
+        // 当浏览器Resize窗口大小变化引起日程表Resize后，会触发windowResize回调函数。
+        windowResize: function(view) {
+            console.log('日历窗口随浏览器窗口变化resize');
+            // console.log(view);
+            event_limit ();
+        },
+        events: [
+            {
+                id:1,
+                title: 1,
+                start: '2018-11-01',
+                className:'bg-success complete'
+            },{
+                id:2,
+                title: 2,
+                start: '2018-11-01',
+                className:'bg-success complete'
+            },{
+                id:3,
+                title: 3,
+                start: '2018-11-01',
+                className:'bg-primary complete'
+            },{
+                id:4,
+                title: 4,
+                start: '2018-11-01',
+                className:'bg-primary complete'
+            },
+            {
+                id:11,
+                title: 10,
+                start: '2018-11-07',
+                className:'bg-purple complete'
+            },
+            {
+                id:12,
+                title: 11,
+                start: '2018-11-07',
+                className:'bg-purple complete'
+            },
+            {
+                id: 1,
+                title: 30,
+                start: '2018-11-09',
+                className:'bg-deepblue complete'
+
+            },{
+                id: 2,
+                title: 333,
+                start: '2018-11-09',
+                className:'bg-deepblue complete'
+            },{
+                id: 3,
+                title: 34,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },{
+                id: 4,
+                title: 3,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },{
+                id: 5,
+                title: 3,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },{
+                id: 6,
+                title: 3,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },{
+                id: 7,
+                title: 3,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },{
+                id: 8,
+                title: 3,
+                start: '2018-11-09',
+                className:'bg-deepblue'
+            },
+            {
+                id: 9,
+                title: 1,
+                start: '2018-11-09',
+                className:'bg-primary complete'
+            },
+            {
+                id: 10,
+                title: 4,
+                start: '2018-11-09',
+                className:'bg-danger'
+
+            },
+            {
+                id: 11,
+                title: 4,
+                start: '2018-11-09',
+                className:'bg-success'
+
+            },
+            {
+                id: 12,
+                title:15,
+                start: '2018-11-09',
+                className:'bg-orange'
+
+            },
+            {
+                id: 13,
+                title: 150,
+                start: '2018-11-09',
+                className:'bg-danger'
+
+            },
+            {
+                id: 14,
+                title: 15,
+                start: '2018-11-09',
+                className:'bg-yellow complete'
+            },
+            {
+                id: 15,
+                title: 15,
+                start: '2018-11-09',
+                className:'bg-danger'
+            },
+            {
+                id: 16,
+                title: 15,
+                start: '2018-11-09',
+                className:'bg-warning'
+            },
+            {
+                id: 17,
+                title: 20,
+                start: '2018-11-09',
+                className:'bg-danger'
+            },
+            {
+                id: 18,
+                title: 16,
+                start: '2018-11-09',
+                className:'bg-danger'
+            },
+            {
+                title: 3,
+                start: '2018-11-12',
+                className:'bg-danger'
+            },
+            {
+                title: 3,
+                start: '2018-11-12',
+                className:'bg-orange'
+            },
+            {
+                title: 4,
+                start: '2018-11-12',
+                className:'bg-orange'
+            },
+            {
+                title: 2,
+                start: '2018-11-13',
+                className:'bg-yellow'
+            },
+            {
+                id:23,
+                title: 10,
+                start: '2018-11-08',
+                className:'bg-yellow'
+            },
+            {
+                id:23,
+                title: 10,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:23,
+                title: 10,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:1,
+                title: 15,
+                start: '2018-11-08',
+                className:'bg-orange complete'
+            },
+            {
+                id:23,
+                title: 10,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:23,
+                title: 10,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:23,
+                title: 11,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:23,
+                title: 12,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 14,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 15,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 20,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 21,
+                start: '2018-11-08',
+                className:'bg-danger complete'
+            },
+            {
+                id:23,
+                title: 22,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 23,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 24,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 30,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:23,
+                title: 40,
+                start: '2018-11-08',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 50,
+                start: '2018-11-10',
+                // className:'bg-danger',
+                description: 'This is a cool event'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title:1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 0,
+                start: '2018-11-21',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-21',
+                className:'bg-danger'
+            }
+            ,
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },
+            {
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-27',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 2,
+                start: '2018-11-27',
+                className:'bg-green'
+            },{
+                id:24,
+                title: 2,
+                start: '2018-11-10',
+                className:'bg-danger'
+            },{
+                id:24,
+                title: 2,
+                start: '2018-11-10',
+                className:'bg-orange complete'
+            },{
+                id:24,
+                title: 1,
+                start: '2018-11-01',
+                className:'bg-orange'
+            }
+        ]
+    })
+
+    /**
+     * 限制显示在一天的事件数,  设置事件（球）行内元素显示
+     * */
+    function event_limit() {
+        var getTrHeight = $(".fc-row .fc-day")[0].offsetHeight;
+        var getTrWidth = $(".fc-row .fc-day")[0].offsetWidth;
+        var getWindowWidth = window.screen.width;
+        var getWindowHeight = window.screen.height;
+        console.log(getWindowWidth, getWindowHeight);
+        //PC端1920*1080 显示15个
+        if (getWindowWidth === 1920 && getWindowHeight === 1080) {
+            console.log("PC 1920*1080")
+            //日历 一个日单元显示15个球
+            var skeleton = $("#project_calendar .fc-content-skeleton");
+            for (var i = 0; i < skeleton.length; i++) {
+                var s_tbody = $(skeleton[i])[0].childNodes[0].childNodes[1];
+                var s_tbody_tr = $($(s_tbody)[0]).children();
+                // event_grid(s_tbody, s_tbody_tr, getTrWidth, 5)
+            }
+        } else {
+            console.log("笔记本 12个");
+            //日历 一个日单元显示12个球
+            var skeleton = $("#project_calendar .fc-content-skeleton");
+            for (var i = 0; i < skeleton.length; i++) {
+                var s_tbody = $(skeleton[i])[0].childNodes[0].childNodes[1];
+                var s_tbody_tr = $($(s_tbody)[0]).children();
+                event_grid(s_tbody, s_tbody_tr, getTrWidth, 4)
+            }
+        }
+        $('#project_calendar').fullCalendar('render');
+    }
+    /**
+     * 	event_grid 	函数定义   超过12/15个球，删除后面的数据
+     * 	s_tbody_tr	获取tr的对象
+     * 	getTrWidth	获取一个日单元格的宽度
+     *  rowSeveral	一行放几个？  比如设置为5：5*3=>15个球， 4*3=>12个球
+     * */
+    function event_grid(s_tbody, s_tbody_tr, getTrWidth, rowSeveral) {
+        //超过12个球，删除后面的数据
+        if ($($(s_tbody)[0]).children().length > rowSeveral * 3) {
+            var s_tobdy_length = $($(s_tbody)[0]).children().splice(rowSeveral * 3);
+            $.each($($(s_tbody)[0]).children(), function (v, k) {
+                console.log(k.removeAttribute('style'))
+            })
+            for (var h = 0; h < s_tobdy_length.length; h++) {
+                s_tobdy_length[h].style.display = "none";
+            }
+            //更多...
+            var mDiv = '<div style="position:absolute;top:110px;left:20px;color:#666;font-size: 12px;font-weight: bold">更多</div>';
+            var mTd = $($($(s_tbody)[0]).children()[rowSeveral * 3 - 1]).children();
+            $(mTd).append(mDiv);
+        }
+        //12个  4*3  并排
+        for (var j = 0; j < s_tbody_tr.length; j++) {
+            var top = '0', left = 15 + (24 * j) + (j) * (getTrWidth - 30 - 24 * rowSeveral) / (rowSeveral - 1);
+            $(s_tbody_tr[j]).children().children("a").css({position: "absolute", top: top + 'px', left: left + 'px'})
+            if (j >= rowSeveral * 1) {
+                top = '40', left = 15 + (24 * (j - rowSeveral * 1)) + (j - rowSeveral * 1) * (getTrWidth - 30 - 24 * rowSeveral) / (rowSeveral - 1);
+                $(s_tbody_tr[j]).children().children("a").css({
+                    position: "absolute",
+                    top: top + 'px',
+                    left: left + 'px'
+                })
+            }
+            if (j >= rowSeveral * 2) {
+                top = '80', left = 15 + (24 * (j - rowSeveral * 2)) + (j - rowSeveral * 2) * (getTrWidth - 30 - 24 * rowSeveral) / (rowSeveral - 1);
+                $(s_tbody_tr[j]).children().children("a").css({
+                    position: "absolute",
+                    top: top + 'px',
+                    left: left + 'px'
+                })
+            }
+        }
+    }
+
+    /**
+     * 给某个日期设置背景色，1:黄色 2:橙色 3:红色
+     * */
+    function setMonthBg() {
+        $(".fc-bg td[data-date='2018-11-09']").css('backgroundColor', 'rgba(254,67,101,.3)');
+        $(".fc-bg td[data-date='2018-11-29']").css('backgroundColor', 'rgba(254,67,101,.3)');
+        // $(".fc-bg td[data-date='2018-01-09']").css('backgroundColor','rgba(255, 88, 37,.5)');
+
+        $(".fc-bg td[data-date='2018-11-08']").css('backgroundColor', 'rgba(255, 250, 130, 0.5)');
+        $(".fc-bg td[data-date='2018-11-09']").css('backgroundColor', 'rgba(232, 126, 33, 0.5)');
+        $(".fc-bg td[data-date='2018-11-10']").css('backgroundColor', 'rgba(255, 100, 100, 0.5)');
+    }
+</script>
+</body>
+</html>

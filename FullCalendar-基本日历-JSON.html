@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历FullCalendar</title>
+    <link rel="stylesheet" href="dist/css/plugins/fullcalendar/fullcalendar.min.css">
+    <style>
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #script-warning {
+            display: none;
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            padding: 0 10px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            color: red;
+        }
+
+        #loading {
+
+            display: none;
+            width: 100%;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本日历FullCalendar JSON</h3>
+                </div>
+                <div class="panel-body">
+                    <div id='script-warning'>
+                        <code>php/get-events.php</code> 报错了
+                    </div>
+
+                    <div id='loading'>loading...</div>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/moment.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="dist/js/plugins/fullcalendar/zh-cn.js"></script>
+<script>
+    $(function(){
+        $('#calendar').fullCalendar({
+            // 在这里输入选项和回调
+            themeSystem: 'bootstrap3',
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            weekNumbers: true, // 是否在日历中显示第几周
+            weekNumbersWithinDays: true,
+            weekNumberCalculation: 'ISO',
+            defaultDate: '2018-11-22', // 默认日期
+            navLinks: true, // 允许天/周名称是否可点击，包括周次weekNumber，点击之后可以跳转到对于的天/周视图，默认false。
+            editable: true, // 是否允许事件可以被编辑
+            eventLimit: true, // 太多的事件, 允许“更多”链接时
+            events: {
+                url: 'dist/json/get-events.json',
+                error: function () {
+                    $('#script-warning').show();
+                }
+            },
+            loading: function(bool) {
+                $('#loading').toggle(bool);
+            }
+        })
+    })
+</script>
+</body>
+</html>
