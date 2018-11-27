@@ -1,7 +1,7 @@
 .vscode
 .project
 .idea
-
+node_modules
 /dist/css/components/*.css
 /dist/css/components/*.css.map
 /dist/css/plugins/*.css
