@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="描述" />
+    <meta name="keywords" content="关键词" />
+    <title></title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="dist/css/plugins/lightgallery/lightgallery.css">
+    <link rel="stylesheet" href="dist/css/plugins/lightgallery/style.css">
+    <style>
+        .swiper-container {
+            height: 300px;
+        }
+        .justified-gallery a{
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+<div class="card-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">相册滑动</div>
+        <div class="panel-body">
+            <div class="swiper-container swiper-container2">
+                <div id="lightgallery" class="swiper-wrapper justified-gallery">
+                    <a class="swiper-slide" href="dist/imgs/light/1.jpg">
+                        <img src="dist/imgs/light/1-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/4.jpg">
+                        <img src="dist/imgs/light/4-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/13.jpg">
+                        <img src="dist/imgs/light/13-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/2.jpg">
+                        <img src="dist/imgs/light/2-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/4.jpg">
+                        <img src="dist/imgs/light/4-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/13.jpg">
+                        <img src="dist/imgs/light/13-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/light/1.jpg">
+                        <img src="dist/imgs/light/1-375.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                    <a class="swiper-slide" href="dist/imgs/other/1.jpg">
+                        <img src="dist/imgs/other/1.jpg">
+                        <div class="demo-gallery-poster">
+                            <img src="dist/imgs/light/zoom.png">
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script src="dist/js/plugins/swiper/swiper.min.js"></script>
+<script src="dist/js/plugins/lightgallery/jquery.mousewheel.min.js"></script>
+<script src="dist/js/plugins/lightgallery/lightgallery-custom.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery();
+    });
+    var swiper = new Swiper('.swiper-container2', {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        slidesPerGroup: 3,
+        // loop: true,
+        // loopFillGroupWithBlank: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+</body>
+
+</html>
