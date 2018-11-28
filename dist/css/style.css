@@ -5567,7 +5567,7 @@ span.select2-dropdown {
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 200px;
+  padding-left: 200px;
   height: 100%;
 }
 .index.index-2 .index-body .index-iframe {
@@ -5790,9 +5790,10 @@ span.select2-dropdown {
   border-radius: 50%;
 }
 .index-body {
-  width: 100%;
+  overflow: hidden;
   position: absolute;
   top: 65px;
+  width: 100%;
   left: 0;
   bottom: 0;
   -webkit-transition: all 0.5s;
