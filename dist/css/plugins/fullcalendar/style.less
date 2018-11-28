@@ -1,17 +1,18 @@
-#external-events .fc-event{
-    margin: 10px 0;
-    cursor:pointer;
-    padding: 10px;
-    background-color: @primary;
+#external-events .fc-event {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  background-color: @primary;
 }
+
 .fc-event-container {
-    .fc-event{
-        background-color: @primary;
-        border-color: darken(@primary, 10%);
-    }
-    .fc-day-grid-event{
-        padding: 2px 4px;
-    }
+  .fc-event {
+    background-color: @primary;
+    border-color: darken(@primary, 10%);
+  }
+  .fc-day-grid-event {
+    padding: 2px 4px;
+  }
 }
 .fc-view-container{
     .fc-head-container{
@@ -31,139 +32,155 @@
             }
         }
     }
-    .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td{
+    .table-bordered>thead>tr>th,
+    .table-bordered>tbody>tr>th,
+    .table-bordered>tfoot>tr>th,
+    .table-bordered>thead>tr>td,
+    .table-bordered>tbody>tr>td,
+    .table-bordered>tfoot>tr>td {
         border:1px solid lighten(@primary,20%);
     }
 }
+
 .fc {
-    button {
-        background-color: @primary !important;
-        color: #fff !important;
-        border: 0;
-    }
-    .glyphicon{
-        color: #fff;
-    }
-    .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle{
-        .btn-variables(@btn-font-color, @primary, @primary, @primary-active);
-    }
+  button {
+    background-color: @primary  !important;
+    color: #fff !important;
+    border: 0;
+  }
+  .glyphicon {
+    color: #fff;
+  }
+  .btn-default:hover,
+  .btn-default:active,
+  .btn-default:focus,
+  .btn-default:active,
+  .btn-default.active,
+  .open>.btn-default.dropdown-toggle {
+    .btn-variables(@btn-font-color, @primary, @primary, @primary-active);
+  }
 }
+
 // 排版系统
-#edit{
-    margin-bottom: 10px;
+#edit {
+  margin-bottom: 10px;
 }
+
 #event-body {
-    display: none;
+  display: none;
 }
+
 #staff-events {
-    max-height: 500px;
-    margin-bottom: 10px;
-    overflow: auto;
+  max-height: 500px;
+  margin-bottom: 10px;
+  overflow: auto;
 }
-.label-event{
-    position: relative;
-    cursor: move;
-    margin: 4px 0;
-    padding: 5px 10px;
-    background-color: @primary;
-    color: #fff;
-    border-radius: @main-radius-default;
-    .event-remove{
-        position: absolute;
-        top: 8px;
-        right: 10px;
-        cursor: pointer;
-    }
+
+.label-event {
+  position: relative;
+  cursor: move;
+  margin: 4px 0;
+  padding: 5px 10px;
+  background-color: @primary;
+  color: #fff;
+  border-radius: @main-radius-default;
+  .event-remove {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+  }
 }
-.group-event{
-    position: relative;
-    cursor: move;
-    margin: 4px 0;
-    padding: 10px;
-    border: 1px dashed @primary;
-    border-radius: @main-radius-default;
-    color: #fff;
-    background-color: #fff;
+
+.group-event {
+  position: relative;
+  cursor: move;
+  margin: 4px 0;
+  padding: 10px;
+  border: 1px dashed @primary;
+  border-radius: @main-radius-default;
+  color: #fff;
+  background-color: #fff;
 }
-.team-kong{
-    background-color: #eee;
-    color: #333;
-    padding: 25px 10px;
-    &:after{
-        content: "空空的，快快把人员分配到这块内";
-    }
+
+.team-kong {
+  background-color: #eee;
+  color: #333;
+  padding: 25px 10px;
+  &:after {
+    content: "空空的，快快把人员分配到这块内";
+  }
 }
 
 /*项目管理日历*/
-.taskType-legend{
-    margin-bottom: 10px;
-    ul{
-        li{
-            display: inline-block;
-            .taskType-legend-content{
-                margin-right: 10px;
-                .dot{
-                    display: inline-block;
-                    border-radius: 50%;
-                    width: 24px;
-                    height: 24px;
-                    line-height:24px;
-                    color:#fff;
-                    background-color:@primary;
-                    text-align: center;
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: 700;
-                    vertical-align: bottom;
-                }
-            }
+
+.taskType-legend {
+  margin-bottom: 10px;
+  ul {
+    li {
+      display: inline-block;
+      .taskType-legend-content {
+        margin-right: 10px;
+        .dot {
+          display: inline-block;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          color: #fff;
+          background-color: @primary;
+          text-align: center;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          vertical-align: bottom;
         }
+      }
     }
+  }
 }
-#project_calendar{
+
+#project_calendar {
+  position: relative;
+  .calendar-select {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .fc-event-container {
     position: relative;
-    .calendar-select {
-        position: absolute;
-        top: 0;
-        right: 0;
+    padding: 0 10px;
+    .fc-event {
+      display: inline-block;
+      padding: 0;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 50%;
+      border: 0;
+      cursor: pointer;
     }
-    .fc-event-container{
-        position: relative;
-        padding: 0 10px;
-        .fc-event{
-            display: inline-block;
-            padding: 0;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 50%;
-            border: 0;
-            cursor: pointer;
-        }
-    }
-    .complete{
-        //font-family: "iconfont" !important;
-        font: normal normal normal 14px/1 FontAwesome;
-    }
-    .complete:after{
-        content: "\f058";
-        position: absolute;
-        bottom: -6px;
-        right: -8px;
-        z-index: 2;
-        font-size: 20px;
-        color: #0ad384;
-        width: 20px;
-        height: 20px;
-        line-height: 1;
-        background: #fff;
-        //border: 1.5px solid #0ad384;
-        border-radius: 50%;
-
-
-        /*content: "\e6aa";
+  }
+  .complete {
+    //font-family: "iconfont" !important;
+    font: normal normal normal 14px/1 FontAwesome;
+  }
+  .complete:after {
+    content: "\f058";
+    position: absolute;
+    bottom: -6px;
+    right: -8px;
+    z-index: 2;
+    font-size: 20px;
+    color: #0ad384;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+    background: #fff; //border: 1.5px solid #0ad384;
+    border-radius: 50%;
+    /*content: "\e6aa";
         position: absolute;
         bottom: -11px;
         left: 4px;*/
