@@ -22,7 +22,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      margin-left: @index-body-left;
+      padding-left: @index-body-left;
       height: 100%;
       .index-iframe {
         margin-left: 0;
@@ -284,9 +284,10 @@
 }
 
 .index-body {
-  width: 100%;
+  overflow: hidden;
   position: absolute;
   top: @index-head-heigth;
+  width: 100%;
   left: 0;
   bottom: 0;
   -webkit-transition: all @index-body-mini-time;
