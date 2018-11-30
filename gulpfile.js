@@ -21,6 +21,7 @@ var paths = [
   plugins + 'select2/select2.full.min.js', //select2
   plugins + 'zTree/jquery.ztree.min.js', //树形菜单
   plugins + 'zcircleMove/zcircleMove.js', //圆形进度条
+  plugins + 'toastr/toastr.min.js', //toastr通知栏
   dist + 'date.js',
   dist + 'common.js'
 ]

@@ -22,10 +22,11 @@ var fnExtend = {
 };
 
 //插入css文件
-fnExtend.includFile(filesSrc.cssPath, ['bootstrap.min.css', 'style.css']);
+fnExtend.includFile(filesSrc.cssPath, ['bootstrap.min.css', 'style.min.css']);
 //插入js文件
 fnExtend.includFile(filesSrc.jsPath, [
   'main.min.js',
+  'common.js',
 ]);
 fnExtend.includFile(filesSrc.plugins, [
   'layer/layer.js', //layer对话框
