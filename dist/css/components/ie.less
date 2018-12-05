@@ -1,0 +1,124 @@
+@font-weight: 400;
+@color: #4C4C4C;
+@margin-top: 10px;
+
+
+.ie-container {
+  margin-top: 60px;
+
+  .text {
+    width: 1025px;
+    height: 32px;
+    font-size: 32px;
+    font-weight: @font-weight;
+    color: @color;
+    margin-top: @margin-top;
+  }
+
+  .text-danger {
+    color: #DD4F43;
+  }
+
+  .text1 {
+    width: 357px;
+    height: 27px;
+    font-size: 27px;
+    font-weight: @font-weight;
+    color: @color;
+    margin-top: @margin-top;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ie-container {
+    margin-top: 170px;
+  }
+}
+
+.xiang {
+  padding-top: 40px;
+  margin: auto;
+  width: 1110px;
+}
+
+.kuang {
+  float: left;
+  width: 308px;
+  height: 469px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 17px 17px 0px rgba(0, 0, 0, 0.17);
+  transition: all .3s;
+  margin: 0 20px;
+  border: 2px solid #dbdbdb \9;
+  *border: 2px solid #dbdbdb;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.icon-background-position (@v) {
+  background-position: @v;
+}
+
+.ie-icon {
+  width: 125px;
+  height: 135px;
+  margin: 20px auto;
+  background-image: url(../imgs/ie-Bbwser3.png);
+  background-repeat: no-repeat;
+
+  &.chrome {
+    .icon-background-position(0 0)
+  }
+
+  &.firefox {
+    .icon-background-position(-125px 0)
+  }
+
+  &.ie360 {
+    .icon-background-position(-253px 0)
+  }
+}
+
+.pp {
+  margin-top: -35px;
+  font-size: 21px;
+  font-weight: bold;
+  color: @color;
+  line-height: 73px;
+}
+
+.pc {
+  width: 176px;
+  height: 49px;
+  font-size: 18px;
+  font-weight: @font-weight;
+  color: @color;
+  line-height: 30px;
+}
+
+.kua {
+  width: 142px;
+  height: 35px;
+  background: #EEEEEE;
+  margin-top: 125px;
+
+  a {
+    text-decoration: none;
+    color: @color;
+
+    &:hover {
+      color: #46b8da;
+    }
+  }
+}
+
+.pi {
+  width: 109px;
+  height: 19px;
+  font-size: 18px;
+  font-weight: @font-weight;
+  color: @color;
+  line-height: 35px;
+}
