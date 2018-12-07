@@ -1,50 +1,56 @@
 @import '../base/variables.less';
+
 .nav-tabs {
-  >li {
-    >a {
+  > li {
+    > a {
       color: @font-color;
     }
   }
-}
 
-.nav-tabs {
   &.nav-tabs-line {
-    >li {
-      &.active>a {
+    > li {
+      &.active > a {
         &,
         &:hover,
         &:focus {
-          border-color: transparent; // border-bottom: 1px solid @main-color;
+          border-color: transparent;
+
+          /* border-bottom: 1px solid @main-color; */
           &:after {
-            content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
+            left: 0;
             width: 100%;
             height: 2px;
             background-color: @main-color;
+            content: '';
           }
         }
       }
     }
   }
+
   &.nav-tabs-card {
     background-color: @gray-l;
-    border: 1px solid @tab-card-border; // border-bottom-color: transparent;
-    >li {
-      >a {
+    border: 1px solid @tab-card-border;
+
+    /* border-bottom-color: transparent; */
+    > li {
+      > a {
         border-radius: 0;
       }
-      &.active>a {
+
+      &:first-child {
+        a {
+          border-left: none;
+        }
+      }
+
+      &.active > a {
         &,
         &:hover,
         &:focus {
           border-top-color: transparent;
-        }
-      }
-      &:first-child {
-        a {
-          border-left: none;
         }
       }
     }

@@ -1,29 +1,35 @@
 @import '../base/variables.less';
 .widget-variables(@color) {
-  background-color: @color;
   color: #fff;
+  background-color: @color;
 }
 
 .widget {
   &.widget-radius {
     border-radius: @widet-radius;
   }
-  border-radius: @widet-radius-default;
+
   padding: 15px 20px;
-  margin-bottom: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: @widet-radius-default;
+
   &.widget-success {
     .widget-variables(@success);
   }
+
   &.widget-info {
     .widget-variables(@info);
   }
+
   &.widget-warning {
     .widget-variables(@warning);
   }
+
   &.widget-danger {
     .widget-variables(@danger);
   }
+
   h2 {
     margin: 0;
   }

@@ -1,4 +1,5 @@
 @import '../base/variables.less';
+
 .btn {
   border-radius: @btn-radius-default;
 }
@@ -11,14 +12,15 @@
   color: @btn-fc;
   background-color: @btn-bg;
   border-color: @btn-border;
+
   &:hover,
   &:active,
   &:focus,
   &:active,
   &.active,
-  .open>&.dropdown-toggle {
-    background-color: @btn-active  !important;
-    border-color: @btn-active  !important;
+  .open > &.dropdown-toggle {
+    background-color: @btn-active !important;
+    border-color: @btn-active !important;
   }
 }
 
@@ -26,14 +28,15 @@
   color: @btn-color;
   background-color: transparent;
   border-color: @btn-color;
+
   &:hover,
   &:active,
   &:focus,
   &:active,
   &.active,
-  .open>&.dropdown-toggle {
+  .open > &.dropdown-toggle {
     background-color: transparent !important;
-    border-color: @btn-active  !important;
+    border-color: @btn-active !important;
   }
 }
 
@@ -56,6 +59,7 @@
 
 .btn-link {
   color: @primary;
+
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -66,7 +70,7 @@
     &:active,
     &.active {
       color: @primary;
-      background-image: none; // border-color: @btn-color;
+      background-image: none;
     }
   }
 }
@@ -105,18 +109,23 @@
   &.btn-default {
     .btn-line-variables(@gray-m, @gray-h);
   }
+
   &.btn-primary {
     .btn-line-variables(@primary, @primary-active);
   }
+
   &.btn-success {
     .btn-line-variables(@success, @success-active);
   }
+
   &.btn-info {
     .btn-line-variables(@info, @info-active);
   }
+
   &.btn-warning {
     .btn-line-variables(@warning, @warning-active);
   }
+
   &.btn-danger {
     .btn-line-variables(@danger, @danger-active);
   }
@@ -124,25 +133,26 @@
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child>.btn,
-.input-group-btn:first-child>.btn-group>.btn,
-.input-group-btn:first-child>.dropdown-toggle,
-.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
-.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
   border-radius: @btn-radius-default;
 }
 
 .pagination {
-  >li {
+  > li {
     &:first-child {
-      >a,
+      > a,
       span {
-        border-top-left-radius: @btn-radius-default;
         border-bottom-left-radius: @btn-radius-default;
+        border-top-left-radius: @btn-radius-default;
       }
     }
+
     &:last-child {
-      >a,
+      > a,
       span {
         border-top-right-radius: @btn-radius-default;
         border-bottom-right-radius: @btn-radius-default;

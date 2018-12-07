@@ -1,6 +1,7 @@
 //文本颜色 S
 .text-emphasis-variant(@color) {
   color: @color;
+
   a&:hover,
   a&:focus {
     color: darken(@color, 10%);
@@ -36,6 +37,7 @@
 @import '../base/variables.less';
 .label-variant(@color) {
   background-color: @color;
+
   &[href] {
     &:hover,
     &:focus {
@@ -45,8 +47,8 @@
 }
 
 .label-line-variant(@color) {
-  background-color: transparent;
   color: @color;
+  background-color: transparent;
   border: 1px solid @color;
 }
 
@@ -60,6 +62,7 @@
 
 .label-default {
   .label-variant(@label-default);
+
   &.label-line {
     .label-line-variant(@label-default);
   }
@@ -67,6 +70,7 @@
 
 .label-primary {
   .label-variant(@label-primary);
+
   &.label-line {
     .label-line-variant(@label-primary);
   }
@@ -74,6 +78,7 @@
 
 .label-success {
   .label-variant(@label-success);
+
   &.label-line {
     .label-line-variant(@label-success);
   }
@@ -81,6 +86,7 @@
 
 .label-info {
   .label-variant(@label-info);
+
   &.label-line {
     .label-line-variant(@label-info);
   }
@@ -88,6 +94,7 @@
 
 .label-warning {
   .label-variant(@label-warning);
+
   &.label-line {
     .label-line-variant(@label-warning);
   }
@@ -95,6 +102,7 @@
 
 .label-danger {
   .label-variant(@label-danger);
+
   &.label-line {
     .label-line-variant(@label-danger);
   }
