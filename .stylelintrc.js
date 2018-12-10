@@ -6,7 +6,6 @@ module.exports = {
     // "no-descending-specificity": null, // 暂时屏蔽 不允许较低特异性的选择子出现在高于较高特异性的选择子之后。
     "no-invalid-double-slash-comments": null, // 禁止CSS不支持双斜杠注释（// ...）。
     "selector-pseudo-element-colon-notation": "single", // 为适用的伪元素指定单冒号或双冒号表示法。
-    "font-family-no-missing-generic-family-keyword": null, // 禁止在字体系列名称列表中缺少通用族。
     // "max-nesting-depth": 6,
     "order/order": [
       [
