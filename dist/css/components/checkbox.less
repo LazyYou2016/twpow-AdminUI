@@ -119,67 +119,6 @@ label {
   }
 }
 
-.radio,
-.radio-inline {
-  .tw-radio-inner {
-    margin-left: -20px;
-  }
-
-  .tw-checkbox-inner {
-    margin-left: -20px;
-  }
-}
-
-// hover
-input[type='checkbox']:hover + .tw-checkbox-inner {
-  border-color: darken(@marquee-color, 10%);
-}
-
-input[type='checkbox']:hover:disabled + .tw-checkbox-inner {
-  border-color: #ddd;
-}
-
-// 选中
-input[type='checkbox']:checked + .tw-checkbox-inner {
-  background-color: @marquee-color;
-  border-color: darken(@marquee-color, 10%);
-}
-
-input[type='checkbox']:checked + .tw-checkbox-inner:before {
-  -webkit-transform: rotate(45deg) scaleY(1);
-  transform: rotate(45deg) scaleY(1);
-}
-
-// 禁止
-input[type='checkbox']:disabled + .tw-checkbox-inner {
-  background-color: #eee;
-}
-
-input[type='checkbox']:disabled:checked + .tw-checkbox-inner {
-  background-color: @marquee-color-disabled;
-  border-color: darken(@marquee-color-disabled, 10%);
-}
-
-/* 单选 */
-
-.radio {
-  .tw-checkbox-inner {
-    border-radius: 100%;
-  }
-}
-
-input[type='radio']:checked + .tw-checkbox-inner {
-  background-color: @marquee-color;
-  border-color: darken(@marquee-color, 10%);
-}
-
-input[type='radio']:checked + .tw-checkbox-inner:before {
-  -webkit-transform: rotate(45deg) scaleY(1);
-  transform: rotate(45deg) scaleY(1);
-}
-
-/* 单选框 */
-
 .tw-radio-inner {
   position: relative;
   z-index: 1;
@@ -207,28 +146,36 @@ input[type='radio']:checked + .tw-checkbox-inner:before {
   }
 }
 
-// hover
-input[type='radio']:hover + .tw-radio-inner {
-  border-color: @marquee-color;
+.radio,
+.radio-inline {
+  .tw-radio-inner {
+    margin-left: -20px;
+  }
+
+  .tw-checkbox-inner {
+    margin-left: -20px;
+  }
 }
 
-input[type='radio']:hover:disabled + .tw-radio-inner {
-  border-color: #ddd;
-}
-
-input[type='radio']:hover:disabled:checked + .tw-radio-inner {
-  border-color: darken(@marquee-color-disabled, 10%);
+.radio {
+  .tw-checkbox-inner {
+    border-radius: 100%;
+  }
 }
 
 // 选中
 input[type='radio']:checked + .tw-radio-inner {
   border-color: darken(@marquee-color, 10%);
+
+  &:before {
+    background-color: @marquee-color;
+  }
 }
 
-input[type='radio']:checked + .tw-radio-inner:before {
-  background-color: @marquee-color;
+// hover
+input[type='radio']:hover + .tw-radio-inner {
+  border-color: @marquee-color;
 }
-
 // 禁止
 input[type='radio']:disabled + .tw-radio-inner {
   background-color: #eee;
@@ -237,10 +184,18 @@ input[type='radio']:disabled + .tw-radio-inner {
 
 input[type='radio']:disabled:checked + .tw-radio-inner {
   border-color: darken(@marquee-color-disabled, 10%);
+
+  &:before {
+    background-color: @marquee-color-disabled;
+  }
 }
 
-input[type='radio']:disabled:checked + .tw-radio-inner:before {
-  background-color: @marquee-color-disabled;
+input[type='radio']:hover:disabled + .tw-radio-inner {
+  border-color: #ddd;
+}
+
+input[type='radio']:hover:disabled:checked + .tw-radio-inner {
+  border-color: darken(@marquee-color-disabled, 10%);
 }
 
 .marquee-arrow() {
@@ -347,3 +302,43 @@ input[type='radio']:disabled:checked + .tw-radio-inner:before {
     }
   }
 }
+
+input[type='radio']:checked + .tw-checkbox-inner {
+  background-color: @marquee-color;
+  border-color: darken(@marquee-color, 10%);
+
+  &:before {
+    -webkit-transform: rotate(45deg) scaleY(1);
+    transform: rotate(45deg) scaleY(1);
+  }
+}
+
+// hover
+input[type='checkbox']:hover + .tw-checkbox-inner {
+  border-color: darken(@marquee-color, 10%);
+}
+
+input[type='checkbox']:checked + .tw-checkbox-inner {
+  background-color: @marquee-color;
+  border-color: darken(@marquee-color, 10%);
+
+  &:before {
+    -webkit-transform: rotate(45deg) scaleY(1);
+    transform: rotate(45deg) scaleY(1);
+  }
+}
+
+input[type='checkbox']:disabled + .tw-checkbox-inner {
+  background-color: #eee;
+}
+
+input[type='checkbox']:hover:disabled + .tw-checkbox-inner {
+  border-color: #ddd;
+}
+
+input[type='checkbox']:disabled:checked + .tw-checkbox-inner {
+  background-color: @marquee-color-disabled;
+  border-color: darken(@marquee-color-disabled, 10%);
+}
+
+/* 单选框 */
