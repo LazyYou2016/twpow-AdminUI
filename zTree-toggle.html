@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="描述" />
+  <meta name="keywords" content="关键词" />
+  <title></title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    .col-md-3 {
+      border-right: #999999 1px dashed
+    }
+
+    .col-md-9 iframe {
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-fluid abs-full">
+    <div class="row-12">
+      <div class="panel-full col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">flex输入框</div>
+          <div class="panel-body">
+            <div class="col-md-3">
+              <ul id="treeDemo" class="ztree"></ul>
+              <button type="button" id="btn">go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dist/js/fileSrc.js"></script>
+  <script>
+    var zTreeObj;
+    // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+    var setting = {};
+    // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+    var zNodes = [
+      {
+        id: 1,
+        name: "test1",
+        children: [
+          { name: "test1_1" }, { name: "test1_2" }
+        ]
+      },
+      {
+        name: "test2",
+        children: [
+          { name: "test2_4" }, { name: "test2_2" }, { name: "test2_2" }]
+      },
+      {
+        name: "test2",
+        children: [
+          { name: "test2_1" }, { name: "test2_2" }, { name: "test2_2" }]
+      }
+    ];
+
+    $(document).ready(function () {
+      zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+      // if (nodes.length>0) {
+      //   treeObj.expandNode(nodes[0], true, true, true);
+      // }
+      // zTreeObj.expandAll(true);
+      var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+      var nodes = treeObj.getNodesByParam("name", "test2", null);
+      // var nodes =  treeObj.getNodeByParam("id", 1, null);
+      // var node = treeObj.getNodeByParam("id", 1, null);
+      // var nodes = treeObj.getNodesByParam("name", "test2", null);
+      // treeObj.expandNode(nodes[0], true, true, true);
+      console.log(nodes);
+
+      $('#btn').click(function () {
+        var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+        var nodes = treeObj.getNodesByParam("name", "test2", null);
+        console.log(nodes)
+        var node = treeObj.getNodeByTId("treeDemo_8");
+        console.log(node)
+        // treeObj.refresh();
+        // var nodes = treeObj.getNodes();
+        // console.log(nodes, nodes[0].getParentNode())
+        // var nodeParent= treeObj.getNodesByParam("name", nodes[0].getParentNode().name, null);
+        treeObj.expandNode(node, true, true, null);
+        // console.log(nodeParent)
+      })
+    });
+  </script>
+</body>
+
+</html>
