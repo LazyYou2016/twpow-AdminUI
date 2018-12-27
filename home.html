@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="描述"/>
+    <meta name="keywords" content="关键词"/>
+    <title></title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="dist/css/components/homes.css">
+    <script src="dist/js/plugins/echarts/echarts.js"></script>
+    <style>
+        .abc{
+            display: inline-block;
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+<div class="card-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">访问量<span class="zho">周</span></div>
+                <div class="panel-body">
+                    <p class="tweet">9,999,666</p>
+                    <p>总计访问量<span class="tweet-shu">88w万<i class="far fa-flag"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">下载<span class="zho bg-warning">月</span></div>
+                <div class="panel-body">
+                    <p class="tweet">33,555</p>
+                    <p>新下载<span class="tweet-shu">10%<i class="far fa-grin-beam"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">收入<span class="zho bg-danger">年</span></div>
+                <div class="panel-body">
+                    <p class="tweet">9999,666</p>
+                    <p>总收入<span class="tweet-shu">***<i class="fas fa-dollar-sign"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">活跃用户<span class="zho bg-deepblue">月</span></div>
+                <div class="panel-body">
+                    <p class="tweet">66,666</p>
+                    <p>最近一个月<span class="tweet-shu">15%<i class="fas fa-user-friends"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default1">
+        <div class="panel-heading">访问量
+
+                <p class="qj"><a id="cl" href="javascript:viod(0)" data-id="0">去年</a></p>
+                <!--<p class="qj"><a href="javascript:viod(0)" onclick="ss('今年')">今年</a></p>-->
+
+
+        </div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                <div id="main" style="width: 100%;height:350px;"></div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <p class="yef">月访问数</p>
+                    <span>同上期增长</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 30%">
+                            30%
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <p class="yef">月访问数</p>
+                    <span>同上期增长</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 20%">
+                            20%
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <p class="yef">月访问数</p>
+                    <span>同上期增长</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 40%">
+                            40%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default2">
+                <div class="panel-heading">用户留言</div>
+                <div class="panel-body">
+                    <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>贤心</b></h4>
+                    <p>作为 layui 官方推出的后台模板，从初版的饱受争议，到后续的埋头丰富，逐步占据了国内后台系统应用的主要市场。</p>
+
+                        <p>5月30日 00:00
+                            <span class="" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                            </span>
+                        </p>
+                    </div>
+                    <hr/>
+                    <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>诸葛亮</b></h4>
+                    <p>皓首匹夫！苍髯老贼！你枉活九十有六，一生未立寸功，只会摇唇鼓舌！助曹为虐！一条断脊之犬，还敢在我军阵前狺狺狂吠，我从未见过有如此厚颜无耻之人！</p>
+                    <p>5月30日 00:00
+                        <span class="" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                        </span>
+                    </p>
+                    </div>
+                    <hr/>
+                    <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>胡歌</b></h4>
+                    <p>你以为只要长得漂亮就有男生喜欢？你以为只要有了钱漂亮妹子就自己贴上来了？你以为学霸就能找到好工作？我告诉你吧，这些都是真的！</p>
+                    <p>5月30日 00:00
+                        <span class="" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                            </span>
+                    </p>
+                    </div>
+                    <hr/>
+                    <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>杜甫</b></h4>
+                    <p>人才虽高，不务学问，不能致圣。刘向十日画一水，五日画一石。</p>
+                    <p>5月30日 00:00
+                        <span class="" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                            </span>
+                    </p>
+                    </div>
+                    <hr/>
+                        <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>鲁迅</b></h4>
+                    <p>路本是无所谓有和无的，走的人多了，就没路了。</p>
+                    <p>5月30日 00:00
+                        <span class="" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                            </span>
+                    </p>
+                        </div>
+                    <hr/>
+                            <div class="demo" onmouseover="overShow(this)" onmouseout="outHide()">
+                    <h4><b>张爱玲</b></h4>
+                    <p>于千万人之中遇到你所要遇到的人，于千万年之中，时间的无涯的荒野中，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话好说，唯有轻轻的问一声：“噢，原来你也在这里？”</p>
+                    <p>5月30日 00:00
+                        <span class="bf" >
+                            <a class="btn1" onclick="prompt()">回复</a>
+                            </span>
+                    </p>
+                            </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default3">
+                <div class="panel-heading">本周活跃用户列表</div>
+                <div class="panel-body">
+                    <div class="table-container">
+                        <table class="table text-center table-bordered-row">
+                            <thead>
+                            <tr class="yh">
+                                <th>用户名</th>
+                                <th>最后登录时间</th>
+                                <th>状态</th>
+                                <th>获得赞</th>
+                            </tr>
+                            </thead>
+                            <tbody class="den">
+                            <tr>
+                                <td class="hu">胡歌</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>在线</td>
+                                <td>22 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            <tr>
+                                <td class="pen">彭于晏</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>在线</td>
+                                <td>21 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            <tr>
+                                <td class="qin">靳东</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>离线</td>
+                                <td>66 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            <tr>
+                                <td>吴尊</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>离线</td>
+                                <td>45 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            <tr>
+                                <td>许上进</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>在线</td>
+                                <td>21 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            <tr>
+                                <td>小蚊子</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>在线</td>
+                                <td>45 <span><i class="far fa-thumbs-up"></i></span></td>
+
+
+                            </tr>
+                            <tr>
+                                <td>贤心</td>
+                                <td><span><i class="far fa-clock"></i></span> 11:00</td>
+                                <td>在线</td>
+                                <td>21 <span><i class="far fa-thumbs-up"></i></span></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default4">
+                <div class="panel-heading">项目进展</div>
+                <div class="panel-body">
+                    <div class="table-container">
+                        <table id="table" class="table text-center table-bordered">
+                            <thead>
+                            <tr class="yh">
+                                <th>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="checkAll" onclick="checkAll()"/>
+                                            <span class="tw-checkbox-inner" ></span>
+                                        </label>
+                                    </div>
+                                </th>
+                                <th>任务</th>
+                                <th>所需时间</th>
+                                <th>完成情况</th>
+                            </tr>
+                            </thead>
+                            <tbody class="den">
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>开会</td>
+                                <td>一小时</td>
+                                <td class="yi">已完成</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>项目开发</td>
+                                <td>两小时</td>
+                                <td class="jin">进行中</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>陪吃饭</td>
+                                <td>一小时</td>
+                                <td class="wei">未完成</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>陪吃饭</td>
+                                <td>两小时</td>
+                                <td class="wei">未完成</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>陪吃饭</td>
+                                <td>半小时</td>
+                                <td class="wei">未完成</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>陪吃饭</td>
+                                <td>半小时</td>
+                                <td class="wei">未完成</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="checkOne"/>
+                                            <span class="tw-checkbox-inner"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>陪吃饭</td>
+                                <td>半小时</td>
+                                <td class="wei">未完成</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default5">
+                <div class="panel-heading">最近更新</div>
+                <div class="panel-body">
+                    <div class="rod">
+                    <div class="col-md-6" >
+                       <div class="qt">
+                           <p class="fll"><span><i class="far fa-clock"></i></span> flow</p>
+                           <p class="cv">修复开启 isLazyimg:true 后, 图片懒加载但是图片不存在的报错问题</p>
+                           <p class="cc">流加载</p><span class="qi">7 天前</span>
+                       </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="qt">
+                            <p class="fll"><span><i class="far fa-clock"></i></span> flow</p>
+                            <p class="cv">修复开启 isLazyimg:true 后, 图片懒加载但是图片不存在的报错问题</p>
+                            <p class="cc">流加载</p><span class="qi">7 天前</span>
+                        </div>
+                    </div>
+                        <div class="col-md-6">
+                            <div class="qt">
+                                <p class="fll"><span><i class="far fa-clock"></i></span> flow</p>
+                                <p class="cv">修复开启 isLazyimg:true 后, 图片懒加载但是图片不存在的报错问题</p>
+                                <p class="cc">流加载</p><span class="qi">7 天前</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="qt">
+                                <p class="fll"><span><i class="far fa-clock"></i></span> flow</p>
+                                <p class="cv">修复开启 isLazyimg:true 后, 图片懒加载但是图片不存在的报错问题</p>
+                                <p class="cc">流加载</p><span class="qi">7 天前</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">便捷导航</div>
+            <div class="panel-body">
+                <div id="father">
+                    <div id="son"></div>
+                </div>
+                <button id="btn1">添加</button>
+                <button id="btn2">移除</button>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default6">
+                <div class="panel-heading">八卦新闻</div>
+                <div class="panel-body">
+                    <div>
+                    <div id="main1" style="width: 100%;height:290px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script src="dist/js/fileSrc.js"></script>
+<script type="text/javascript">
+
+    var data = [
+            {
+                name: '访问量',
+                type: 'line',
+                symbolSize: 8,
+                hoverAnimation: false,
+                itemStyle: {
+                    borderWidth: '2'
+                },
+                emphasis: {
+                    itemStyle: {
+                        borderWidth: '4'
+                    },
+                },
+
+                smooth: true,
+                data: [900, 850, 950, 1000, 1100, 1050, 1000, 1150, 1250, 1370, 1250, 1100]
+            },
+            {
+                name: '下载量',
+                type: 'line',
+                symbolSize: 8,
+                hoverAnimation: false,
+                itemStyle: {
+                    borderWidth: '2'
+                },
+                emphasis: {
+                    itemStyle: {
+                        borderWidth: '4'
+                    },
+                },
+                yAxisIndex: 1,
+                smooth: true,
+                data: [850, 850, 800, 950, 1000, 950, 950, 1150, 1100, 1240, 1000, 950]
+            },
+            {
+                name: '平均访问量',
+                type: 'line',
+                symbolSize: 8,
+                hoverAnimation: false,
+                itemStyle: {
+                    borderWidth: '2'
+                },
+                emphasis: {
+                    itemStyle: {
+                        borderWidth: '4'
+                    },
+                },
+                smooth: true,
+                data: [870, 850, 850, 950, 1050, 1000, 980, 1150, 1000, 1300, 1150, 1000]
+            }
+        ]
+    var data1 = [
+
+        {
+            name: '访问量',
+            type: 'line',
+            symbolSize: 8,
+            hoverAnimation: false,
+            itemStyle: {
+                borderWidth: '2'
+            },
+            emphasis: {
+                itemStyle: {
+                    borderWidth: '4'
+                },
+            },
+
+            smooth: true,
+            data: [455, 150, 250, 3000, 1400, 1550, 1600, 1150, 1250, 1370, 1250, 1100]
+        },
+        {
+            name: '下载量',
+            type: 'line',
+            symbolSize: 8,
+            hoverAnimation: false,
+            itemStyle: {
+                borderWidth: '2'
+            },
+            emphasis: {
+                itemStyle: {
+                    borderWidth: '4'
+                },
+            },
+            yAxisIndex: 1,
+            smooth: true,
+            data: [1870, 2850, 1850, 1950, 2050, 1400, 980, 1150, 1000, 1300, 1150, 1000]
+        },
+        {
+            name: '平均访问量',
+            type: 'line',
+            symbolSize: 8,
+            hoverAnimation: false,
+            itemStyle: {
+                borderWidth: '2'
+            },
+            emphasis: {
+                itemStyle: {
+                    borderWidth: '4'
+                },
+            },
+            smooth: true,
+            data: [850, 850, 800, 950, 1000, 950, 950, 1150, 1100, 1240, 1000, 950]
+        }
+    ]
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '',
+            subtext: ''
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'line',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            data: ['访问量', '下载量', '平均访问量'],
+
+        },
+        grid: {
+            left: '8%',
+            right: '8%',
+            bottom: '8%',
+            // containLabel: true
+        },
+        toolbox: {},
+        xAxis: [
+            {
+                axisLine: {
+                    lineStyle: {
+                        color: '#009c6e',
+                        width: 3
+                    }   // x轴坐标轴颜色
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: '#000000'
+                    }
+                },
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '访问量',
+                // min: 0,
+                // max: 1500,
+                interval: 250,
+                axisLabel: {
+                    formatter: '{value} 万',
+                    textStyle: {
+                        color: '#000000'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#009c6e',
+                        width: 3
+                    }   // x轴坐标轴颜色
+                }
+            },
+            {
+                type: 'value',
+                name: '下载量',
+                // min: 0,
+                // max: 1250,
+                interval: 250,
+                axisLabel: {
+                    formatter: '{value} 万',
+                    textStyle: {
+                        color: '#000000'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#009c6e',
+                        width: 3
+                    }
+                }
+            }
+
+        ],
+
+        series: data,
+        color: ['#25daa6', '#51b1ff', '#009c6e']
+    };
+    myChart.setOption(option);
+
+    function prompt() {
+        layer.prompt({
+            title: '输入任何口令，并确认',
+            formType: 1
+        }, function (pass, index) {
+            layer.close(index);
+            layer.prompt({
+                title: '随便写点啥，并确认',
+                formType: 2
+            }, function (text, index) {
+                layer.close(index);
+                layer.msg('演示完毕！您的口令：' + pass + '您最后写下了：' + text);
+            });
+        });
+    }
+//回复
+    function overShow(obj){
+        console.log( document.getElementsByClassName("btn1"))
+        // document.getElementsByClassName("btn1")[0].style.display ="block";
+        console.log($('.btn1'))
+
+        // console.log($('.btn1'))
+        $(obj).find('.btn1').css('display','inline');
+    }
+    function outHide(obj){
+        // document.getElementsByClassName("btn1").style.display ="block";
+        $('.btn1').hide()
+        // $(obj).find('.btn1').hide()
+    }
+
+
+    function checkAll(){
+        //1.获取编号前面的复选框
+        var checkAllEle = document.getElementById("checkAll");
+        //2.对编号前面复选框的状态进行判断
+        if(checkAllEle.checked==true){
+            //3.获取下面所有的复选框
+            var checkOnes = document.getElementsByName("checkOne");
+            //4.对获取的所有复选框进行遍历
+            for(var i=0;i<checkOnes.length;i++){
+                //5.拿到每一个复选框，并将其状态置为选中
+                checkOnes[i].checked=true;
+            }
+        }else{
+            //6.获取下面所有的复选框
+            var checkOnes = document.getElementsByName("checkOne");
+            //7.对获取的所有复选框进行遍历
+            for(var i=0;i<checkOnes.length;i++){
+                //8.拿到每一个复选框，并将其状态置为未选中
+                checkOnes[i].checked=false;
+            }
+        }
+    }
+
+    $('#cl').click(function() {
+        var s = $('#cl').attr('data-id')
+        // var b = s.substring(4, 6)
+        console.log(s)
+        // console.log(b)
+        if(s == 0) {
+            $('#cl').attr('data-id', '1')
+            $('#cl').text('今年')
+            console.log(option.series = data)
+        } else {
+            $('#cl').attr('data-id', '0')
+            $('#cl').text('去年')
+            console.log(option.series = data1)
+        }
+        myChart.setOption(option);
+    })
+
+
+   /* function ss (id) {
+
+        if (id == '去年') {
+
+            console.log(data)
+            console.log(option.series = data)
+        } else {
+
+            console.log(data1)
+            console.log(option.series = data1)
+
+        }
+        myChart.setOption(option);
+    }*/
+
+    var myChart1 = echarts.init(document.getElementById('main1'));
+
+    // 指定图表的配置项和数据
+    var option1 = {
+
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['罗纳尔多', '舍普琴科'],
+            orient: 'horizontal',
+            x : '0%',
+            y : '0%',
+            align: 'left',
+        },
+        radar: {
+            // shape: 'circle',
+            name: {
+                textStyle: {
+                    color: '#000000',
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                { name: '进攻', max: 100},
+                { name: '防守', max: 100},
+                { name: '体能', max: 100},
+                { name: '速度', max: 100},
+                { name: '力量', max: 100},
+                { name: '技巧', max: 100}
+            ]
+        },
+        series: [{
+            name: '罗纳尔多 vs 舍普琴科（罗纳尔多 vs 舍普琴科）',
+            type: 'radar',
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            // areaStyle: {normal: {}},
+            data : [
+                {
+                    value : [97, 32, 74, 95, 88, 92],
+                    name : '罗纳尔多'
+                },
+                {
+                    value : [97, 42, 88, 94, 90, 86],
+                    name : '舍普琴科'
+                }
+            ]
+        }]
+    }
+    myChart1.setOption(option1);
+
+    var cnum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    function rp (n) {
+        var s = '';
+        n = '' + n; // 数字转为字符串
+        for (var i = 0; i < n.length; i++) {
+            s += cnum[parseInt(n.charAt(i))];
+        }
+        return s;
+    }
+
+    console.log( rp(14))
+  var son =document.getElementById("son");
+  var father = document.getElementById("father");
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+
+    var num=1;
+    btn1.onclick =  function () {
+        // 逻辑
+        var para=document.createElement("span");
+        para.setAttribute("class", "abc");
+        var node=document.createTextNode('操作' +rp(num++));
+        para.appendChild(node);
+        son.appendChild(para);
+    }
+    btn2.onclick = function () {
+        // var item =document.getElementsByTagName("span");
+        var item = document.getElementsByClassName('abc')
+        console.log(item);
+        // son.removeChild(item[item.length-1])
+
+        if (item.length == 0) {
+            son.innerHTML=""
+        }
+        else {
+            son.removeChild(item[item.length-1])
+        }
+        // document.getElementById("son").innerHTML=x;
+    }
+
+</script>
+</body>
+</html>
