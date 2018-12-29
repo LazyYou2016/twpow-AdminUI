@@ -2,30 +2,29 @@
 @color: #4C4C4C;
 @margin-top: 10px;
 
-
 .ie-container {
   margin-top: 60px;
 
   .text {
     width: 1025px;
     height: 32px;
+    margin-top: @margin-top;
     font-size: 32px;
     font-weight: @font-weight;
     color: @color;
-    margin-top: @margin-top;
   }
 
   .text-danger {
-    color: #DD4F43;
+    color: #dd4f43;
   }
 
   .text1 {
     width: 357px;
     height: 27px;
+    margin-top: @margin-top;
     font-size: 27px;
     font-weight: @font-weight;
     color: @color;
-    margin-top: @margin-top;
   }
 }
 
@@ -36,23 +35,26 @@
 }
 
 .xiang {
+  width: 1110px;
   padding-top: 40px;
   margin: auto;
-  width: 1110px;
 }
 
 .kuang {
   float: left;
   width: 308px;
   height: 469px;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 17px 17px 0px rgba(0, 0, 0, 0.17);
-  transition: all .3s;
   margin: 0 20px;
+  background: rgba(255, 255, 255, 1);
   border: 2px solid #dbdbdb \9;
   *border: 2px solid #dbdbdb;
+  -webkit-box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.17);
+  box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.17);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
   &:hover {
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
 }
@@ -69,15 +71,15 @@
   background-repeat: no-repeat;
 
   &.chrome {
-    .icon-background-position(0 0)
+    .icon-background-position(0 0);
   }
 
   &.firefox {
-    .icon-background-position(-125px 0)
+    .icon-background-position(-125px 0);
   }
 
   &.ie360 {
-    .icon-background-position(-253px 0)
+    .icon-background-position(-253px 0);
   }
 }
 
@@ -85,8 +87,8 @@
   margin-top: -35px;
   font-size: 21px;
   font-weight: bold;
-  color: @color;
   line-height: 73px;
+  color: @color;
 }
 
 .pc {
@@ -94,19 +96,19 @@
   height: 49px;
   font-size: 18px;
   font-weight: @font-weight;
-  color: @color;
   line-height: 30px;
+  color: @color;
 }
 
 .kua {
   width: 142px;
   height: 35px;
-  background: #EEEEEE;
   margin-top: 125px;
+  background: #eee;
 
   a {
-    text-decoration: none;
     color: @color;
+    text-decoration: none;
 
     &:hover {
       color: #46b8da;
@@ -119,6 +121,6 @@
   height: 19px;
   font-size: 18px;
   font-weight: @font-weight;
-  color: @color;
   line-height: 35px;
+  color: @color;
 }

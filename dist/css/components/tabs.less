@@ -1,54 +1,60 @@
 @import '../base/variables.less';
+
+.test(@a) when (@a>10) {
+  li.active > a,
+  li.active > a:hover,
+  li.active > a:focus {
+    border-color: transparent;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: @main-color;
+      content: '';
+    }
+  }
+}
+
+.test(@a) when (@a<=10) {
+  li.active > a,
+  li.active > a:hover,
+  li.active > a:focus {
+    border-top-color: transparent;
+  }
+}
+
 .nav-tabs {
-  >li {
-    >a {
+  > li {
+    > a {
       color: @font-color;
     }
   }
 }
 
-.nav-tabs {
-  &.nav-tabs-line {
-    >li {
-      &.active>a {
-        &,
-        &:hover,
-        &:focus {
-          border-color: transparent; // border-bottom: 1px solid @main-color;
-          &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: @main-color;
-          }
-        }
+.nav-tabs-card {
+  background-color: @gray-l;
+  border: 1px solid @tab-card-border;
+
+  > li {
+    > a {
+      border-radius: 0;
+    }
+
+    &:first-child {
+      a {
+        border-left: none;
       }
     }
+
+    .test(5);
   }
-  &.nav-tabs-card {
-    background-color: @gray-l;
-    border: 1px solid @tab-card-border; // border-bottom-color: transparent;
-    >li {
-      >a {
-        border-radius: 0;
-      }
-      &.active>a {
-        &,
-        &:hover,
-        &:focus {
-          border-top-color: transparent;
-        }
-      }
-      &:first-child {
-        a {
-          border-left: none;
-        }
-      }
-    }
-  }
+}
+
+.nav-tabs-line {
+  .test(15);
 }
 
 .tab-content {

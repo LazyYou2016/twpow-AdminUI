@@ -7,96 +7,99 @@
 @login-box-p: 44px 60px;
 @login-box-bg: #091645;
 @login-box-r: 4px;
+
 .login-body {
-  display: table;
-  overflow: hidden;
-  background-image: url(@login-bg);
-  background-color: @login-color;
-  background-size: contain;
-  background-size: 100% 100%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  display: table;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  background-color: @login-color;
+  background-image: url(@login-bg);
+  background-size: contain;
+  background-size: 100% 100%;
+
   .login-container {
     position: relative;
     width: @login-container-w;
     text-align: center;
+
     .swiper-container {
+      position: absolute;
+      z-index: 2;
       width: 60%;
       height: 550px;
       margin: 0 auto;
-      position: absolute;
-      z-index: 2;
       overflow-y: hidden;
     }
+
     .login-box {
       position: relative;
       width: @login-box-w;
       height: @login-box-h;
       padding: @login-box-p;
+      text-align: center;
       background: @login-box-bg;
       border-radius: @login-box-r;
-      text-align: center;
+
       .login-head {
         margin: 14px 0 20px;
         text-align: center;
       }
+
       .login-form {
         margin-bottom: 6px;
+
         .form-label {
-          color: #fff;
           margin: 10px 0 6px;
+          color: #fff;
         }
+
         .login-input {
           position: relative;
+
           input {
             width: 100%;
+            height: 44px;
             padding: 10px 0 10px 50px;
             border: none;
-            height: 44px;
           }
+
           i {
             position: absolute;
             top: 16px;
             left: 16px;
             color: @main-color;
           }
-          .code-btn {
-            position: absolute;
-            top: 6px;
-            right: 8px;
-            font-weight: bold;
-            &,
-            &:hover,
-            &:focus {
-              border-color: transparent !important;
-              color: @primary;
-            }
-          }
         }
+
         &:last-child {
           margin-bottom: 0;
         }
+
         &.login-code {
           input {
             display: inline-block;
             width: 200px;
           }
+
           img.code-img {
+            float: right;
             width: 100px;
             height: 40px;
             margin: 2px 0;
-            float: right;
           }
         }
       }
+
       .btn-login {
         margin: 16px 0;
       }
+
       .login-other {
         &.error-tips-container {
           &,
@@ -105,10 +108,13 @@
           }
         }
       }
+
       .login-tab {
         text-align: center;
+
         .btn-group {
           width: 100%;
+
           .btn {
             width: 50%;
           }
@@ -116,54 +122,77 @@
       }
     }
   }
+
   .login-box-center {
     margin: 0 auto;
   }
+
+  .footer-copyright {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    z-index: 100;
+    width: 100%;
+    margin: 30px 0 20px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    a {
+      color: #fff;
+    }
+  }
+
   &.login-full {
     .login-container {
       width: 100%;
       height: 100%;
+
       .login-box-left {
         position: relative;
         height: 100%;
         padding-right: @login-box-w;
+
         .vc {
-          padding: 90px @login-box-w 120px 0;
           z-index: 100;
+          padding: 90px @login-box-w 120px 0;
         }
+
         .swiper-container {
           position: relative;
           width: 800px;
         }
       }
+
       .login-box-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
         width: @login-box-w;
         height: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
         background-color: @login-box-bg;
       }
     }
+
     .footer-copyright {
       padding-right: @login-box-w;
     }
   }
-  .footer-copyright {
-    position: absolute;
-    z-index: 100;
-    left: 50%;
-    bottom: 14px;
-    color: #fff;
-    width: 100%;
-    margin: 30px 0 20px;
-    text-align: center;
-    font-size: 12px;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    a {
-      color: #fff;
-    }
+}
+
+.code-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-weight: bold;
+
+  &,
+  &:hover,
+  &:focus {
+    color: @primary;
+    border-color: transparent !important;
   }
 }

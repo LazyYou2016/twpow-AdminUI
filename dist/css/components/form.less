@@ -1,4 +1,5 @@
 @import '../base/variables.less';
+
 input.form-control.form-radius {
   border-radius: @form-radius;
 }
@@ -11,14 +12,19 @@ input.form-control {
   border: none;
 }
 
-.form-flex-container.form-radius {
-  .form-flex-label {
-    border-top-left-radius: @form-radius;
-    border-bottom-left-radius: @form-radius;
-  }
-  .form-flex-body {
-    border-top-right-radius: @form-radius;
-    border-bottom-right-radius: @form-radius;
+.form-flex-body {
+  input {
+    width: 100%;
+    height: 40px;
+    padding: 3px 10px;
+    line-height: 40px;
+    -webkit-text-size-adjust: none;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -38,103 +44,43 @@ span.select2-container--default .select2-selection--multiple {
   border: 1px solid @gray-l;
 }
 
-.form-flex-container {
-  .form-flex-label,
-  .form-flex-body {
-    border: 1px solid @gray-l;
-  }
-}
-
 .form-flex {
   padding: 20px;
 }
 
-.form-flex-container {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 10px 0;
-  .form-flex-label {
-    width: 11.5rem;
-    float: left;
-    text-align: right;
-    border-right: none;
-    line-height: 14px;
-    padding: 13px 10px 13px 10px;
-    border-top-left-radius: @form-radius-default;
-    border-bottom-left-radius: @form-radius-default;
-  }
-  .form-flex-body {
-    position: relative;
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-    flex: 1;
-    min-width: 200px;
-    border-top-right-radius: @form-radius-default;
-    border-bottom-right-radius: @form-radius-default;
-    input {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      line-height: 40px;
-      height: 40px;
-      width: 100%;
-      padding: 3px 10px;
-      border: 0;
-      background-color: transparent;
-      outline: none;
-      -webkit-text-size-adjust: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-    textarea {
-      &.form-control {
-        padding-top: 10px;
-      }
-      &.form-control,
-      &.form-control:focus {
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: 1px solid transparent;
-      }
-    }
-  }
-  .select2 {
-    .select2-selection__rendered,
-    &.select2-container--default {
-      &.select2-container--focus,
-      .select2-selection--multiple,
-      .select2-selection--single {
-        border-color: transparent;
-      }
-    }
-  }
-}
-
 .select2 {
   margin: 0;
+
   .select2-selection {
     height: 40px;
     line-height: 40px;
+
     &:focus {
       outline: none;
     }
   }
+
   &.select2-container--default .select2-search--inline .select2-search__field {
     height: 40px;
     line-height: 40px;
   }
+
   .select2-selection__rendered {
     line-height: 40px !important;
-    li.select2-search {
-      input {
-        margin-top: 0;
-      }
+
+    li.select2-search input {
+      margin-top: 0;
     }
+
     li.select2-selection__choice {
       height: 22px;
       line-height: 22px;
     }
   }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 8px !important;
 }
 
 span.select2-container--default.select2-container--focus .select2-selection--multiple,
@@ -146,6 +92,69 @@ span.select2-dropdown {
   z-index: 99999999;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  top: 8px !important;
+.form-flex-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+
+  .form-flex-label {
+    float: left;
+    width: 11.5rem;
+    padding: 13px 10px 13px 10px;
+    line-height: 14px;
+    text-align: right;
+    border: 1px solid @gray-l;
+    border-right: none;
+    border-bottom-left-radius: @form-radius-default;
+    border-top-left-radius: @form-radius-default;
+  }
+
+  .form-flex-body {
+    position: relative;
+    min-width: 200px;
+    border: 1px solid @gray-l;
+    border-top-right-radius: @form-radius-default;
+    border-bottom-right-radius: @form-radius-default;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    &.form-radius {
+      .form-flex-label {
+        border-bottom-left-radius: @form-radius;
+        border-top-left-radius: @form-radius;
+      }
+
+      .form-flex-body {
+        border-top-right-radius: @form-radius;
+        border-bottom-right-radius: @form-radius;
+      }
+    }
+
+    textarea {
+      &.form-control {
+        padding-top: 10px;
+      }
+
+      &.form-control,
+      &.form-control:focus {
+        border: 1px solid transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .select2 {
+    .select2-selection__rendered,
+    &.select2-container--default {
+      &.select2-container--focus,
+      .select2-selection--multiple,
+      .select2-selection--single {
+        border-color: transparent;
+      }
+    }
+  }
 }

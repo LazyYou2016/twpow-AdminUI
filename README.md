@@ -17,20 +17,21 @@
 | [Bootstrap](http://www.bootcss.com/) | v3.3.7 | http://www.bootcss.com/ |
 | [JQuery](http://jquery.com/) | v1.11.3 |http://jquery.com/| jquery下载所有版本：http://www.jq22.com/jquery-info122
 | [JQuery-ui](https://jqueryui.com/) | v1.12.1 | https://jqueryui.com/ | jquery-ui 定制交互部件（Interactions），配合fullcalendar日历拖拽事件
-| [DataTables](https://datatables.net/)| ? | https://datatables.net/ | 中文文档：http://www.datatables.club/
 | [echarts](http://echarts.baidu.com/) | v4.x | http://echarts.baidu.com/ | 
 | [fullcalendar](https://fullcalendar.io/) | v3.8.0 | https://fullcalendar.io/ | 中文文档：https://www.helloweba.net/javascript/445.html
 | [lightgallery](http://sachinchoolur.github.io/lightGallery/) | v1.6.11 | http://sachinchoolur.github.io/lightGallery/ | 适用于jQuery的可定制，模块化，响应式灯箱库插件。
 | [My97DatePicker](http://www.my97.net/) | v4.8 | http://www.my97.net/ | My97日期控件 
-| [liMarquee](http://www.dowebok.com/188.html) | v4.6 | http://www.dowebok.com/188.html | 走马灯无缝滚动插件
-| [dataTables](http://www.datatables.club/) | v1.10.15 | http://www.datatables.club/ | dataTables表格插件
+| [liMarquee](http://www.dowebok.com/188.html) | v4.6 | http://masscode.ru/index.php/k2/item/44-limarquee | 走马灯无缝滚动插件 中文文档：http://www.dowebok.com/188.html
+| [DataTables](http://www.datatables.club/) | v1.10.15 | https://datatables.net/ | dataTables表格插件 中文文档：http://www.datatables.club/
 | [dataTables自定义跳页](http://www.datatables.club/) | * | http://www.datatables.club/ | dataTables表格自定义跳页插件
 | [echo](http://www.jq22.com/jquery-info660) | * | http://www.jq22.com/jquery-info660 | 图片懒加载
 | [metisMenu](https://mm.onokumus.com/) | v3.0.3 | https://mm.onokumus.com/ | 折叠菜单
 | [select2](https://select2.org/) | v4.0.6 | https://select2.org/ | select2选择框
 | [ztree](http://www.treejs.cn/v3/main.php#_zTreeInfo) | v3.5.28 | http://www.treejs.cn/v3/main.php#_zTreeInfo | 树形菜单
 | [jquery.liMarquee](http://www.dowebok.com/188.html) | v4.6 | http://www.dowebok.com/188.html | 圆形进度条
-| [toastr](http://www.jq22.com/jquery-info19923) | create by zcy 2016/10/10 | http://www.jq22.com/jquery-info19923 | toastr通知栏
+| [toastr](http://www.toastrjs.com) | create by zcy 2016/10/10 | http://www.toastrjs.com | toastr通知栏, https://github.com/CodeSeven/toastr
+| [zcircleMove](http://www.jq22.com/jquery-info19923) | ? | http://www.jq22.com/jquery-info19923 | jQuery 圆型进度条
+| [photoClip](http://www.jq22.com/jquery-info4894) | 1.0.0 | http://www.jq22.com/jquery-info19923 | jQueryphotoClip图片剪裁插件 jQueryphotoClip是一款支持移动设备触摸手势的图片裁剪jQuery插件。 改自jquery-photoClip http://www.jq22.com/jquery-info4894
 
 ## 目录结构
 ```

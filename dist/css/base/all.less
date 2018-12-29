@@ -8,13 +8,13 @@
 .far,
 .fal,
 .fab {
+  display: inline-block;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  display: inline-block;
   font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
   line-height: 1;
+  text-rendering: auto;
+  font-variant: normal;
 }
 
 .fa-lg {
@@ -72,14 +72,14 @@
 }
 
 .fa-fw {
-  text-align: center;
   width: 1.25em;
+  text-align: center;
 }
 
 .fa-ul {
-  list-style-type: none;
-  margin-left: 2.5em;
   padding-left: 0;
+  margin-left: 2.5em;
+  list-style-type: none;
 }
 
 .fa-ul > li {
@@ -87,17 +87,17 @@
 }
 
 .fa-li {
-  left: -2em;
   position: absolute;
-  text-align: center;
+  left: -2em;
   width: 2em;
   line-height: inherit;
+  text-align: center;
 }
 
 .fa-border {
+  padding: 0.2em 0.25em 0.15em;
   border: solid 0.08em #eee;
   border-radius: 0.1em;
-  padding: 0.2em 0.25em 0.15em;
 }
 
 .fa-pull-left {
@@ -139,6 +139,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -150,6 +151,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -202,20 +204,20 @@
 }
 
 .fa-stack {
+  position: relative;
   display: inline-block;
+  width: 2.5em;
   height: 2em;
   line-height: 2em;
-  position: relative;
   vertical-align: middle;
-  width: 2.5em;
 }
 
 .fa-stack-1x,
 .fa-stack-2x {
-  left: 0;
   position: absolute;
-  text-align: center;
+  left: 0;
   width: 100%;
+  text-align: center;
 }
 
 .fa-stack-1x {
@@ -5270,24 +5272,24 @@ readers do not read off random characters that represent icons */
 }
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
   width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  clip: auto;
+  position: static;
+  width: auto;
   height: auto;
   margin: 0;
   overflow: visible;
-  position: static;
-  width: auto;
+  clip: auto;
 }
 
 @font-face {
@@ -5295,8 +5297,9 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: normal;
   src: url('../fonts/webfonts/fa-brands-400.eot');
-  src: url('../fonts/webfonts/fa-brands-400.eot?#iefix')
-      format('embedded-opentype'),
+  src:
+    url('../fonts/webfonts/fa-brands-400.eot?#iefix')
+    format('embedded-opentype'),
     url('../fonts/webfonts/fa-brands-400.woff2') format('woff2'),
     url('../fonts/webfonts/fa-brands-400.woff') format('woff'),
     url('../fonts/webfonts/fa-brands-400.ttf') format('truetype'),
@@ -5312,8 +5315,9 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/webfonts/fa-regular-400.eot');
-  src: url('../fonts/webfonts/fa-regular-400.eot?#iefix')
-      format('embedded-opentype'),
+  src:
+    url('../fonts/webfonts/fa-regular-400.eot?#iefix')
+    format('embedded-opentype'),
     url('../fonts/webfonts/fa-regular-400.woff2') format('woff2'),
     url('../fonts/webfonts/fa-regular-400.woff') format('woff'),
     url('../fonts/webfonts/fa-regular-400.ttf') format('truetype'),
@@ -5330,8 +5334,9 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   src: url('../fonts/webfonts/fa-solid-900.eot');
-  src: url('../fonts/webfonts/fa-solid-900.eot?#iefix')
-      format('embedded-opentype'),
+  src:
+    url('../fonts/webfonts/fa-solid-900.eot?#iefix')
+    format('embedded-opentype'),
     url('../fonts/webfonts/fa-solid-900.woff2') format('woff2'),
     url('../fonts/webfonts/fa-solid-900.woff') format('woff'),
     url('../fonts/webfonts/fa-solid-900.ttf') format('truetype'),

@@ -1,4 +1,5 @@
 @import 'variables';
+
 ::-ms-clear,
 ::-ms-reveal {
   display: none;
@@ -11,19 +12,19 @@
 
 ::-webkit-scrollbar-track-piece {
   background-color: @scrollbar-bg;
-  -webkit-border-radius: @scrollbar-radius;
+  border-radius: @scrollbar-radius;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
   height: @scrollbar-wh;
   background-color: @scrollbar-color;
-  -webkit-border-radius: @scrollbar-radius;
+  border-radius: @scrollbar-radius;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
   width: @scrollbar-wh;
   background-color: @scrollbar-color;
-  -webkit-border-radius: @scrollbar-radius;
+  border-radius: @scrollbar-radius;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -34,22 +35,22 @@ html,
 body {
   width: 100%;
   height: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: @body-bg-color;
   font-family: @font-family;
   color: @font-color;
+  background-color: @body-bg-color;
 }
 
 a {
   &:active,
   &:hover,
   &:focus {
-    outline: 0;
     text-decoration: none !important;
+    outline: 0;
   }
 }
 
